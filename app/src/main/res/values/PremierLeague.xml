@@ -1,5 +1,5 @@
 <resources>
-    <array name="PremierLeagueTeams"/>
+    <array name="PremierLeagueTeams">
     <item name="ArsnealClubName">Arsenal</item>
     <item name="BournemouthClubName">Bournemouth</item>
     <item name="BrightonClubName">Brighton</item>
@@ -20,8 +20,9 @@
     <item name="WatfordClubName">Watford</item>
     <item name="WestBromwichAlbionClubName">West Brom</item>
     <item name="WestHamUnitedClubName">West Ham</item>
+    </array>
 
-
+    <!--
     <array name="PremierLeagueStadiumNames"/>
     <item name="ArsnealStadiumName">Emirates Stadium</item>
     <item name="BournemouthStadiumName">Vitality Stadium</item>
@@ -136,6 +137,6 @@
     <item name="WestBromwichAlbionStadiumLocation">B71 4LF</item>
     <item name="WestHamUnitedStadiumLocation">E20 2ST</item>
 
-
+-->
 
 </resources>
