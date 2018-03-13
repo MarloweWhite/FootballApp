@@ -9,34 +9,27 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-public class StadiumActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    private String[] leaugueArray;
+public class ChampionshipLeague extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    private String[] championLeague;
     private Intent intent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stadium);
+        setContentView(R.layout.activity_championship_league);
 
-        ArrayAdapter<String> adapter;
-        leaugueArray = getResources().getStringArray(R.array.football_leagues);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, leaugueArray);
-
-        ListViewCompat lv = findViewById(R.id.list_view);
-        lv.setAdapter(adapter);
+        ArrayAdapter<String> championAdapter;
+        championLeague = getResources().getStringArray(R.array.EFLC);
+        championAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, championLeague);
+        ListViewCompat lv = findViewById(R.id.championList);
+        lv.setAdapter(championAdapter);
         lv.setOnItemClickListener(this);
+
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-        if(position==1){
-            intent = new Intent(getApplicationContext(),ChampionshipLeague.class);
-            startActivity(intent);
-        }
+        intent = new Intent(getApplicationContext(),InfoActivity.class);
+        intent.putExtra("Club Name", championLeague[position]);
     }
 }
-
