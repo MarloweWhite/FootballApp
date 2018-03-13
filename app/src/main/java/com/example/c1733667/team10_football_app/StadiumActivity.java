@@ -1,5 +1,6 @@
 package com.example.c1733667.team10_football_app;
 
+import android.content.Intent;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 
 public class StadiumActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private String[] leaugueArray;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,11 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, String.format("Item clicked on = %d"), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
+        if(position==1){
+            intent = new Intent(getApplicationContext(),ChampionshipLeague.class);
+            startActivity(intent);
+        }
     }
 }
 
