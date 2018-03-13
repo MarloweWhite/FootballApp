@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         stadiumButtonListener();
-        scoreButtonListener();
+//        scoreButtonListener();
     }
 
     public void stadiumButtonListener() {
@@ -29,14 +29,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void scoreButtonListener(){
-        btnScore = findViewById(R.id.btnScore);
-        btnScore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent= new Intent(getApplicationContext(), Score.class);
-                startActivity(intent);
-            }
-        });
-    }
+//    public void scoreButtonListener(){
+//        btnScore = findViewById(R.id.btnScore);
+//        btnScore.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                intent= new Intent(getApplicationContext(), Score.class);
+//                startActivity(intent);
+//            }
+//        });
+//    }
 }
