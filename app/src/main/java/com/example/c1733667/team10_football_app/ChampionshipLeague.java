@@ -29,7 +29,7 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-        intent = new Intent(getApplicationContext(),InfoActivity.class);
-        intent.putExtra("Club Name", championLeague[position]);
+//        intent = new Intent(getApplicationContext(),InfoActivity.class);
+//        intent.putExtra("Club Name", championLeague[position]);
     }
 }
