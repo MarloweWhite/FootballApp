@@ -9,20 +9,20 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-public class PremierLeague extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    private String[] premierLeague;
+public class LeagueTwo extends AppCompatActivity implements AdapterView.OnItemClickListener {
+    private String[] leagueTwo;
     private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_premier_league);
+        setContentView(R.layout.activity_league_two);
 
-        ArrayAdapter<String> premierAdapter;
-        premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
-        premierAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, premierLeague);
-        ListViewCompat lv = findViewById(R.id.premierList);
-        lv.setAdapter(premierAdapter);
+        ArrayAdapter<String> leagueTwoAdapter;
+        leagueTwo = getResources().getStringArray(R.array.EFL2);
+        leagueTwoAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,leagueTwo);
+        ListViewCompat lv = findViewById(R.id.leagueTwoList);
+        lv.setAdapter(leagueTwoAdapter);
         lv.setOnItemClickListener(this);
     }
 
@@ -30,7 +30,7 @@ public class PremierLeague extends AppCompatActivity implements AdapterView.OnIt
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
         intent = new Intent(getApplicationContext(), ChampionshipLeague.class);
-        intent.putExtra("Club Name", premierLeague[position]);
+        intent.putExtra("Club Name", leagueTwo[position]);
         startActivity(intent);
     }
 }
