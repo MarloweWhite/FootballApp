@@ -29,7 +29,7 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-        intent = new Intent(getApplicationContext(),ChampionshipLeague.class);
+        intent = new Intent(getApplicationContext(),InfoActivity.class);
         intent.putExtra("Club Name", leagueOne[position]);
         startActivity(intent);
     }
