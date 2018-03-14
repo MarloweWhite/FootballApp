@@ -19,7 +19,8 @@
         <activity android:name=".StadiumActivity" />
         <activity android:name=".ChampionshipLeague" />
         <activity android:name=".Score" />
-        <activity android:name=".PremierLeague"></activity>
+        <activity android:name=".PremierLeague" />
+        <activity android:name=".LeagueOne"></activity>
     </application>
 
 </manifest>

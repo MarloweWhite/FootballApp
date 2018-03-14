@@ -41,6 +41,10 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
             intent = new Intent(getApplicationContext(),ChampionshipLeague.class);
             startActivity(intent);
         }
+        if(position==2){
+            intent = new Intent(getApplicationContext(),LeagueOne.class);
+            startActivity(intent);
+        }
     }
 }
 
