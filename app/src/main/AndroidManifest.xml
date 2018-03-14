@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".StadiumActivity" />
-        <activity android:name=".ChampionshipLeague"></activity>
-        <activity android:name=".Score"></activity>
+        <activity android:name=".ChampionshipLeague" />
+        <activity android:name=".Score" />
+        <activity android:name=".PremierLeague"></activity>
     </application>
 
 </manifest>

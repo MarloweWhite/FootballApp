@@ -33,6 +33,10 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
+        if (position==0){
+            intent=new Intent(getApplicationContext(),PremierLeague.class);
+            startActivity(intent);
+        }
         if(position==1){
             intent = new Intent(getApplicationContext(),ChampionshipLeague.class);
             startActivity(intent);
