@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,12 +25,18 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
         lv.setAdapter(championAdapter);
         lv.setOnItemClickListener(this);
 
+        String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
+        if (clubFromOtherActivity != null)
+            Log.d("CLUBTEST", clubFromOtherActivity);
+
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-//        intent = new Intent(getApplicationContext(),InfoActivity.class);
-//        intent.putExtra("Club Name", championLeague[position]);
+        intent = new Intent(getApplicationContext(),ChampionshipLeague.class);
+        intent.putExtra("Club Name", championLeague[position]);
+
+        startActivity(intent);
     }
 }

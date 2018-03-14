@@ -1,27 +1,30 @@
 <resources>
-    <array name="PremierLeagueTeams"/>
-    <item name="ArsnealClubName">Arsenal</item>
-    <item name="BournemouthClubName">Bournemouth</item>
-    <item name="BrightonClubName">Brighton</item>
-    <item name="BurnleyClubName">Burnley</item>
-    <item name="ChelseaClubName">Chelsea</item>
-    <item name="CrystalPalaceClubName">Crystal Palace</item>
-    <item name="EvertonClubName">Everton</item>
-    <item name="HuddersfieldTownClubName">Huddersfield</item>
-    <item name="LeicesterCityClubName">Leicester City</item>
-    <item name="LiverpoolClubName">Liverpool</item>
-    <item name="ManchesterCityClubName">Manchester City</item>
-    <item name="ManchesterUnitedClubName">Manchester United</item>
-    <item name="NewcastleUnitedClubName">Newcastle United</item>
-    <item name="SouthamptonClubName">Southampton</item>
-    <item name="StokeCityClubName">Stoke City</item>
-    <item name="SwanseaCityClubName">Swansea City</item>
-    <item name="TottenhamHotspurClubName">Tottemham Hotspur</item>
-    <item name="WatfordClubName">Watford</item>
-    <item name="WestBromwichAlbionClubName">West Brom</item>
-    <item name="WestHamUnitedClubName">West Ham</item>
+    <array name="PremierLeagueTeams">
+        <item name="ArsnealClubName">Arsenal</item>
+        <item name="BournemouthClubName">Bournemouth</item>
+        <item name="BrightonClubName">Brighton</item>
+        <item name="BurnleyClubName">Burnley</item>
+        <item name="ChelseaClubName">Chelsea</item>
+        <item name="CrystalPalaceClubName">Crystal Palace</item>
+        <item name="EvertonClubName">Everton</item>
+        <item name="HuddersfieldTownClubName">Huddersfield</item>
+        <item name="LeicesterCityClubName">Leicester City</item>
+        <item name="LiverpoolClubName">Liverpool</item>
+        <item name="ManchesterCityClubName">Manchester City</item>
+        <item name="ManchesterUnitedClubName">Manchester United</item>
+        <item name="NewcastleUnitedClubName">Newcastle United</item>
+        <item name="SouthamptonClubName">Southampton</item>
+        <item name="StokeCityClubName">Stoke City</item>
+        <item name="SwanseaCityClubName">Swansea City</item>
+        <item name="TottenhamHotspurClubName">Tottemham Hotspur</item>
+        <item name="WatfordClubName">Watford</item>
+        <item name="WestBromwichAlbionClubName">West Brom</item>
+        <item name="WestHamUnitedClubName">West Ham</item>
+    </array>
 
 
+
+    <!--
     <array name="PremierLeagueStadiumNames"/>
     <item name="ArsnealStadiumName">Emirates Stadium</item>
     <item name="BournemouthStadiumName">Vitality Stadium</item>
@@ -136,6 +139,6 @@
     <item name="WestBromwichAlbionStadiumLocation">B71 4LF</item>
     <item name="WestHamUnitedStadiumLocation">E20 2ST</item>
 
-
+      -->
 
 </resources>
