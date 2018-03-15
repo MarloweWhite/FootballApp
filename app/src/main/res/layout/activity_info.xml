@@ -7,11 +7,16 @@
     android:orientation="vertical"
     tools:context="com.example.c1733667.team10_football_app.InfoActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/infoToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:titleTextColor="#FFFFFF"/>
+
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/clubName"
-        android:gravity="center"
-        android:textSize="50dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:textSize="20dp"/>
 </android.support.v7.widget.LinearLayoutCompat>
