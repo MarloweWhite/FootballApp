@@ -1,0 +1,20 @@
+{
+  "teams": {
+    "Aston Villa": {
+      "club name": "Aston Villa",
+      "Stadium ": "Emirates",
+      "Stadium Location": "N5 1BU",
+      "Stadium capacity": "56987",
+      "Manager": "Arsene Wenger",
+      "History": ""
+    },
+    "Barnsley": {
+      "club name": "Barnsley",
+      "Stadium ": "Emirates",
+      "Stadium Location": "N5 1BU",
+      "Stadium capacity": "56987",
+      "Manager": "Arsene Wenger",
+      "History": ""
+    }
+  }
+}
