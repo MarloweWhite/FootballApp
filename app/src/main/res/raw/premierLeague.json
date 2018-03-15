@@ -1,0 +1,148 @@
+{
+  "teams" : {
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "Emirates",
+      "Stadium Location" : "N5 1BU",
+      "Stadium capacity" : "56987",
+      "Manager" : "Arsene Wenger",
+      "History" : ""
+    },
+    "Bournemouth" : {
+      "club name" : "Bournemouth",
+      "Stadium " : "Vitality Stadium",
+      "Stadium Location" : "BH7 7AF",
+      "Stadium capacity" : "11360",
+      "Manager" : "Eddie Howe",
+      "History" : ""
+    },
+    "Brighton" : {
+      "club name" : "Brighton",
+      "Stadium " : "American Express Stadium",
+      "Stadium Location" : "BN1 9BL",
+      "Stadium capacity" : "30750",
+      "Manager" : "Chris Hughton",
+      "History" : ""
+    },
+    "Burnley" : {
+      "club name" : "Burnley",
+      "Stadium " : "Turf Moor",
+      "Stadium Location" : "B10 4BX",
+      "Stadium capacity" : "21944",
+      "Manager" : "Sean Dyche",
+      "History" : ""
+    },
+    "Chelsea" : {
+      "club name" : "Chelsea",
+      "Stadium " : "Stamford Bridge",
+      "Stadium Location" : "SW6 1HS",
+      "Stadium capacity" : "41631",
+      "Manager" : "Antonio Conte",
+      "History" : ""
+    },
+    "Crystal Palace" : {
+      "club name" : "Crystal Palace",
+      "Stadium " : "Selhurst Park",
+      "Stadium Location" : "SE25 6PU",
+      "Stadium capacity" : "26309",
+      "Manager" : "Roy Hodgson",
+      "History" : ""
+    },
+    "Everton" : {
+      "club name" : "Everton",
+      "Stadium " : "Goodison Park",
+      "Stadium Location" : "L4 4EL",
+      "Stadium capacity" : "39572",
+      "Manager" : "Sam Allardyce",
+      "History" : ""
+    },
+    "Huddersfield" : {
+      "club name" : "Huddersfield",
+      "Stadium " : "John Smith's Stadium",
+      "Stadium Location" : "HD1 6PX",
+      "Stadium capacity" : "24500",
+      "Manager" : "David Wagner",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+    "Arsenal" : {
+      "club name" : "Arsenal",
+      "Stadium " : "",
+      "Stadium Location" : "",
+      "Stadium capacity" : "",
+      "Manager" : "",
+      "History" : ""
+    },
+  }
+}
