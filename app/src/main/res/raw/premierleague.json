@@ -64,85 +64,100 @@
       "Manager" : "David Wagner",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Leicester City" : {
+      "club name" : "Leicester City",
+      "Stadium " : "King Power Stadium",
+      "Stadium Location" : "LE2 7FL",
+      "Stadium capacity" : "32312",
+      "Manager" : "Claude Puel",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Liverpool" : {
+      "club name" : "Liverpool",
+      "Stadium " : "Anfield",
+      "Stadium Location" : "L4 0TH",
+      "Stadium capacity" : "54074",
+      "Manager" : "Jurgen Klopp",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Manchester City" : {
+      "club name" : "Manchester City",
+      "Stadium " : "Etihad Stadium",
+      "Stadium Location" : "M11 3FF",
+      "Stadium capacity" : "55097",
+      "Manager" : "Pep Guardiola",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Manchester United" : {
+      "club name" : "Manchester United",
+      "Stadium " : "Old Trafford",
+      "Stadium Location" : "M16 0RA",
+      "Stadium capacity" : "74994",
+      "Manager" : "Jose Mourinho",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Newcastle United" : {
+      "club name" : "Newcastle United",
+      "Stadium " : "St James Park",
+      "Stadium Location" : "NE1 4ST",
+      "Stadium capacity" : "52354",
+      "Manager" : "Rafael Benitez",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Southampton" : {
+      "club name" : "Southampton",
+      "Stadium " : "St Mary's Stadium",
+      "Stadium Location" : "SO14 5FP",
+      "Stadium capacity" : "32505",
+      "Manager" : "Mauricio Pellegrino",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Stoke City" : {
+      "club name" : "Stoke City",
+      "Stadium " : "bet365 Stadium",
+      "Stadium Location" : "ST4 4EG",
+      "Stadium capacity" : "30089",
+      "Manager" : "Paul Lambert",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Swansea City" : {
+      "club name" : "Swansea City",
+      "Stadium " : "Liberty Stadium",
+      "Stadium Location" : "SA1 2FA",
+      "Stadium capacity" : "21088",
+      "Manager" : "Carlos Carvalhal",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Tottemham Hotspur" : {
+      "club name" : "Tottemham Hotspur",
+      "Stadium " : "Wembley Stadium",
+      "Stadium Location" : "N17 0AP",
+      "Stadium capacity" : "61559",
+      "Manager" : "Mauricio Pochettino",
       "History" : ""
     },
-    "Arsenal" : {
-      "club name" : "Arsenal",
-      "Stadium " : "",
-      "Stadium Location" : "",
-      "Stadium capacity" : "",
-      "Manager" : "",
+    "Watford" : {
+      "club name" : "Watford",
+      "Stadium " : "Vicarage Road",
+      "Stadium Location" : "WD18 0ER",
+      "Stadium capacity" : "21577",
+      "Manager" : "Javi Gracia",
       "History" : ""
+    },
+    "West Brom" : {
+      "club name" : "West Brom",
+      "Stadium " : "The HawThorns",
+      "Stadium Location" : "B71 4LF",
+      "Stadium capacity" : "26688",
+      "Manager" : "Alan Pardew",
+      "History" : ""
+    },
+    "West Ham" : {
+      "club name" : "West Ham",
+      "Stadium " : "London Stadium",
+      "Stadium Location" : "E20 2ST",
+      "Stadium capacity" : "57000",
+      "Manager" : "David Moyes"
     }
   }
 }
