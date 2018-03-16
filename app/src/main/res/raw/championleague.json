@@ -1,20 +1,194 @@
 {
-  "teams": {
     "Aston Villa": {
       "club name": "Aston Villa",
-      "Stadium ": "Emirates",
-      "Stadium Location": "N5 1BU",
-      "Stadium capacity": "56987",
-      "Manager": "Arsene Wenger",
-      "History": ""
+      "Stadium ": "Villa Park",
+      "Stadium Location": "B6 6HE",
+      "Stadium capacity": "42682",
+      "Manager": "Steve Bruce",
+      "History": "1897"
     },
     "Barnsley": {
       "club name": "Barnsley",
-      "Stadium ": "Emirates",
-      "Stadium Location": "N5 1BU",
-      "Stadium capacity": "56987",
-      "Manager": "Arsene Wenger",
-      "History": ""
+      "Stadium ": "Oakwell",
+      "Stadium Location": "S71 1ET",
+      "Stadium capacity": "23287",
+      "Manager": "José Morais",
+      "History": "1888"
+    },
+    "Birmingham City": {
+      "club name": "Birmingham City",
+      "Stadium ": "St Andrew's",
+      "Stadium Location": "B9 4RL",
+      "Stadium capacity": "29409",
+      "Manager": "Gary Monk",
+      "History": "1906"
+    },
+    "Bolton Wanderers": {
+      "club name": "Bolton Wanderers",
+      "Stadium ": "Macron Stadium",
+      "Stadium Location": "BL6 6JW",
+      "Stadium capacity": "28723",
+      "Manager": "Phil Parkinson",
+      "History": "1997"
+    },
+    "Brentford": {
+      "club name": "Brentford",
+      "Stadium ": "Griffin Park",
+      "Stadium Location": "TW8 0NT",
+      "Stadium capacity": "12763",
+      "Manager": "Dean Smith",
+      "History": "1904"
+    },
+    "Bristol City": {
+      "club name": "Bristol City",
+      "Stadium ": "Ashton Gate Stadium",
+      "Stadium Location": "BS3 2EJ",
+      "Stadium capacity": "27000",
+      "Manager": "Lee Johnson",
+      "History": "1887"
+    },
+    "Burton Albion": {
+      "club name": "Burton Albion",
+      "Stadium ": "Pirelli Stadium",
+      "Stadium Location": "DE13 0AR",
+      "Stadium capacity": "6912",
+      "Manager": "Nigel Clough",
+      "History": "2005"
+    },
+    "Cardiff City": {
+      "club name": "Cardiff City",
+      "Stadium ": "Cardiff City Stadium",
+      "Stadium Location": "CF11 8AZ",
+      "Stadium capacity": "33280",
+      "Manager": "Neil Warnock",
+      "History": "2009"
+    },
+    "Derby County": {
+      "club name": "Derby County",
+      "Stadium ": "Pride Park Stadium",
+      "Stadium Location": "DE24 8XL",
+      "Stadium capacity": "33597",
+      "Manager": "Gary Rowett",
+      "History": "1997"
+    },
+    "Fulham": {
+      "club name": "Fulham",
+      "Stadium ": "Craven Cottage",
+      "Stadium Location": "SW6 6HH",
+      "Stadium capacity": "25700",
+      "Manager": "Slavisa Jokanovic",
+      "History": "1896"
+    },
+    "Hull City": {
+      "club name": "Hull City",
+      "Stadium ": "KCOM Stadium",
+      "Stadium Location": "HU3 6HU",
+      "Stadium capacity": "25586",
+      "Manager": "Nigel Adkins",
+      "History": "2002"
+    },
+    "Ipswich Town": {
+      "club name": "Ipswitch Town",
+      "Stadium ": "Portman Road",
+      "Stadium Location": "IP1 2DA",
+      "Stadium capacity": "30311",
+      "Manager": "Mick McCarthy",
+      "History": "1884"
+    },
+    "Leeds United": {
+      "club name": "Leeds United",
+      "Stadium ": "Elland Road",
+      "Stadium Location": "LS11 0ES",
+      "Stadium capacity": "37890",
+      "Manager": "Paul Heckingbottom",
+      "History": "1919"
+    },
+    "Middlesbrough": {
+      "club name": "Middlesbrough",
+      "Stadium ": "Riverside Stadium",
+      "Stadium Location": "TS3 6RS",
+      "Stadium capacity": "34742",
+      "Manager": "Tony Pulis",
+      "History": "1995"
+    },
+    "Millwall": {
+      "club name": "Millwall",
+      "Stadium ": "The Den",
+      "Stadium Location": "SE16 3LN",
+      "Stadium capacity": "20146",
+      "Manager": "Neil Harris",
+      "History": "1993"
+    },
+    "Norwich City": {
+      "club name": "Norwich City",
+      "Stadium ": "Carrow Road",
+      "Stadium Location": "NR1 1JE",
+      "Stadium capacity": "27244",
+      "Manager": "Daniel Farke",
+      "History": "1935"
+    },
+    "Nottingham Forest": {
+      "club name": "Nottingham Forest",
+      "Stadium ": "City Ground",
+      "Stadium Location": "NG2 5FJ",
+      "Stadium capacity": "30445",
+      "Manager": "Aitor Karanka",
+      "History": "1898"
+    },
+    "Preston North End": {
+      "club name": "Preston North End",
+      "Stadium ": "Deepdale",
+      "Stadium Location": "PR1 6RU",
+      "Stadium capacity": "23404",
+      "Manager": "Alex Neil",
+      "History": "1875"
+    },
+    "Queen Park Rangers": {
+      "club name": "Queen Park Rangers",
+      "Stadium ": "Loftus Road",
+      "Stadium Location": "W12 7PJ",
+      "Stadium capacity": "18439",
+      "Manager": "Ian Holloway",
+      "History": "1904"
+    },
+    "Reading": {
+      "club name": "Reading",
+      "Stadium ": "Madejski Stadium",
+      "Stadium Location": "RG2 0FL",
+      "Stadium capacity": "24161",
+      "Manager": "Jaap Stam",
+      "History": "1998"
+    },
+    "Sheffield United": {
+      "club name": "Shefield United",
+      "Stadium ": "Bramall Lane",
+      "Stadium Location": "S2 4SU",
+      "Stadium capacity": "32702",
+      "Manager": "Chris Wilder",
+      "History": "1855"
+    },
+    "Sheffield Wednesday": {
+      "club name": "Sheffield Wednesday",
+      "Stadium ": "Hillsborough Stadium",
+      "Stadium Location": "S6 1SW",
+      "Stadium capacity": "39732",
+      "Manager": "Jos Luhukay",
+      "History": "1899"
+    },
+    "Sunderland": {
+      "club name": "Sunderland",
+      "Stadium ": "Staidum of Light",
+      "Stadium Location": "SR5 1SU",
+      "Stadium capacity": "49000",
+      "Manager": "Chris Coleman",
+      "History": "1997"
+    },
+    "Wolverhampton Wanderers": {
+      "club name": "Wolverhampton Wanderers",
+      "Stadium ": "Molineux Stadium",
+      "Stadium Location": "WV1 4QR",
+      "Stadium capacity": "31700",
+      "Manager": "Nuno Espirito Santo",
+      "History": "1889"
     }
-  }
 }
