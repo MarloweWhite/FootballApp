@@ -3,6 +3,7 @@ package com.example.c1733667.team10_football_app;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,10 +18,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class InfoActivity extends AppCompatActivity {
+public class InfoActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView clubInfo;
+    private TextView clubName;
+    private TextView clubStadium;
+    private TextView clubLocation;
     private Intent intent;
     private Toolbar toolbar;
+
 
 
     @Override
@@ -29,14 +34,15 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         clubInfo = findViewById(R.id.clubName);
+        clubLocation = findViewById(R.id.clubLocation);
         toolbar = findViewById(R.id.infoToolbar);
         String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
         if (clubFromOtherActivity != null) {
 //            clubInfo.setText(clubFromOtherActivity);
             toolbar.setTitle(clubFromOtherActivity);
             getClubInfo();
-
         }
+        clubLocation.setOnClickListener(this);
     }
 
     public void getClubInfo() {
@@ -51,23 +57,21 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     private void parseJson(String json) {
-        clubInfo = (TextView) findViewById(R.id.clubName);
+        clubInfo = (TextView) findViewById(R.id.clubInfo);
+        clubName = (TextView) findViewById(R.id.clubName);
+        clubLocation = (TextView) findViewById(R.id.clubLocation);
+        clubStadium = (TextView) findViewById(R.id.clubStadium);
         String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
-        StringBuilder builder = new StringBuilder();
+        StringBuilder info = new StringBuilder();
+        StringBuilder name = new StringBuilder();
+        StringBuilder location = new StringBuilder();
+        StringBuilder stadium = new StringBuilder();
+
         try {
             JSONObject root = new JSONObject(json);
             JSONObject clubInfo = root.getJSONObject(clubFromOtherActivity);
 
-            builder.append("Name: ")
-                    .append(clubInfo.getString("club name"))
-                    .append("\n")
-                    .append("Stadium: ")
-                    .append(clubInfo.getString("Stadium "))
-                    .append("\n")
-                    .append("Stadium Location: ")
-                    .append(clubInfo.getString("Stadium Location"))
-                    .append("\n")
-                    .append("Stadium capacity: ")
+            info.append("Stadium capacity: ")
                     .append(clubInfo.getString("Stadium capacity"))
                     .append("\n")
                     .append("Manager: ")
@@ -75,12 +79,32 @@ public class InfoActivity extends AppCompatActivity {
                     .append("\n")
                     .append("History: ")
                     .append(clubInfo.getString("History"));
+            name.append("Name: ")
+                    .append(clubInfo.getString("club name"));
+            location.append("Location: ")
+                    .append(clubInfo.getString("Stadium Location"));
+            stadium.append("Stadium: ")
+                    .append(clubInfo.getString("Stadium "));
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        clubInfo.setText(builder.toString());
+        clubInfo.setText(info.toString());
+        clubName.setText(name.toString());
+        clubLocation.setText(location.toString());
+        clubStadium.setText(stadium.toString());
     }
 
+    @Override
+    public void onClick(View v) {
+        String str = clubStadium.getText().toString();
+        Uri gmmIntentUri = Uri.parse("geo:51.488762, -3.174134?q="+str);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
+    }
 }
+
