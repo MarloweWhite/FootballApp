@@ -16,6 +16,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class InfoActivity extends AppCompatActivity implements View.OnClickListener {
@@ -25,7 +28,6 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     private TextView clubLocation;
     private Intent intent;
     private Toolbar toolbar;
-
 
 
     @Override
@@ -38,7 +40,6 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         toolbar = findViewById(R.id.infoToolbar);
         String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
         if (clubFromOtherActivity != null) {
-//            clubInfo.setText(clubFromOtherActivity);
             toolbar.setTitle(clubFromOtherActivity);
             getClubInfo();
         }
@@ -98,8 +99,9 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        String str = clubStadium.getText().toString();
-        Uri gmmIntentUri = Uri.parse("geo:51.488762, -3.174134?q="+str);
+        String str = clubName.getText().toString();
+        String[] location = str.split(" ",2);
+            Uri gmmIntentUri = Uri.parse("geo:51.488762, -3.174134?q=" + location[1].toString()+" "+"Football Stadium");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         if (mapIntent.resolveActivity(getPackageManager()) != null) {
