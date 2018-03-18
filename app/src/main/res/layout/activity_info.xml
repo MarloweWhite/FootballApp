@@ -37,4 +37,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="visited?"
+        android:textSize="20dp"/>
 </android.support.v7.widget.LinearLayoutCompat>
