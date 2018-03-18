@@ -38,10 +38,14 @@
         android:layout_height="wrap_content"
         android:textSize="20dp" />
 
+<<<<<<< HEAD
     <android.support.v7.widget.AppCompatCheckBox
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="visited?"
         android:textSize="20dp"/>
+=======
+
+>>>>>>> 479ee5dcfdbc28b49e080c97dc7e8ed43d33e591
 </android.support.v7.widget.LinearLayoutCompat>

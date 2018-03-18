@@ -63,6 +63,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         clubName = (TextView) findViewById(R.id.clubName);
         clubLocation = (TextView) findViewById(R.id.clubLocation);
         clubStadium = (TextView) findViewById(R.id.clubStadium);
+
         String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
         StringBuilder info = new StringBuilder();
         StringBuilder name = new StringBuilder();
@@ -87,6 +88,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
                     .append(clubInfo.getString("Stadium Location"));
             stadium.append("Stadium: ")
                     .append(clubInfo.getString("Stadium "));
+
 
         } catch (JSONException e) {
             e.printStackTrace();

@@ -5,7 +5,7 @@
     "Stadium Location" : "N5 1BU",
     "Stadium capacity" : "56987",
     "Manager" : "Arsene Wenger",
-    "History" : ""
+    "History" : "Founded 1886"
   },
   "Bournemouth" : {
     "club name" : "Bournemouth",
@@ -13,7 +13,7 @@
     "Stadium Location" : "BH7 7AF",
     "Stadium capacity" : "11360",
     "Manager" : "Eddie Howe",
-    "History" : ""
+    "History" : "Founded 1810"
   },
   "Brighton" : {
     "club name" : "Brighton",
@@ -21,7 +21,7 @@
     "Stadium Location" : "BN1 9BL",
     "Stadium capacity" : "30750",
     "Manager" : "Chris Hughton",
-    "History" : ""
+    "History" : "Founded 1904"
   },
   "Burnley" : {
     "club name" : "Burnley",
@@ -29,7 +29,7 @@
     "Stadium Location" : "B10 4BX",
     "Stadium capacity" : "21944",
     "Manager" : "Sean Dyche",
-    "History" : ""
+    "History" : "Founded 1882"
   },
   "Chelsea" : {
     "club name" : "Chelsea",
@@ -37,7 +37,7 @@
     "Stadium Location" : "SW6 1HS",
     "Stadium capacity" : "41631",
     "Manager" : "Antonio Conte",
-    "History" : ""
+    "History" : "Founded 1905"
   },
   "Crystal Palace" : {
     "club name" : "Crystal Palace",
@@ -45,7 +45,7 @@
     "Stadium Location" : "SE25 6PU",
     "Stadium capacity" : "26309",
     "Manager" : "Roy Hodgson",
-    "History" : ""
+    "History" : "Founded 1905"
   },
   "Everton" : {
     "club name" : "Everton",
@@ -53,7 +53,7 @@
     "Stadium Location" : "L4 4EL",
     "Stadium capacity" : "39572",
     "Manager" : "Sam Allardyce",
-    "History" : ""
+    "History" : " Founded 1878"
   },
   "Huddersfield" : {
     "club name" : "Huddersfield",
@@ -61,7 +61,7 @@
     "Stadium Location" : "HD1 6PX",
     "Stadium capacity" : "24500",
     "Manager" : "David Wagner",
-    "History" : ""
+    "History" : "Founded 1908"
   },
   "Leicester City" : {
     "club name" : "Leicester City",
@@ -69,7 +69,7 @@
     "Stadium Location" : "LE2 7FL",
     "Stadium capacity" : "32312",
     "Manager" : "Claude Puel",
-    "History" : ""
+    "History" : "Founded 1884"
   },
   "Liverpool" : {
     "club name" : "Liverpool",
@@ -77,7 +77,7 @@
     "Stadium Location" : "L4 0TH",
     "Stadium capacity" : "54074",
     "Manager" : "Jurgen Klopp",
-    "History" : ""
+    "History" : "Founded 1892"
   },
   "Manchester City" : {
     "club name" : "Manchester City",
@@ -85,7 +85,7 @@
     "Stadium Location" : "M11 3FF",
     "Stadium capacity" : "55097",
     "Manager" : "Pep Guardiola",
-    "History" : ""
+    "History" : "Founded 1880"
   },
   "Manchester United" : {
     "club name" : "Manchester United",
@@ -93,7 +93,7 @@
     "Stadium Location" : "M16 0RA",
     "Stadium capacity" : "74994",
     "Manager" : "Jose Mourinho",
-    "History" : ""
+    "History" : "Founded 1878"
   },
   "Newcastle United" : {
     "club name" : "Newcastle United",
@@ -101,7 +101,7 @@
     "Stadium Location" : "NE1 4ST",
     "Stadium capacity" : "52354",
     "Manager" : "Rafael Benitez",
-    "History" : ""
+    "History" : "Founded 1892"
   },
   "Southampton" : {
     "club name" : "Southampton",
@@ -109,7 +109,7 @@
     "Stadium Location" : "SO14 5FP",
     "Stadium capacity" : "32505",
     "Manager" : "Mauricio Pellegrino",
-    "History" : ""
+    "History" : "Founded 1885"
   },
   "Stoke City" : {
     "club name" : "Stoke City",
@@ -117,7 +117,7 @@
     "Stadium Location" : "ST4 4EG",
     "Stadium capacity" : "30089",
     "Manager" : "Paul Lambert",
-    "History" : ""
+    "History" : "Founded 1863"
   },
   "Swansea City" : {
     "club name" : "Swansea City",
@@ -125,7 +125,7 @@
     "Stadium Location" : "SA1 2FA",
     "Stadium capacity" : "21088",
     "Manager" : "Carlos Carvalhal",
-    "History" : ""
+    "History" : "Founded 1912"
   },
   "Tottemham Hotspur" : {
     "club name" : "Tottemham Hotspur",
@@ -133,7 +133,7 @@
     "Stadium Location" : "N17 0AP",
     "Stadium capacity" : "61559",
     "Manager" : "Mauricio Pochettino",
-    "History" : ""
+    "History" : "Founded 1912"
   },
   "Watford" : {
     "club name" : "Watford",
@@ -141,7 +141,7 @@
     "Stadium Location" : "WD18 0ER",
     "Stadium capacity" : "21577",
     "Manager" : "Javi Gracia",
-    "History" : ""
+    "History" : "Founded 1881"
   },
   "West Brom" : {
     "club name" : "West Brom",
@@ -149,14 +149,15 @@
     "Stadium Location" : "B71 4LF",
     "Stadium capacity" : "26688",
     "Manager" : "Alan Pardew",
-    "History" : ""
+    "History" : "Founded 1878"
   },
   "West Ham" : {
     "club name" : "West Ham",
     "Stadium " : "London Stadium",
     "Stadium Location" : "E20 2ST",
     "Stadium capacity" : "57000",
-    "Manager" : "David Moyes"
+    "Manager" : "David Moyes",
+    "History" : "Founded 1895"
   },
     "Aston Villa": {
       "club name": "Aston Villa",
@@ -164,7 +165,7 @@
       "Stadium Location": "B6 6HE",
       "Stadium capacity": "42682",
       "Manager": "Steve Bruce",
-      "History": "1897"
+      "History": "Founded 1897"
     },
     "Barnsley": {
       "club name": "Barnsley",
@@ -172,7 +173,7 @@
       "Stadium Location": "S71 1ET",
       "Stadium capacity": "23287",
       "Manager": "José Morais",
-      "History": "1888"
+      "History": "Founded 1888"
     },
     "Birmingham City": {
       "club name": "Birmingham City",
@@ -180,7 +181,7 @@
       "Stadium Location": "B9 4RL",
       "Stadium capacity": "29409",
       "Manager": "Gary Monk",
-      "History": "1906"
+      "History": "Founded 1906"
     },
     "Bolton Wanderers": {
       "club name": "Bolton Wanderers",
@@ -188,7 +189,7 @@
       "Stadium Location": "BL6 6JW",
       "Stadium capacity": "28723",
       "Manager": "Phil Parkinson",
-      "History": "1997"
+      "History": "Founded 1997"
     },
     "Brentford": {
       "club name": "Brentford",
@@ -196,7 +197,7 @@
       "Stadium Location": "TW8 0NT",
       "Stadium capacity": "12763",
       "Manager": "Dean Smith",
-      "History": "1904"
+      "History": "Founded 1904"
     },
     "Bristol City": {
       "club name": "Bristol City",
@@ -204,7 +205,7 @@
       "Stadium Location": "BS3 2EJ",
       "Stadium capacity": "27000",
       "Manager": "Lee Johnson",
-      "History": "1887"
+      "History": "Founded 1887"
     },
     "Burton Albion": {
       "club name": "Burton Albion",
@@ -212,7 +213,7 @@
       "Stadium Location": "DE13 0AR",
       "Stadium capacity": "6912",
       "Manager": "Nigel Clough",
-      "History": "2005"
+      "History": "Founded 2005"
     },
     "Cardiff City": {
       "club name": "Cardiff City",
@@ -220,7 +221,7 @@
       "Stadium Location": "CF11 8AZ",
       "Stadium capacity": "33280",
       "Manager": "Neil Warnock",
-      "History": "2009"
+      "History": "Founded 2009"
     },
     "Derby County": {
       "club name": "Derby County",
@@ -228,7 +229,7 @@
       "Stadium Location": "DE24 8XL",
       "Stadium capacity": "33597",
       "Manager": "Gary Rowett",
-      "History": "1997"
+      "History": "Founded 1997"
     },
     "Fulham": {
       "club name": "Fulham",
@@ -236,7 +237,7 @@
       "Stadium Location": "SW6 6HH",
       "Stadium capacity": "25700",
       "Manager": "Slavisa Jokanovic",
-      "History": "1896"
+      "History": "Founded 1896"
     },
     "Hull City": {
       "club name": "Hull City",
@@ -244,7 +245,7 @@
       "Stadium Location": "HU3 6HU",
       "Stadium capacity": "25586",
       "Manager": "Nigel Adkins",
-      "History": "2002"
+      "History": "Founded 2002"
     },
     "Ipswich Town": {
       "club name": "Ipswitch Town",
@@ -252,7 +253,7 @@
       "Stadium Location": "IP1 2DA",
       "Stadium capacity": "30311",
       "Manager": "Mick McCarthy",
-      "History": "1884"
+      "History": "Founded 1884"
     },
     "Leeds United": {
       "club name": "Leeds United",
@@ -260,7 +261,7 @@
       "Stadium Location": "LS11 0ES",
       "Stadium capacity": "37890",
       "Manager": "Paul Heckingbottom",
-      "History": "1919"
+      "History": "Founded 1919"
     },
     "Middlesbrough": {
       "club name": "Middlesbrough",
@@ -268,7 +269,7 @@
       "Stadium Location": "TS3 6RS",
       "Stadium capacity": "34742",
       "Manager": "Tony Pulis",
-      "History": "1995"
+      "History": "Founded 1995"
     },
     "Millwall": {
       "club name": "Millwall",
@@ -276,7 +277,7 @@
       "Stadium Location": "SE16 3LN",
       "Stadium capacity": "20146",
       "Manager": "Neil Harris",
-      "History": "1993"
+      "History": "Founded 1993"
     },
     "Norwich City": {
       "club name": "Norwich City",
@@ -284,7 +285,7 @@
       "Stadium Location": "NR1 1JE",
       "Stadium capacity": "27244",
       "Manager": "Daniel Farke",
-      "History": "1935"
+      "History": "Founded 1935"
     },
     "Nottingham Forest": {
       "club name": "Nottingham Forest",
@@ -292,7 +293,7 @@
       "Stadium Location": "NG2 5FJ",
       "Stadium capacity": "30445",
       "Manager": "Aitor Karanka",
-      "History": "1898"
+      "History": "Founded 1898"
     },
     "Preston North End": {
       "club name": "Preston North End",
@@ -300,7 +301,7 @@
       "Stadium Location": "PR1 6RU",
       "Stadium capacity": "23404",
       "Manager": "Alex Neil",
-      "History": "1875"
+      "History": "Founded 1875"
     },
     "Queens Park Rangers": {
       "club name": "Queen Park Rangers",
@@ -308,7 +309,7 @@
       "Stadium Location": "W12 7PJ",
       "Stadium capacity": "18439",
       "Manager": "Ian Holloway",
-      "History": "1904"
+      "History": "Founded 1904"
     },
     "Reading": {
       "club name": "Reading",
@@ -316,7 +317,7 @@
       "Stadium Location": "RG2 0FL",
       "Stadium capacity": "24161",
       "Manager": "Jaap Stam",
-      "History": "1998"
+      "History": "Founded 1998"
     },
     "Sheffield United": {
       "club name": "Shefield United",
@@ -324,7 +325,7 @@
       "Stadium Location": "S2 4SU",
       "Stadium capacity": "32702",
       "Manager": "Chris Wilder",
-      "History": "1855"
+      "History": "Founded 1855"
     },
     "Sheffield Wednesday": {
       "club name": "Sheffield Wednesday",
@@ -332,7 +333,7 @@
       "Stadium Location": "S6 1SW",
       "Stadium capacity": "39732",
       "Manager": "Jos Luhukay",
-      "History": "1899"
+      "History": "Founded 1899"
     },
     "Sunderland": {
       "club name": "Sunderland",
@@ -340,7 +341,7 @@
       "Stadium Location": "SR5 1SU",
       "Stadium capacity": "49000",
       "Manager": "Chris Coleman",
-      "History": "1997"
+      "History": "Founded 1997"
     },
     "Wolverhampton Wanderers": {
       "club name": "Wolverhampton Wanderers",
@@ -348,6 +349,6 @@
       "Stadium Location": "WV1 4QR",
       "Stadium capacity": "31700",
       "Manager": "Nuno Espirito Santo",
-      "History": "1889"
+      "History": "Founded 1889"
     }
 }
