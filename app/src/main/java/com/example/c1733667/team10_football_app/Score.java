@@ -11,17 +11,20 @@ import android.widget.AdapterView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+
 public class Score extends AppCompatActivity implements AdapterView.OnClickListener{
 
     private int mainScore;
     ProgressBar mprogressBar;
-
+    private String[] stadiumsNum = {"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scoring_system);
-        this.mainScore = 10;
+        int lenStadiums = stadiumsNum.length;
+        this.mainScore = lenStadiums;
+
         //String yourScoreIs = getResources().getString(R.string.your_score);
         //String showScore = String.format(yourScoreIs, mainScore);
         TextView textView = (TextView) findViewById(R.id.textViewName);
