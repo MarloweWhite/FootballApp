@@ -39,16 +39,6 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        ArrayList<String> visited = new ArrayList<>();
-        visited.add("Visited");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_checked,
-                visited);
-        ListViewCompat lv =findViewById(R.id.checkbox);
-        lv.setAdapter(adapter);
-        lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
-        lv.setOnItemClickListener(this);
-
         clubInfo = findViewById(R.id.clubName);
         clubLocation = findViewById(R.id.clubLocation);
         toolbar = findViewById(R.id.infoToolbar);

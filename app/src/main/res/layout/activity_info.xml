@@ -36,11 +36,7 @@
         android:id="@+id/clubInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp" />
+        android:textSize="20dp"/>
 
-    <android.support.v7.widget.ListViewCompat
-        android:id="@+id/checkbox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v7.widget.ListViewCompat>
+
 </android.support.v7.widget.LinearLayoutCompat>
