@@ -14,6 +14,7 @@ import com.google.android.gms.ads.MobileAds;
 public class MainActivity extends AppCompatActivity {
     private Button btnStadium;
     private Button btnScore;
+    private Button btnMap;
     private Intent intent;
     private AdView mAdView;
 
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         stadiumButtonListener();
         scoreButtonListener();
+        mapbuttonListener();
 
         MobileAds.initialize(this, "ca-app-pub-2747796691426534~5751833757");
 
@@ -41,12 +43,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void scoreButtonListener(){
+
+    public void scoreButtonListener() {
         btnScore = findViewById(R.id.btnScore);
         btnScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent= new Intent(getApplicationContext(), Score.class);
+                intent = new Intent(getApplicationContext(), Score.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void mapbuttonListener() {
+        btnMap = findViewById(R.id.btnMap);
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent);
             }
         });
