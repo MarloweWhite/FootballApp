@@ -13,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.Map;
+
 
 public class Score extends AppCompatActivity implements AdapterView.OnClickListener{
 
@@ -28,15 +30,42 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         SharedPreferences pref2 = getSharedPreferences("PremierPreference", 0);
         SharedPreferences pref3 = getSharedPreferences("LeagueOnePreference", 0);
         SharedPreferences pref4 = getSharedPreferences("LeagueTwoPreference", 0);
-        int lenStadiums1 = pref1.getAll().size() ;
-        int lenStadiums2 = pref2.getAll().size() ;
-        int lenStadiums3 = pref3.getAll().size() ;
-        int lenStadiums4 = pref4.getAll().size() ;
-        int totalStadiums = lenStadiums1 + lenStadiums2 + lenStadiums3 + lenStadiums4;
+//        int lenStadiums1 = pref1.getAll().size() ;
 
-        this.mainScore = totalStadiums;
+        Map map = pref1.getAll();
+        int total = 0;
 
-        double totalPerc = 0.92 * mainScore;
+        for (Object key: map.keySet()){
+            if( (Boolean) map.get((String) key).equals(true)){
+               total=total +1;
+            }
+        }
+        Map map2= pref2.getAll();
+        for (Object key: map2.keySet()){
+            if( (Boolean) map2.get((String) key).equals(true)){
+                total=total +1;
+            }
+        }
+        Map map3 = pref3.getAll();
+        for (Object key: map3.keySet()){
+            if( (Boolean) map3.get((String) key).equals(true)){
+                total=total +1;
+            }
+        }
+        Map map4= pref4.getAll();
+        for (Object key: map4.keySet()){
+            if( (Boolean) map4.get((String) key).equals(true)){
+                total=total +1;
+            }
+        }
+//        int lenStadiums2 = pref2.getAll().size() ;
+//        int lenStadiums3 = pref3.getAll().size() ;
+//        int lenStadiums4 = pref4.getAll().size() ;
+//        int totalStadiums = lenStadiums1 + lenStadiums2 + lenStadiums3 + lenStadiums4;
+
+        this.mainScore = total;
+
+        long totalPerc = Math.round(0.92 * mainScore);
         //String yourScoreIs = getResources().getString(R.string.your_score);
         //String showScore = String.format(yourScoreIs, mainScore);
         TextView textView = (TextView) findViewById(R.id.textViewName);
