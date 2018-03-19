@@ -13,7 +13,7 @@
             android:layout_weight="1"
             android:layout_marginTop="30dp"
             android:indeterminate="false"
-            android:max="98"
+            android:max="92"
             android:progress="1"
             android:progressDrawable="@drawable/circular_progressbar" />
 

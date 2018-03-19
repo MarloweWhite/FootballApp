@@ -65,7 +65,7 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
 
         this.mainScore = total;
 
-        long totalPerc = Math.round(0.92 * mainScore);
+        long totalPerc = (long) Math.floor(0.92 * mainScore);
         //String yourScoreIs = getResources().getString(R.string.your_score);
         //String showScore = String.format(yourScoreIs, mainScore);
         TextView textView = (TextView) findViewById(R.id.textViewName);
@@ -75,7 +75,7 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
 
         mprogressBar = (ProgressBar) findViewById(R.id.circular_progress_bar);
         ObjectAnimator anim = ObjectAnimator.ofInt(mprogressBar, "progress", 0, mainScore);
-        anim.setDuration(15000);
+        anim.setDuration(850);
         anim.setInterpolator(new DecelerateInterpolator());
         anim.start();
     }
