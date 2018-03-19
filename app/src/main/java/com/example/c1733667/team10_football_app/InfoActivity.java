@@ -7,8 +7,12 @@ import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -21,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class InfoActivity extends AppCompatActivity implements View.OnClickListener {
+public class InfoActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private TextView clubInfo;
     private TextView clubName;
     private TextView clubStadium;
@@ -34,6 +38,16 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
+
+        ArrayList<String> visited = new ArrayList<>();
+        visited.add("Visited");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_checked,
+                visited);
+        ListViewCompat lv =findViewById(R.id.checkbox);
+        lv.setAdapter(adapter);
+        lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
+        lv.setOnItemClickListener(this);
 
         clubInfo = findViewById(R.id.clubName);
         clubLocation = findViewById(R.id.clubLocation);
@@ -99,16 +113,22 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         clubStadium.setText(stadium.toString());
     }
 
+
     @Override
     public void onClick(View v) {
         String str = clubName.getText().toString();
-        String[] location = str.split(" ",2);
-            Uri gmmIntentUri = Uri.parse("geo:51.488762, -3.174134?q=" + location[1].toString()+" "+"Football Stadium");
+        String[] location = str.split(" ", 2);
+        Uri gmmIntentUri = Uri.parse("geo:51.488762, -3.174134?q=" + location[1].toString() + " " + "Football Stadium");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         if (mapIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(mapIntent);
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
     }
 }
 
