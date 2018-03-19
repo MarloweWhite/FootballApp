@@ -25,11 +25,13 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         int lenStadiums = stadiumsNum.length;
         this.mainScore = lenStadiums;
 
+        double totalPerc = 0.98 * mainScore;
         //String yourScoreIs = getResources().getString(R.string.your_score);
         //String showScore = String.format(yourScoreIs, mainScore);
         TextView textView = (TextView) findViewById(R.id.textViewName);
-        textView.setText("Your Score is :" + mainScore + "%");
-
+        textView.setText("Your percentage of clubs you have been too :" + totalPerc + "%");
+        TextView textView2 = (TextView) findViewById(R.id.textViewName2);
+        textView2.setText("Your Score is :" + mainScore );
 
         mprogressBar = (ProgressBar) findViewById(R.id.circular_progress_bar);
         ObjectAnimator anim = ObjectAnimator.ofInt(mprogressBar, "progress", 0, mainScore);
