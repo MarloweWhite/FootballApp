@@ -12,13 +12,14 @@
             android:layout_height="200dp"
             android:layout_marginTop="30dp"
             android:indeterminate="false"
-            android:max="48"
+            android:max="98"
             android:progress="1"
             android:progressDrawable="@drawable/circular_progressbar" />
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="26dp"
             android:gravity="center|bottom"
             android:textSize="24sp" />

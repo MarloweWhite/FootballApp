@@ -9,22 +9,37 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+
 
 public class Score extends AppCompatActivity implements AdapterView.OnClickListener{
 
+    private int mainScore;
     ProgressBar mprogressBar;
+    private String[] stadiumsNum = {"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scoring_system);
+        int lenStadiums = stadiumsNum.length;
+        this.mainScore = lenStadiums;
+
+        //String yourScoreIs = getResources().getString(R.string.your_score);
+        //String showScore = String.format(yourScoreIs, mainScore);
+        TextView textView = (TextView) findViewById(R.id.textViewName);
+        textView.setText("Your Score is :" + mainScore + "%");
+
 
         mprogressBar = (ProgressBar) findViewById(R.id.circular_progress_bar);
-        ObjectAnimator anim = ObjectAnimator.ofInt(mprogressBar, "progress", 0, 100);
+        ObjectAnimator anim = ObjectAnimator.ofInt(mprogressBar, "progress", 0, mainScore);
         anim.setDuration(15000);
         anim.setInterpolator(new DecelerateInterpolator());
         anim.start();
     }
+
+
+
 
     @Override
     public void onClick(View v) {

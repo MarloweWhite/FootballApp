@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Team10_Football_App</string>
+    <string name="your_score"> Your Score is : %1$d </string>
 </resources>
