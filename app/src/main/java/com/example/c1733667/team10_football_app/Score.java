@@ -1,5 +1,7 @@
 package com.example.c1733667.team10_football_app;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
@@ -16,16 +18,25 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
 
     private int mainScore;
     ProgressBar mprogressBar;
-    private String[] stadiumsNum = {"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"};
+    //private String[] stadiumsNum = {"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scoring_system);
-        int lenStadiums = stadiumsNum.length;
-        this.mainScore = lenStadiums;
+        SharedPreferences pref1 = getSharedPreferences("ChampionPreference", 0);
+        SharedPreferences pref2 = getSharedPreferences("PremierPreference", 0);
+        SharedPreferences pref3 = getSharedPreferences("LeagueOnePreference", 0);
+        SharedPreferences pref4 = getSharedPreferences("LeagueTwoPreference", 0);
+        int lenStadiums1 = pref1.getAll().size() ;
+        int lenStadiums2 = pref2.getAll().size() ;
+        int lenStadiums3 = pref3.getAll().size() ;
+        int lenStadiums4 = pref4.getAll().size() ;
+        int totalStadiums = lenStadiums1 + lenStadiums2 + lenStadiums3 + lenStadiums4;
 
-        double totalPerc = 0.98 * mainScore;
+        this.mainScore = totalStadiums;
+
+        double totalPerc = 0.92 * mainScore;
         //String yourScoreIs = getResources().getString(R.string.your_score);
         //String showScore = String.format(yourScoreIs, mainScore);
         TextView textView = (TextView) findViewById(R.id.textViewName);
