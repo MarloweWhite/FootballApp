@@ -65,11 +65,12 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
 
         this.mainScore = total;
 
-        long totalPerc = (long) Math.floor(0.92 * mainScore);
+        long totalPerc = (long) Math.floor(100 * mainScore);
+        long totalPerc1 = (long) Math.floor(totalPerc / 92 );
         //String yourScoreIs = getResources().getString(R.string.your_score);
         //String showScore = String.format(yourScoreIs, mainScore);
         TextView textView = (TextView) findViewById(R.id.textViewName);
-        textView.setText("Your percentage of clubs you have been too :" + totalPerc + "%");
+        textView.setText("Your percentage of clubs you have been too :" + totalPerc1 + "%");
         TextView textView2 = (TextView) findViewById(R.id.textViewName2);
         textView2.setText("Your Score is :" + mainScore );
 
