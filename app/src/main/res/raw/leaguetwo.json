@@ -5,7 +5,9 @@
     "Stadium Location" : "BB5 5BX",
     "Stadium capacity" : "5,057",
     "Manager" : "John Marsden ",
-    "History" : "Founded 1968"
+    "History" : "Founded 1968",
+    "Latitude": 53.764968 ,
+    "Longitude": -2.371180
   },
   "Barnet" : {
     "club name" : "Barnet",
@@ -13,7 +15,9 @@
     "Stadium Location" : "HA8 6AG",
     "Stadium capacity" : "6,205",
     "Manager" : "Graham Westley",
-    "History" : "Founded 1888"
+    "History" : "Founded 1888",
+    "Latitude": 51.602786,
+    "Longitude": -0.291803
   },
   "Cambridge United" : {
     "club name" : "Cambridge United",
@@ -21,7 +25,9 @@
     "Stadium Location" : "CB5 8LN",
     "Stadium capacity" : "8,127",
     "Manager" : "Joe Dunne",
-    "History" : "Founded 1912"
+    "History" : "Founded 1912",
+    "Latitude": 52.211998 ,
+    "Longitude": 0.154946
   },
   "Carlisle United" : {
     "club name" : "Carlisle United",
@@ -29,7 +35,9 @@
     "Stadium Location" : "CA1 1LL",
     "Stadium capacity" : "18,202",
     "Manager" : "Keuth Curle",
-    "History" : "Founded 1904"
+    "History" : "Founded 1904",
+    "Latitude": 54.895816 ,
+    "Longitude": -2.914475
   },
   "Cheltenham Town" : {
     "club name" : "Cheltenham Town",
@@ -37,7 +45,9 @@
     "Stadium Location" : "GL52 5NA",
     "Stadium capacity" : "7,066",
     "Manager" : "Gary Johnson",
-    "History" : "Founded 1887"
+    "History" : "Founded 1887",
+    "Latitude": 51.906168 ,
+    "Longitude": -2.060215
   },
   "Chesterfield" : {
     "club name" : "Crystal Palace",
@@ -45,7 +55,9 @@
     "Stadium Location" : "S41 8NZ",
     "Stadium capacity" : "10,305",
     "Manager" : "Jack Lester",
-    "History" : "Founded 1919"
+    "History" : "Founded 1919",
+    "Latitude": 53.253532 ,
+    "Longitude": -1.426764
   },
   "Colchester United" : {
     "club name" : "Colchester United",
@@ -53,7 +65,9 @@
     "Stadium Location" : "CO4 5UP",
     "Stadium capacity" : "10,105",
     "Manager" : "John McGreal",
-    "History" : " Founded 1937"
+    "History" : " Founded 1937",
+    "Latitude": 51.923322 ,
+    "Longitude": 0.896991
   },
   "Coventry City" : {
     "club name" : "Coventry City",
@@ -61,7 +75,9 @@
     "Stadium Location" : "CV6 6HH",
     "Stadium capacity" : "32,609",
     "Manager" : "Mark Robins",
-    "History" : "Founded 1883"
+    "History" : "Founded 1883",
+    "Latitude": 52.448350 ,
+    "Longitude": -1.496635
   },
   "Crawley Town" : {
     "club name" : "Crawley Town",
@@ -69,7 +85,9 @@
     "Stadium Location" : "RH11 9RX",
     "Stadium capacity" : "6,134",
     "Manager" : "Harry Kewell",
-    "History" : "Founded 1896"
+    "History" : "Founded 1896",
+    "Latitude": 51.099568,
+    "Longitude": -0.195395
   },
   "Crewe Alexandra" : {
     "club name" : "Crewe Alexandra",
@@ -77,7 +95,9 @@
     "Stadium Location" : "CW2 6EB",
     "Stadium capacity" : "10,153",
     "Manager" : "David Artell",
-    "History" : "Founded 1877"
+    "History" : "Founded 1877",
+    "Latitude": 53.087931,
+    "Longitude": -2.436102
   },
   "Exeter City" : {
     "club name" : "Exeter City",
@@ -85,7 +105,9 @@
     "Stadium Location" : "M11 3FF",
     "Stadium capacity" : "8,541",
     "Manager" : "Paul Tisdale",
-    "History" : "Founded 1901"
+    "History" : "Founded 1901",
+    "Latitude": 53.483143 ,
+    "Longitude": -2.200398
   },
   "Forest Green Rovers" : {
     "club name" : "Forest Green Rovers",
@@ -93,7 +115,9 @@
     "Stadium Location" : "GL6 0ET",
     "Stadium capacity" : "5,141",
     "Manager" : "Mark Cooper",
-    "History" : "Founded 1889"
+    "History" : "Founded 1889",
+    "Latitude": 51.698743 ,
+    "Longitude": -2.237778
   },
   "Grimsby Town" : {
     "club name" : "Grimsby Town",
@@ -101,7 +125,9 @@
     "Stadium Location" : "DN35 7PY",
     "Stadium capacity" : "9,027",
     "Manager" : "	Michael Jolley",
-    "History" : "Founded 1878"
+    "History" : "Founded 1878",
+    "Latitude": 53.570161 ,
+    "Longitude": -0.046434
   },
   "Lincoln City" : {
     "club name" : "Lincoln City",
@@ -109,7 +135,9 @@
     "Stadium Location" : "LN5 8LD",
     "Stadium capacity" : "10,120",
     "Manager" : "	Danny Cowley",
-    "History" : "Founded 1884"
+    "History" : "Founded 1884",
+    "Latitude": 53.218176 ,
+    "Longitude": -0.540056
   },
   "Luton Town" : {
     "club name" : "Luton Town",
@@ -117,7 +145,9 @@
     "Stadium Location" : "LU4 8AW",
     "Stadium capacity" : "10,356",
     "Manager" : "Nathan Jones",
-    "History" : "Founded 1885"
+    "History" : "Founded 1885",
+    "Latitude": 51.883943 ,
+    "Longitude": -0.432406
   },
   "Mansfield Town" : {
     "club name" : "Mansfield Town",
@@ -125,7 +155,9 @@
     "Stadium Location" : "NG18 5DA",
     "Stadium capacity" : "9,186",
     "Manager" : "Carlos Carvalhal",
-    "History" : "Founded 1912"
+    "History" : "Founded 1912",
+    "Latitude": 53.137436 ,
+    "Longitude": -1.200135
   },
   "Morecambe" : {
     "club name" : "Morecambe",
@@ -133,7 +165,9 @@
     "Stadium Location" : "LA4 4TB",
     "Stadium capacity" : "6,476",
     "Manager" : "Jim Bentley",
-    "History" : "Founded 1920"
+    "History" : "Founded 1920",
+    "Latitude": 54.061066,
+    "Longitude" : -2.867251
   },
   "Newport County" : {
     "club name" : "Newport County",
@@ -141,7 +175,9 @@
     "Stadium Location" : "NP19 0UU",
     "Stadium capacity" : "7,850",
     "Manager" : "Mike Flynn",
-    "History" : "Founded 1912"
+    "History" : "Founded 1912",
+    "Latitude": 51.588323 ,
+    "Longitude" : -2.987852
   },
   "Notts County" : {
     "club name" : "Notts County",
@@ -149,7 +185,9 @@
     "Stadium Location" : "NG2 3HJ",
     "Stadium capacity" : "19,841",
     "Manager" : "Kevin Nolan",
-    "History" : "Founded 1862"
+    "History" : "Founded 1862",
+    "Latitude": 52.942243,
+    "Longitude": -1.136105
   },
   "Port Vale" : {
     "club name" : "Port Vale",
@@ -157,7 +195,9 @@
     "Stadium Location" : "ST6 1AW",
     "Stadium capacity" : "19,052",
     "Manager" : "Neil Aspin",
-    "History" : "Founded 1876"
+    "History" : "Founded 1876",
+    "Latitude": 53.050390 ,
+    "Longitude": -2.191697
   },
   "Stevenage": {
     "club name": "Stevenage",
@@ -165,7 +205,9 @@
     "Stadium Location": "SG2 8RH",
     "Stadium capacity": "6,722",
     "Manager": "Vacant",
-    "History": "Founded 1976"
+    "History": "Founded 1976",
+    "Latitude": 51.890160,
+    "Longitude": -0.194407
   },
   "Swindon Town": {
     "club name": "Swindon Town",
@@ -173,7 +215,9 @@
     "Stadium Location": "SN1 2ED",
     "Stadium capacity": "15,728",
     "Manager": "Phil Brown",
-    "History": "Founded 1879"
+    "History": "Founded 1879",
+    "Latitude": 51.564785 ,
+    "Longitude": -1.769934
   },
   "Wycombe Wanderers": {
     "club name": "Wycombe Wanderers",
@@ -181,7 +225,9 @@
     "Stadium Location": "HP12 4HJ",
     "Stadium capacity": "9,617",
     "Manager": "Gareth Ainsworth",
-    "History": "Founded 1887"
+    "History": "Founded 1887",
+    "Latitude": 51.631049 ,
+    "Longitude" -0.796011
   },
   "Yeovil Town": {
     "club name": "Yeovil Town",
@@ -189,6 +235,9 @@
     "Stadium Location": "BA22 8YF",
     "Stadium capacity": "9,565",
     "Manager": "Darren Way",
-    "History": "Founded 1895"
+    "History": "Founded 1895",
+    "Latitude": 50.950221,
+    "Longitude": -2.674717
+
   }
 }
