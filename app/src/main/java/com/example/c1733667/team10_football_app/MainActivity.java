@@ -1,6 +1,7 @@
 package com.example.c1733667.team10_football_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         stadiumButtonListener();
         scoreButtonListener();
         mapbuttonListener();
-
         MobileAds.initialize(this, "ca-app-pub-2747796691426534~5751833757");
 
         mAdView = findViewById(R.id.adView);

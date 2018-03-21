@@ -30,7 +30,6 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         SharedPreferences pref2 = getSharedPreferences("PremierPreference", 0);
         SharedPreferences pref3 = getSharedPreferences("LeagueOnePreference", 0);
         SharedPreferences pref4 = getSharedPreferences("LeagueTwoPreference", 0);
-//        int lenStadiums1 = pref1.getAll().size() ;
 
         Map map = pref1.getAll();
         int total = 0;
@@ -58,10 +57,6 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
                 total=total +1;
             }
         }
-//        int lenStadiums2 = pref2.getAll().size() ;
-//        int lenStadiums3 = pref3.getAll().size() ;
-//        int lenStadiums4 = pref4.getAll().size() ;
-//        int totalStadiums = lenStadiums1 + lenStadiums2 + lenStadiums3 + lenStadiums4;
 
         this.mainScore = total;
 
