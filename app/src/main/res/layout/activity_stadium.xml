@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context="com.example.c1733667.team10_football_app.StadiumActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Stadiums" />
+
     <android.support.v7.widget.ListViewCompat
         android:id="@+id/list_view"
         android:layout_height="wrap_content"

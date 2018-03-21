@@ -6,8 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.example.c1733667.team10_football_app.ChampionshipLeague">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Championship" />
+
     <android.support.v7.widget.ListViewCompat
         android:id="@+id/championList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v7.widget.ListViewCompat>
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.ListViewCompat>
 </android.support.v7.widget.LinearLayoutCompat>
