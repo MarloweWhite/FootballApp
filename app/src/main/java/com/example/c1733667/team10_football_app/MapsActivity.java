@@ -25,6 +25,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private String[] championLeague;
+    private String[] premierLeague;
+    private String[] leagueOne;
+    private String[] leagueTwo;
+    private ArrayList<String> clubName;
     private ArrayList<LatLng> visitedClubs;
 
     @Override
@@ -32,11 +36,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         visitedClubs = new ArrayList<>();
+        clubName = new ArrayList<>();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);
+        leagueOne = getResources().getStringArray(R.array.EFL1);
+        leagueTwo = getResources().getStringArray(R.array.EFL2);
         getClubInfo();
     }
 
@@ -56,9 +64,54 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             try {
                 JSONObject root = new JSONObject(json);
                 JSONObject visitedChampionClub = root.getJSONObject(championLeague[i]);
+                String name = visitedChampionClub.getString("club name");
                 double latitude = visitedChampionClub.getDouble("Latitude");
                 double longitude = visitedChampionClub.getDouble("Longitude");
                 LatLng location = new LatLng(latitude, longitude);
+                clubName.add(name);
+                visitedClubs.add(location);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        for (int i = 0; i < premierLeague.length; i++) {
+            try {
+                JSONObject root = new JSONObject(json);
+                JSONObject visitedChampionClub = root.getJSONObject(premierLeague[i]);
+                String name = visitedChampionClub.getString("club name");
+                double latitude = visitedChampionClub.getDouble("Latitude");
+                double longitude = visitedChampionClub.getDouble("Longitude");
+                LatLng location = new LatLng(latitude, longitude);
+                clubName.add(premierLeague[i]);
+                clubName.add(name);
+                visitedClubs.add(location);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        for (int i = 0; i < leagueOne.length; i++) {
+            try {
+                JSONObject root = new JSONObject(json);
+                JSONObject visitedChampionClub = root.getJSONObject(leagueOne[i]);
+                String name = visitedChampionClub.getString("club name");
+                double latitude = visitedChampionClub.getDouble("Latitude");
+                double longitude = visitedChampionClub.getDouble("Longitude");
+                LatLng location = new LatLng(latitude, longitude);
+                clubName.add(name);
+                visitedClubs.add(location);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        for (int i = 0; i < leagueTwo.length; i++) {
+            try {
+                JSONObject root = new JSONObject(json);
+                JSONObject visitedChampionClub = root.getJSONObject(leagueTwo[i]);
+                String name = visitedChampionClub.getString("club name");
+                double latitude = visitedChampionClub.getDouble("Latitude");
+                double longitude = visitedChampionClub.getDouble("Longitude");
+                LatLng location = new LatLng(latitude, longitude);
+                clubName.add(name);
                 visitedClubs.add(location);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -81,11 +134,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
 //        LatLng sydney = new LatLng(-34, 151);
 //        LatLng BRISBANE = new LatLng(-27.47093, 153.0235);
-        LatLng defaultMap = new LatLng(53.956086, -0.252686);
+        LatLng defaultMap = new LatLng(52.644031, -2.321991);
         for (int i = 0; i < visitedClubs.size(); i++) {
-            mMap.addMarker(new MarkerOptions().position(visitedClubs.get(i)));
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(i))
+                    .visible(true)
+                    .title(clubName.get(i)));
         }
 //        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultMap, 5));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultMap, 6));
     }
 }
