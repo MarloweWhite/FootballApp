@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context="com.example.c1733667.team10_football_app.PremierLeague">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Premier League" />
+
     <android.support.v7.widget.ListViewCompat
         android:id="@+id/premierList"
         android:layout_width="match_parent"

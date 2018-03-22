@@ -7,6 +7,13 @@
     android:orientation="vertical"
     tools:context="com.example.c1733667.team10_football_app.MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Home" />
+
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/AdImage"
         android:layout_width="wrap_content"
