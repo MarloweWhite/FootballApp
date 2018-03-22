@@ -20,8 +20,6 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
 
     private int mainScore;
     ProgressBar mprogressBar;
-    //private String[] stadiumsNum = {"1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

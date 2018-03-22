@@ -19,6 +19,7 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -30,6 +31,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String[] leagueTwo;
     private ArrayList<String> clubName;
     private ArrayList<LatLng> visitedClubs;
+    private ArrayList<Boolean> visibility;
+    private SharedPreferences pref1;
+    private SharedPreferences pref2;
+    private SharedPreferences pref3;
+    private SharedPreferences pref4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         visitedClubs = new ArrayList<>();
         clubName = new ArrayList<>();
+        visibility =new ArrayList<>(92);
+        //setting size of arraylist
+        for(int i =0; i<92;i++){
+            visibility.add(false);
+        }
+        pref1 = getSharedPreferences("ChampionPreference", 0);
+        pref2 = getSharedPreferences("PremierPreference", 0);
+        pref3 = getSharedPreferences("LeagueOnePreference", 0);
+        pref4 = getSharedPreferences("LeagueTwoPreference", 0);
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -131,17 +148,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        LatLng BRISBANE = new LatLng(-27.47093, 153.0235);
         LatLng defaultMap = new LatLng(52.644031, -2.321991);
         for (int i = 0; i < visitedClubs.size(); i++) {
             mMap.addMarker(new MarkerOptions()
                     .position(visitedClubs.get(i))
-                    .visible(true)
+//                    .visible(visibility.get(i))
                     .title(clubName.get(i)));
         }
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultMap, 6));
     }
 }
