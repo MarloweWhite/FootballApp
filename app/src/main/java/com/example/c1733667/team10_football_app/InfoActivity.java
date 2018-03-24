@@ -4,11 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,19 +32,27 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class InfoActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class InfoActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
     private TextView clubInfo;
     private TextView clubName;
     private TextView clubStadium;
     private TextView clubLocation;
     private Intent intent;
     private Toolbar toolbar;
+    private DrawerLayout navDrawer;
+    private NavigationView navView;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_info_outer);
 
         clubInfo = findViewById(R.id.clubName);
         clubLocation = findViewById(R.id.clubLocation);
@@ -48,7 +63,15 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
             getClubInfo();
         }
         clubLocation.setOnClickListener(this);
+        setSupportActionBar(toolbar);
+        this.navDrawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
+        navDrawer.addDrawerListener(toggle);
+        toggle.syncState();
+        this.navView = findViewById(R.id.nav_view);
+        this.navView.setNavigationItemSelectedListener(this);
     }
+
 
     public void getClubInfo() {
         Resources res = getResources();
@@ -119,6 +142,11 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }
 

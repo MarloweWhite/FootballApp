@@ -30,6 +30,7 @@ public class LeagueTwo extends AppCompatActivity implements AdapterView.OnItemCl
     private DrawerLayout navDrawer;
     private NavigationView navView;
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu,menu);
