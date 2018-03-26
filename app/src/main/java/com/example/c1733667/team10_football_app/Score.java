@@ -33,9 +33,9 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         int total = 0;
 
         for (Object key: map.keySet()){
-            if( (Boolean) map.get((String) key).equals(true)){
-               total=total +1;
-            }
+                if( (Boolean) map.get((String) key).equals(true)){
+                    total=total +1;
+                }
         }
         Map map2= pref2.getAll();
         for (Object key: map2.keySet()){

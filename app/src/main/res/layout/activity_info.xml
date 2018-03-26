@@ -18,25 +18,30 @@
         android:id="@+id/clubName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:gravity="center"/>
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/clubStadium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:gravity="center"
+        />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/clubLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:gravity="center"/>
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/clubInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:gravity="center"/>
 
 
 </android.support.v7.widget.LinearLayoutCompat>

@@ -4,9 +4,8 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.util.Log;
 
-import com.google.android.gms.location.places.PlaceReport;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -19,6 +18,9 @@ import org.json.JSONObject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -31,7 +33,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String[] leagueTwo;
     private ArrayList<String> clubName;
     private ArrayList<LatLng> visitedClubs;
-    private ArrayList<Boolean> visibility;
+    private HashMap<Integer, Boolean> visibility;
+    private ArrayList<Collection> getVisibility;
     private SharedPreferences pref1;
     private SharedPreferences pref2;
     private SharedPreferences pref3;
@@ -43,15 +46,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
         visitedClubs = new ArrayList<>();
         clubName = new ArrayList<>();
-        visibility =new ArrayList<>(92);
+        visibility = new HashMap<>();
         //setting size of arraylist
-        for(int i =0; i<92;i++){
-            visibility.add(false);
-        }
         pref1 = getSharedPreferences("ChampionPreference", 0);
         pref2 = getSharedPreferences("PremierPreference", 0);
         pref3 = getSharedPreferences("LeagueOnePreference", 0);
         pref4 = getSharedPreferences("LeagueTwoPreference", 0);
+
+        Map map = pref1.getAll();
+        Map map1 = pref2.getAll();
+        Map map2 = pref3.getAll();
+        Map map3 = pref4.getAll();
+        Log.d("pref1 size", String.valueOf(map.size()));
+        Log.d("pref1 vlaues", String.valueOf(map.values()));
+        Log.d("pref1 keyset", String.valueOf(map.keySet()));
+        Log.d("pref2 size", String.valueOf(map1.size()));
+        Log.d("pref2 keyset", String.valueOf(map1.keySet()));
+        Log.d("pref2 vlaues", String.valueOf(map1.values()));
+        Log.d("pref3 size", String.valueOf(map2.size()));
+        Log.d("pref3 vlaues", String.valueOf(map2.values()));
+        Log.d("pref4 size", String.valueOf(map3.size()));
+        Log.d("pref4 vlaues", String.valueOf(map3.values()));
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -99,7 +114,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 double latitude = visitedChampionClub.getDouble("Latitude");
                 double longitude = visitedChampionClub.getDouble("Longitude");
                 LatLng location = new LatLng(latitude, longitude);
-                clubName.add(premierLeague[i]);
                 clubName.add(name);
                 visitedClubs.add(location);
             } catch (JSONException e) {
@@ -149,12 +163,56 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         LatLng defaultMap = new LatLng(52.644031, -2.321991);
-        for (int i = 0; i < visitedClubs.size(); i++) {
+        Map map = pref1.getAll();
+        Map map1 = pref2.getAll();
+        Map map2 = pref3.getAll();
+        Map map3 = pref4.getAll();
+        Iterator iterator = map.keySet().iterator();
+        Iterator iterator1 = map1.keySet().iterator();
+        Iterator iterator2 = map2.keySet().iterator();
+        Iterator iterator3 = map3.keySet().iterator();
+
+        while (iterator.hasNext()) {
+            String key = (String) iterator.next();
             mMap.addMarker(new MarkerOptions()
-                    .position(visitedClubs.get(i))
-//                    .visible(visibility.get(i))
-                    .title(clubName.get(i)));
+                    .position(visitedClubs.get(Integer.parseInt(key)))
+                    .visible((Boolean) map.get(key))
+                    .title(clubName.get(Integer.parseInt(key))));
         }
+        while (iterator1.hasNext()) {
+            String key = (String) iterator1.next();
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(championLeague.length
+                            + Integer.parseInt(key)))
+                    .visible((Boolean) map1.get(key))
+                    .title(clubName.get(championLeague.length
+                            + Integer.parseInt(key))));
+        }
+        while (iterator2.hasNext()) {
+            String key = (String) iterator2.next();
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(championLeague.length
+                            + premierLeague.length
+                            + Integer.parseInt(key)))
+                    .visible((Boolean) map2.get(key))
+                    .title(clubName.get(championLeague.length
+                            + premierLeague.length
+                            + Integer.parseInt(key))));
+        }
+        while (iterator3.hasNext()) {
+            String key = (String) iterator3.next();
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(championLeague.length
+                            + premierLeague.length
+                            + leagueOne.length - 1
+                            + Integer.parseInt(key)))
+                    .visible((Boolean) map3.get(key))
+                    .title(clubName.get(championLeague.length
+                            + premierLeague.length
+                            + leagueOne.length - 1
+                            + Integer.parseInt(key))));
+        }
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultMap, 6));
     }
 }

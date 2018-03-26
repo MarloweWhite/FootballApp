@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -81,6 +82,7 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
 
         SparseBooleanArray checkeditems = lv.getCheckedItemPositions();
         sharedPreferences.edit().putBoolean(String.valueOf(position), checkeditems.get(position)).commit();
+        Log.d("shared preference",String.valueOf(leagueOne[position]));
     }
 
     @Override

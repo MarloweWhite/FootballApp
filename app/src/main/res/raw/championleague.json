@@ -5,7 +5,9 @@
     "Stadium Location": "N5 1BU",
     "Stadium capacity": "56987",
     "Manager": "Arsene Wenger",
-    "History": "Founded 1886"
+    "History": "Founded 1886",
+    "Latitude": 51.554888 ,
+    "Longitude":-0.108438
   },
   "Bournemouth": {
     "club name": "Bournemouth",
@@ -13,7 +15,10 @@
     "Stadium Location": "BH7 7AF",
     "Stadium capacity": "11360",
     "Manager": "Eddie Howe",
-    "History": "Founded 1810"
+    "History": "Founded 1810",
+    "Latitude": 50.735231  ,
+    "Longitude":-1.838279
+
   },
   "Brighton": {
     "club name": "Brighton",
@@ -21,7 +26,9 @@
     "Stadium Location": "BN1 9BL",
     "Stadium capacity": "30750",
     "Manager": "Chris Hughton",
-    "History": "Founded 1904"
+    "History": "Founded 1904",
+    "Latitude": 50.861565 ,
+    "Longitude":-0.083716
   },
   "Burnley": {
     "club name": "Burnley",
@@ -29,7 +36,9 @@
     "Stadium Location": "B10 4BX",
     "Stadium capacity": "21944",
     "Manager": "Sean Dyche",
-    "History": "Founded 1882"
+    "History": "Founded 1882",
+    "Latitude":53.789024,
+    "Longitude":-2.230174
   },
   "Chelsea": {
     "club name": "Chelsea",
@@ -37,7 +46,9 @@
     "Stadium Location": "SW6 1HS",
     "Stadium capacity": "41631",
     "Manager": "Antonio Conte",
-    "History": "Founded 1905"
+    "History": "Founded 1905",
+    "Latitude":51.481663,
+    "Longitude":-0.190956
   },
   "Crystal Palace": {
     "club name": "Crystal Palace",
@@ -45,7 +56,9 @@
     "Stadium Location": "SE25 6PU",
     "Stadium capacity": "26309",
     "Manager": "Roy Hodgson",
-    "History": "Founded 1905"
+    "History": "Founded 1905",
+    "Latitude":51.398253,
+    "Longitude":-0.085487
   },
   "Everton": {
     "club name": "Everton",
@@ -53,7 +66,9 @@
     "Stadium Location": "L4 4EL",
     "Stadium capacity": "39572",
     "Manager": "Sam Allardyce",
-    "History": " Founded 1878"
+    "History": " Founded 1878",
+    "Latitude":53.438787,
+    "Longitude":-2.966319
   },
   "Huddersfield": {
     "club name": "Huddersfield",
@@ -61,7 +76,9 @@
     "Stadium Location": "HD1 6PX",
     "Stadium capacity": "24500",
     "Manager": "David Wagner",
-    "History": "Founded 1908"
+    "History": "Founded 1908",
+    "Latitude":53.654282,
+    "Longitude":-1.768252
   },
   "Leicester City": {
     "club name": "Leicester City",
@@ -69,7 +86,9 @@
     "Stadium Location": "LE2 7FL",
     "Stadium capacity": "32312",
     "Manager": "Claude Puel",
-    "History": "Founded 1884"
+    "History": "Founded 1884",
+    "Latitude":52.620366,
+    "Longitude":-1.142189
   },
   "Liverpool": {
     "club name": "Liverpool",
@@ -77,7 +96,9 @@
     "Stadium Location": "L4 0TH",
     "Stadium capacity": "54074",
     "Manager": "Jurgen Klopp",
-    "History": "Founded 1892"
+    "History": "Founded 1892",
+    "Latitude":53.430829,
+    "Longitude":-2.960830
   },
   "Manchester City": {
     "club name": "Manchester City",
@@ -85,7 +106,9 @@
     "Stadium Location": "M11 3FF",
     "Stadium capacity": "55097",
     "Manager": "Pep Guardiola",
-    "History": "Founded 1880"
+    "History": "Founded 1880",
+    "Latitude":53.483138,
+    "Longitude":-2.200395
   },
   "Manchester United": {
     "club name": "Manchester United",
@@ -93,7 +116,9 @@
     "Stadium Location": "M16 0RA",
     "Stadium capacity": "74994",
     "Manager": "Jose Mourinho",
-    "History": "Founded 1878"
+    "History": "Founded 1878",
+    "Latitude":53.463059,
+    "Longitude":-2.291340
   },
   "Newcastle United": {
     "club name": "Newcastle United",
@@ -101,7 +126,9 @@
     "Stadium Location": "NE1 4ST",
     "Stadium capacity": "52354",
     "Manager": "Rafael Benitez",
-    "History": "Founded 1892"
+    "History": "Founded 1892",
+    "Latitude":54.975556,
+    "Longitude":-1.621667
   },
   "Southampton": {
     "club name": "Southampton",
@@ -109,7 +136,9 @@
     "Stadium Location": "SO14 5FP",
     "Stadium capacity": "32505",
     "Manager": "Mauricio Pellegrino",
-    "History": "Founded 1885"
+    "History": "Founded 1885",
+    "Latitude":50.905822,
+    "Longitude":-1.390954
   },
   "Stoke City": {
     "club name": "Stoke City",
@@ -117,7 +146,9 @@
     "Stadium Location": "ST4 4EG",
     "Stadium capacity": "30089",
     "Manager": "Paul Lambert",
-    "History": "Founded 1863"
+    "History": "Founded 1863",
+    "Latitude":52.988105,
+    "Longitude":-2.176430
   },
   "Swansea City": {
     "club name": "Swansea City",
@@ -125,7 +156,9 @@
     "Stadium Location": "SA1 2FA",
     "Stadium capacity": "21088",
     "Manager": "Carlos Carvalhal",
-    "History": "Founded 1912"
+    "History": "Founded 1912",
+    "Latitude":51.642750,
+    "Longitude":-3.934586
   },
   "Tottemham Hotspur": {
     "club name": "Tottemham Hotspur",
@@ -133,7 +166,9 @@
     "Stadium Location": "N17 0AP",
     "Stadium capacity": "61559",
     "Manager": "Mauricio Pochettino",
-    "History": "Founded 1912"
+    "History": "Founded 1912",
+    "Latitude":51.604286,
+    "Longitude":-0.066381
   },
   "Watford": {
     "club name": "Watford",
@@ -141,7 +176,9 @@
     "Stadium Location": "WD18 0ER",
     "Stadium capacity": "21577",
     "Manager": "Javi Gracia",
-    "History": "Founded 1881"
+    "History": "Founded 1881",
+    "Latitude":51.649906,
+    "Longitude":-0.401525
   },
   "West Brom": {
     "club name": "West Brom",
@@ -149,7 +186,9 @@
     "Stadium Location": "B71 4LF",
     "Stadium capacity": "26688",
     "Manager": "Alan Pardew",
-    "History": "Founded 1878"
+    "History": "Founded 1878",
+    "Latitude":52.509038,
+    "Longitude":-1.963938
   },
   "West Ham": {
     "club name": "West Ham",
@@ -157,7 +196,9 @@
     "Stadium Location": "E20 2ST",
     "Stadium capacity": "57000",
     "Manager": "David Moyes",
-    "History": "Founded 1895"
+    "History": "Founded 1895",
+    "Latitude":51.538710,
+    "Longitude":-0.016604
   },
   "Aston Villa": {
     "club name": "Aston Villa",
@@ -639,8 +680,8 @@
     "Latitude": 53.547463,
     "Longitude": -2.653755
   },
-  "Acrington Stanley" : {
-    "club name" : "Acrington Stanley",
+  "Accrington Stanley" : {
+    "club name" : "Accrington Stanley",
     "Stadium " : "Wham Stadium",
     "Stadium Location" : "BB5 5BX",
     "Stadium capacity" : "5,057",
@@ -741,13 +782,13 @@
   },
   "Exeter City" : {
     "club name" : "Exeter City",
-    "Stadium " : "Etihad Stadium",
+    "Stadium " : "St James Park",
     "Stadium Location" : "M11 3FF",
     "Stadium capacity" : "8,541",
     "Manager" : "Paul Tisdale",
     "History" : "Founded 1901",
-    "Latitude": 53.483143 ,
-    "Longitude": -2.200398
+    "Latitude": 50.730586 ,
+    "Longitude": -3.520152
   },
   "Forest Green Rovers" : {
     "club name" : "Forest Green Rovers",
