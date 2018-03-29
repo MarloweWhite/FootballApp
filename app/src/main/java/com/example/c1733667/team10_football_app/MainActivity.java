@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button btnStadium;
     private Button btnScore;
     private Button btnMap;
+    private Button btnAchievement;
     private Intent intent;
     private AdView mAdView;
     private DrawerLayout navDrawer;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         stadiumButtonListener();
         scoreButtonListener();
         mapbuttonListener();
+        achievementButtonListener();
+
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);
@@ -94,6 +97,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void achievementButtonListener(){
+        btnAchievement = findViewById(R.id.btnAchievement);
+        btnAchievement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getApplicationContext(),Achievement.class);
                 startActivity(intent);
             }
         });
