@@ -1,0 +1,122 @@
+{
+  "Over 50%": {
+    "Description": "Visited over 50% of UK grounds",
+    "Requirement": ""
+  },
+  "Over 60%": {
+    "Description": "Visited over 60% of UK grounds",
+    "Requirement": ""
+  },
+  "Over 70%": {
+    "Description": "Visited over 70% of UK grounds",
+    "Requirement": ""
+  },
+  "Over 80%": {
+    "Description": "Visited over 80% of UK grounds",
+    "Requirement": ""
+  },
+  "Over 90%": {
+    "Description": "Visited over 90% of UK grounds",
+    "Requirement": ""
+  },
+  "Done the lot!": {
+    "Description": "Visited over 100% of UK grounds",
+    "Requirement": ""
+  },
+  "The Wanderer": {
+    "Description": "Visited all of the Wanderers",
+    "Requirement": ""
+  },
+  "The Wild Rover": {
+    "Description": "Visited all of the Rovers",
+    "Requirement": ""
+  },
+  "Cymru am byth": {
+    "Description": "Visited all the Welsh grounds",
+    "Requirement": ""
+  },
+  "Far and Wide": {
+    "Description": "Visited the NESW grounds",
+    "Requirement": ""
+  },
+  "Master and Apprentice": {
+    "Description": "Visit the oldest and newest grounds",
+    "Requirement": ""
+  },
+  "OOP North": {
+    "Description": "Visit all grounds up north",
+    "Requirement": ""
+  },
+  "Perfect Premier": {
+    "Description": "Visit all PL grounds",
+    "Requirement": ""
+  },
+  "Championship Champ": {
+    "Description": "Visit all Championship grounds",
+    "Requirement": ""
+  },
+  "League 1 Done": {
+    "Description": "Visit all league 1 grounds",
+    "Requirement": ""
+  },
+  "League 2 Triumphed": {
+    "Description": "Visit all league 2 grounds",
+    "Requirement": ""
+  },
+  "Little 'n' large": {
+    "Description": "Visit the biggest and smallest ground",
+    "Requirement": ""
+  },
+  "Cockney Conquerer": {
+    "Description": "Visit all grounds inside the m25",
+    "Requirement": ""
+  },
+  "All sit down": {
+    "Description": "Visit St James' Park and St James Park",
+    "Requirement": ""
+  },
+  "Claret 'n' Blue": {
+    "Description": "Visit St James' Park and St James Park",
+    "Requirement": ""
+  },
+  "City Slicker": {
+    "Description": "Visit all the City club grounds",
+    "Requirement": ""
+  },
+  "Park Ranger": {
+    "Description": "Visit all the grounds named park",
+    "Requirement": ""
+  },
+  "The Champions": {
+    "Description": "Visit all grounds of PL champions",
+    "Requirement": ""
+  },
+  "Le Champions": {
+    "Description": "Visit all grounds of European champions",
+    "Requirement": ""
+  },
+  "Respect your Elders": {
+    "Description": "Visit the 5 oldest grounds",
+    "Requirement": ""
+  },
+  "Neighbours": {
+    "Description": "Visit the two closest grounds in the UK",
+    "Requirement": ""
+  },
+  "Longest and Shortest": {
+    "Description": "Visit the grounds of the teams with the longest and shortest names",
+    "Requirement": ""
+  },
+  "What even is an Albion?!": {
+    "Description": "Visit all of the Albions",
+    "Requirement": ""
+  },
+  "I'm an athlete!": {
+    "Description": "Visit all of the Athletics",
+    "Requirement": ""
+  },
+  "The Compass": {
+    "Description": "Visit all teams with North, East, South or West in their names",
+    "Requirement": ""
+  }
+}
