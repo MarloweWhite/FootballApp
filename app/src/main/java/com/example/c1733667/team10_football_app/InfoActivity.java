@@ -70,6 +70,49 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(InfoActivity.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(InfoActivity.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(InfoActivity.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(InfoActivity.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(InfoActivity.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                }
+                return false;
+            }
+        });
     }
 
 

@@ -38,6 +38,49 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(Achievement.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(Achievement.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(Achievement.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(Achievement.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(Achievement.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                }
+                return false;
+            }
+        });
     }
 
     @Override

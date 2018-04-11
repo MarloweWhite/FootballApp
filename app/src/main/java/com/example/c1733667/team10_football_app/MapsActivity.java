@@ -1,5 +1,6 @@
 package com.example.c1733667.team10_football_app;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
@@ -87,6 +88,48 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         leagueOne = getResources().getStringArray(R.array.EFL1);
         leagueTwo = getResources().getStringArray(R.array.EFL2);
         getClubInfo();
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(MapsActivity.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(MapsActivity.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(MapsActivity.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(MapsActivity.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(MapsActivity.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+                }
+                return false;
+            }
+        });
+
     }
 
     public void getClubInfo() {

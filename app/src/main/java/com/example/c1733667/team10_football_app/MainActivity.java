@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         //event handling thing majig
         return super.onOptionsItemSelected(item);
-    }
+
+        }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(MainActivity.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(MainActivity.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(MainActivity.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(MainActivity.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                }
+                return false;
+            }
+        });
+
     }
 
     public void stadiumButtonListener() {
@@ -118,4 +163,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.navDrawer.closeDrawer(GravityCompat.START);
         return false;
     }
+
 }

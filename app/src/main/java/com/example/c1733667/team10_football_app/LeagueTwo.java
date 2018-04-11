@@ -73,6 +73,49 @@ public class LeagueTwo extends AppCompatActivity implements AdapterView.OnItemCl
         for(Object key : map.keySet()){
             lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
         }
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(LeagueTwo.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(LeagueTwo.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(LeagueTwo.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(LeagueTwo.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(LeagueTwo.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                }
+                return false;
+            }
+        });
     }
 
     @Override

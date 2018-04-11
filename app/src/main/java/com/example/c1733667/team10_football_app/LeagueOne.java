@@ -74,6 +74,49 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
         for(Object key : map.keySet()){
             lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
         }
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(LeagueOne.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(LeagueOne.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(LeagueOne.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(LeagueOne.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(LeagueOne.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
