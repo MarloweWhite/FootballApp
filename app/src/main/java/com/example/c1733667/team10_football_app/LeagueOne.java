@@ -95,7 +95,27 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        this.navDrawer.closeDrawer(GravityCompat.START);
+        Log.d("Item", String.valueOf(item));
+        int id = item.getItemId();
+        Log.d("id", String.valueOf(id));
+        navDrawer.closeDrawers();
+        switch (id){
+            case R.id.stadium_nav:
+                intent = new Intent(getApplicationContext(),StadiumActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.score_nav:
+                intent = new Intent(getApplicationContext(),Score.class);
+                startActivity(intent);
+                break;
+            case R.id.map_nav:
+                intent = new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.exit_nav:
+                System.exit(0);
+                break;
+        }
         return false;
     }
 

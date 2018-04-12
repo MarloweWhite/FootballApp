@@ -1,7 +1,9 @@
 package com.example.c1733667.team10_football_app;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -43,6 +46,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private SharedPreferences pref2;
     private SharedPreferences pref3;
     private SharedPreferences pref4;
+    private Intent intent;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -183,6 +187,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         while (iterator.hasNext()) {
             String key = (String) iterator.next();
+            Log.d("iterator", String.valueOf(iterator.next()));
             mMap.addMarker(new MarkerOptions()
                     .position(visitedClubs.get(Integer.parseInt(key)))
                     .visible((Boolean) map.get(key))
@@ -227,6 +232,27 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        Log.d("Item", String.valueOf(item));
+        int id = item.getItemId();
+        Log.d("id", String.valueOf(id));
+        navDrawer.closeDrawers();
+        switch (id){
+            case R.id.stadium_nav:
+                intent = new Intent(getApplicationContext(),StadiumActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.score_nav:
+                    intent = new Intent(getApplicationContext(),Score.class);
+                    startActivity(intent);
+                    break;
+            case R.id.map_nav:
+                intent = new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.exit_nav:
+                System.exit(0);
+                break;
+        }
+        return true;
     }
 }

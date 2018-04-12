@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="Stadium" />
-    <item android:title="Score" />
-    <item android:title="Map" />
-    <item android:title="Exit" />
+    <item
+        android:id="@+id/stadium_nav"
+        android:title="Stadium" />
+    <item
+        android:id="@+id/score_nav"
+        android:title="Score" />
+    <item
+        android:id="@+id/map_nav"
+        android:title="Map" />
+
+    <item
+        android:id="@+id/exit_nav"
+        android:title="Exit" />
 </menu>

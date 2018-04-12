@@ -1,9 +1,9 @@
 package com.example.c1733667.team10_football_app;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -34,11 +33,13 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
     private DrawerLayout navDrawer;
     private NavigationView navView;
     private ProgressBar progressBar;
+    Intent intent;
     private String[] premierLeague;
     private String[] championLeague;
     private String[] leagueOne;
     private String[] leagueTwo;
     private ArrayList<String> visitedClubs;
+    private ArrayList<String> theWanderer;
     int total = 0;
     int champion = 0;
     int premier = 0;
@@ -110,20 +111,16 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                 leaguetwo = leaguetwo + 1;
             }
         }
+
         Log.d("Visited clubs", String.valueOf(visitedClubs));
         if (achievementName.equals("Over 50%")) {
-            progressBar = findViewById(R.id.achievementProgressBar);
-            ObjectAnimator anim = ObjectAnimator.ofInt(progressBar, "progress", 0, (total * 100) / 46);
-            anim.setDuration(850);
-            anim.setInterpolator(new DecelerateInterpolator());
-            anim.start();
+            AchievementClass overFifty = new AchievementClass("Over 50%",46, total);
+            overFifty.createProgessBar();
         }
         if (achievementName.equals("Over 60%")) {
-            progressBar = findViewById(R.id.achievementProgressBar);
-            ObjectAnimator anim = ObjectAnimator.ofInt(progressBar, "progress", 0, (total * 100) / 55);
-            anim.setDuration(850);
-            anim.setInterpolator(new DecelerateInterpolator());
-            anim.start();
+            Log.d("Total", String.valueOf(total));
+            AchievementClass overSixty = new AchievementClass("Over 60%",55,total);
+            overSixty.createProgessBar();
         }
         if (achievementName.equals("Over 70%")) {
             progressBar = findViewById(R.id.achievementProgressBar);
@@ -184,6 +181,27 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        Log.d("Item", String.valueOf(item));
+        int id = item.getItemId();
+        Log.d("id", String.valueOf(id));
+        navDrawer.closeDrawers();
+        switch (id){
+            case R.id.stadium_nav:
+                intent = new Intent(getApplicationContext(),StadiumActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.score_nav:
+                intent = new Intent(getApplicationContext(),Score.class);
+                startActivity(intent);
+                break;
+            case R.id.map_nav:
+                intent = new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.exit_nav:
+                System.exit(0);
+                break;
+        }
+        return true;
     }
 }
