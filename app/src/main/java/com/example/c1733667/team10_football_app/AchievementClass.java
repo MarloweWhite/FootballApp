@@ -51,14 +51,7 @@ public class AchievementClass {
         this.actualNumber = actualNumber;
     }
 
-    public ProgressBar getProgressBar() {
-        return progressBar;
-    }
-
-    public void setProgressBar(ProgressBar progressBar) {
-        this.progressBar = progressBar;
-    }
-    public void createProgessBar(){
+    public void createProgessBar(ProgressBar progressBar){
         Log.d("actual number", String.valueOf(actualNumber));
         Log.d("target number", String.valueOf(targetNumber));
         ObjectAnimator anim =ObjectAnimator.ofInt(progressBar, "progress", 0, (actualNumber*100)/targetNumber);

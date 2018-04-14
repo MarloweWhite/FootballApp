@@ -45,6 +45,8 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
     int premier = 0;
     int leagueone = 0;
     int leaguetwo = 0;
+    int wanderer = 0;
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -84,7 +86,11 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
             if ((Boolean) map.get((String) key).equals(true)) {
                 total = total + 1;
                 champion = champion + 1;
-
+            }
+            if (map.get(key).equals(true)
+                    && (championLeague[Integer.parseInt(String.valueOf(key))].equals("Wolverhampton Wanderers")
+                    || championLeague[Integer.parseInt(String.valueOf(key))].equals("Bolton Wanderers"))) {
+                wanderer = wanderer + 1;
             }
         }
         Map map2 = pref2.getAll();
@@ -110,45 +116,41 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                 total = total + 1;
                 leaguetwo = leaguetwo + 1;
             }
+            if (map4.get(key).equals(true)
+                    && leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Wycombe Wanderers")) {
+                wanderer = wanderer + 1;
+            }
         }
 
         Log.d("Visited clubs", String.valueOf(visitedClubs));
         if (achievementName.equals("Over 50%")) {
-            AchievementClass overFifty = new AchievementClass("Over 50%",46, total);
-            overFifty.createProgessBar();
+            AchievementClass overFifty = new AchievementClass("Over 50%", 46, total);
+            overFifty.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
         if (achievementName.equals("Over 60%")) {
             Log.d("Total", String.valueOf(total));
-            AchievementClass overSixty = new AchievementClass("Over 60%",55,total);
-            overSixty.createProgessBar();
+            AchievementClass overSixty = new AchievementClass("Over 60%", 55, total);
+            overSixty.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
         if (achievementName.equals("Over 70%")) {
-            progressBar = findViewById(R.id.achievementProgressBar);
-            ObjectAnimator anim = ObjectAnimator.ofInt(progressBar, "progress", 0, (total * 100) / 64);
-            anim.setDuration(850);
-            anim.setInterpolator(new DecelerateInterpolator());
-            anim.start();
+            AchievementClass overSeventy = new AchievementClass("Over 70%", 65, total);
+            overSeventy.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
         if (achievementName.equals("Over 80%")) {
-            progressBar = findViewById(R.id.achievementProgressBar);
-            ObjectAnimator anim = ObjectAnimator.ofInt(progressBar, "progress", 0, (total * 100) / 74);
-            anim.setDuration(850);
-            anim.setInterpolator(new DecelerateInterpolator());
-            anim.start();
+            AchievementClass overEighty = new AchievementClass("Over 80%", 74, total);
+            overEighty.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
         if (achievementName.equals("Over 90%")) {
-            progressBar = findViewById(R.id.achievementProgressBar);
-            ObjectAnimator anim = ObjectAnimator.ofInt(progressBar, "progress", 0, (total * 100) / 83);
-            anim.setDuration(850);
-            anim.setInterpolator(new DecelerateInterpolator());
-            anim.start();
+            AchievementClass overNinety = new AchievementClass("Over 90%", 83, total);
+            overNinety.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
         if (achievementName.equals("Done the lot!")) {
-            progressBar = findViewById(R.id.achievementProgressBar);
-            ObjectAnimator anim = ObjectAnimator.ofInt(progressBar, "progress", 0, (total * 100) / 92);
-            anim.setDuration(850);
-            anim.setInterpolator(new DecelerateInterpolator());
-            anim.start();
+            AchievementClass doneTheLot = new AchievementClass("Done The Lot", 92, total);
+            doneTheLot.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("The Wanderer")) {
+            AchievementClass theWanderer = new AchievementClass("The Wanderer", 3, wanderer);
+            theWanderer.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
     }
 
@@ -185,17 +187,17 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         int id = item.getItemId();
         Log.d("id", String.valueOf(id));
         navDrawer.closeDrawers();
-        switch (id){
+        switch (id) {
             case R.id.stadium_nav:
-                intent = new Intent(getApplicationContext(),StadiumActivity.class);
+                intent = new Intent(getApplicationContext(), StadiumActivity.class);
                 startActivity(intent);
                 break;
             case R.id.score_nav:
-                intent = new Intent(getApplicationContext(),Score.class);
+                intent = new Intent(getApplicationContext(), Score.class);
                 startActivity(intent);
                 break;
             case R.id.map_nav:
-                intent = new Intent(getApplicationContext(),MapsActivity.class);
+                intent = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(intent);
                 break;
             case R.id.exit_nav:
