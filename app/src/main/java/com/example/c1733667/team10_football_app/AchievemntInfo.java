@@ -129,11 +129,12 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Middlesbrough")
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Preston North End")
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Leeds United")
-                    || championLeague[Integer.parseInt(String.valueOf(key))].equals("Hull city")
+                    || championLeague[Integer.parseInt(String.valueOf(key))].equals("Hull City")
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Sheffield United")
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Sheffield Wednesday")
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Barnsley")
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Bolton Wanderers"))) {
+                Log.d("championTeam", championLeague[Integer.parseInt(String.valueOf(key))]);
                 northern = northern + 1;
             }
             if (map.get(key).equals(true)
@@ -215,11 +216,8 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Liverpool")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Burnley")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Everton")
-<<<<<<< HEAD
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield"))) {
-=======
-                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield Town")) {
->>>>>>> a3b7d3409f93725bd7cebe544824ebdf0edc31ef
+                Log.d("premiere Team", premierLeague[Integer.parseInt(String.valueOf(key))]);
                 northern = northern + 1;
             }
             if (map2.get(key).equals(true)
@@ -250,7 +248,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Stoke City"))) {
                 city = city + 1;
             }
-            if (map2.get(key).equals(key)
+            if (map2.get(key).equals(true)
                     && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("Crystal Palace")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Everton")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Newcastle United"))) {
@@ -298,7 +296,6 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     && (leagueOne[Integer.parseInt(String.valueOf(key))].equals("Blackburn Rovers")
                     || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Bristol Rovers")
                     || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Doncaster Rovers"))) {
-                Log.d("Rovers", leagueOne[Integer.parseInt(String.valueOf(key))]);
                 rover = rover + 1;
             }
             if (map3.get(key).equals(true)
@@ -317,7 +314,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Rochdale")
                     || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Wigan Athletic")
                     || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Oldham Athletic"))) {
-                Log.d("Oop north", leagueOne[Integer.parseInt(String.valueOf(key))]);
+                Log.d("champion Team", leagueOne[Integer.parseInt(String.valueOf(key))]);
                 northern = northern + 1;
             }
             if (map3.get(key).equals(true)
@@ -385,10 +382,11 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                 cymru = cymru + 1;
             }
             if (map4.get(key).equals(true)
-                    && (leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Accrington Stanley"))
+                    && (leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Accrington Stanley")
                     || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Morcambe")
                     || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Grimsby Town")
-                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Carlisle United")) {
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Carlisle United"))) {
+                Log.d("league 2 Team", leagueTwo[Integer.parseInt(String.valueOf(key))]);
                 northern = northern + 1;
             }
             if (map4.get(key).equals(true)
