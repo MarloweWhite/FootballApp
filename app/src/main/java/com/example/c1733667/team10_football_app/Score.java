@@ -1,6 +1,7 @@
 package com.example.c1733667.team10_football_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.animation.ObjectAnimator;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -18,7 +20,9 @@ import java.util.Map;
 
 public class Score extends AppCompatActivity implements AdapterView.OnClickListener{
 
+    private Button btnShare;
     private int mainScore;
+    private Intent shareIntent = new Intent(Intent.ACTION_SEND);
     ProgressBar mprogressBar;
     ProgressBar mprogressBar2;
     ProgressBar mprogressBar3;
@@ -29,6 +33,7 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scoring_system);
+        shareButtonListener();
         SharedPreferences pref1 = getSharedPreferences("ChampionPreference", 0);
         SharedPreferences pref2 = getSharedPreferences("PremierPreference", 0);
         SharedPreferences pref3 = getSharedPreferences("LeagueOnePreference", 0);
@@ -38,9 +43,9 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         int total = 0;
 
         for (Object key: map.keySet()){
-                if( (Boolean) map.get((String) key).equals(true)){
-                    total=total +1;
-                }
+            if( (Boolean) map.get((String) key).equals(true)){
+                total=total +1;
+            }
         }
         int total2 = 0;
         Map map2= pref2.getAll();
@@ -114,5 +119,19 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
     @Override
     public void onClick(View v) {
 
+    }
+    public void shareButtonListener() {
+        btnShare = findViewById(R.id.btnShare);
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                String shareContent = ("I have visited "+mainScore+" out of the 92 football stadiums in the UK!\nHow many have you visited?");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareContent);
+
+                startActivity(Intent.createChooser(shareIntent, "Share via:"));
+            }
+        });
     }
 }

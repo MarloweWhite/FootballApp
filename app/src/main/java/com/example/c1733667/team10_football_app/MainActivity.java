@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button btnScore;
     private Button btnMap;
     private Button btnAchievement;
+    private Button btnHelp;
     private Intent intent;
     private AdView mAdView;
     private DrawerLayout navDrawer;
@@ -45,13 +46,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //event handling thing majig
         return super.onOptionsItemSelected(item);
 
-        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_outer);
         stadiumButtonListener();
+        helpButtonListener();
         scoreButtonListener();
         mapbuttonListener();
         achievementButtonListener();
@@ -107,7 +109,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         Intent intent4 = new Intent(MainActivity.this, Achievement.class);
                         startActivity(intent4);
                         break;
-
                 }
                 return false;
             }
@@ -121,6 +122,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 intent = new Intent(getApplicationContext(), StadiumActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void helpButtonListener() {
+        btnHelp = findViewById(R.id.btnHelp);
+        btnHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getApplicationContext(), HelpActivity.class);
                 startActivity(intent);
             }
         });
