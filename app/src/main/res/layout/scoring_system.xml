@@ -6,11 +6,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-<<<<<<< HEAD
-
-    <FrameLayout
-       android:layout_width="match_parent"
-=======
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
@@ -18,15 +13,12 @@
         android:background="@color/colorPrimary"
         app:title="Score" />
 
-    <ProgressBar
-        android:id="@+id/circular_progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
+
+    <FrameLayout
         android:layout_width="match_parent"
->>>>>>> 16bf80bb8029e2db399e7c1c72b83d1f1920619d
         android:layout_height="0dp"
-        android:layout_weight="1"
-<<<<<<< HEAD
-        android:layout_marginTop="30dp">
+        android:layout_weight="1.2"
+        android:layout_marginTop="5dp">
 
        <ProgressBar
            android:id="@+id/circular_progress_bar"
@@ -55,20 +47,10 @@
    </FrameLayout>
 
     <FrameLayout
-=======
-        android:layout_marginTop="30dp"
-        android:indeterminate="false"
-        android:max="24"
-        android:progress="1"
-        android:progressDrawable="@drawable/circular_progressbar" />
-    <ProgressBar
-        android:id="@+id/circular_progress_bar2"
-        style="?android:attr/progressBarStyleHorizontal"
->>>>>>> 0ea7a6e3b277eacb1160fdbafba50c11271251cd
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="30dp">
+        android:layout_weight="1.2"
+        android:layout_marginTop="25dp">
 
         <ProgressBar
             android:id="@+id/circular_progress_bar2"
@@ -98,8 +80,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="30dp">
+        android:layout_weight="1.2"
+        android:layout_marginTop="25dp">
 
         <ProgressBar
             android:id="@+id/circular_progress_bar3"
@@ -132,8 +114,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="30dp">
+        android:layout_weight="1.2"
+        android:layout_marginTop="25dp">
 
         <ProgressBar
             android:id="@+id/circular_progress_bar4"
@@ -171,26 +153,24 @@
         android:indeterminate="false"
         android:max="92"
         android:progress="1" />
-
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center|bottom"
+        android:textSize="17dp"/>
+    <TextView
+        android:id="@+id/textViewName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="17sp" />
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Share"/>
-
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:gravity="center|bottom"
-        android:textSize="16dp"/>
-    <TextView
-        android:id="@+id/textViewName2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="18sp" />
 
 </LinearLayout>
