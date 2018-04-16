@@ -36,7 +36,7 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.activity_help_outer);
 
         TextView aboutTheApp = (TextView) findViewById(R.id.aboutTheApp);
         TextView help = (TextView) findViewById(R.id.howToUse);
