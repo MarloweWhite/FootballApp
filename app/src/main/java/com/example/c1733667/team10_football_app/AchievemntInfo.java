@@ -172,7 +172,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Manchester City")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Liverpool")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Everton")
-                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield")) {
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield Town")) {
                 northern = northern + 1;
             }
             if (map2.get(key).equals(true)
@@ -276,7 +276,8 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
             }
             if (map4.get(key).equals(true)
                     && (leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Accrington Stanley"))
-                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Morecambe")
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Morcambe")
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Grimsby Town")
                     || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Carlisle United")) {
                 northern = northern + 1;
             }
