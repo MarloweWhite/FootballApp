@@ -33,7 +33,7 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -63,16 +63,57 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,navDrawer,toolbar,R.string.open,R.string.close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
         navDrawer.addDrawerListener(toggle);
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
 
         Map map = sharedPreferences.getAll();
-        for(Object key : map.keySet()){
+        for (Object key : map.keySet()) {
             lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
         }
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.stad:
+                        Intent intent = new Intent(ChampionshipLeague.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(ChampionshipLeague.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(ChampionshipLeague.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(ChampionshipLeague.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(ChampionshipLeague.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                }
+                return false;
+            }
+        });
 
     }
 
@@ -86,40 +127,19 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        intent = new Intent(getApplicationContext(),InfoActivity.class);
+        intent = new Intent(getApplicationContext(), InfoActivity.class);
         intent.putExtra("Club Name", championLeague[position]);
         startActivity(intent);
         return true;
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Log.d("Item", String.valueOf(item));
-        int id = item.getItemId();
-        Log.d("id", String.valueOf(id));
-        navDrawer.closeDrawers();
-        switch (id){
-            case R.id.stadium_nav:
-                intent = new Intent(getApplicationContext(),StadiumActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.score_nav:
-                intent = new Intent(getApplicationContext(),Score.class);
-                startActivity(intent);
-                break;
-            case R.id.map_nav:
-                intent = new Intent(getApplicationContext(),MapsActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.exit_nav:
-                System.exit(0);
-                break;
-        }
-        return true;
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 
     @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

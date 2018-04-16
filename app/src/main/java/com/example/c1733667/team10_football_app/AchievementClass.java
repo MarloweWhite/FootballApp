@@ -11,10 +11,10 @@ import android.widget.ProgressBar;
  */
 
 public class AchievementClass {
-    String name;
-    Integer targetNumber;
-    Integer actualNumber;
-    ProgressBar progressBar;
+    private String name;
+    private Integer targetNumber;
+    private Integer actualNumber;
+    private ProgressBar progressBar;
 
     public AchievementClass(String name, Integer targetNumber, Integer actualNumber) {
         this.name = name;

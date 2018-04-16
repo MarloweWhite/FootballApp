@@ -43,7 +43,7 @@
     "Description": "Visit the oldest and newest grounds",
     "Requirement": ""
   },
-  "OOP North": {
+  "Oop North": {
     "Description": "Visit all grounds up north",
     "Requirement": ""
   },
@@ -63,11 +63,11 @@
     "Description": "Visit all league 2 grounds",
     "Requirement": ""
   },
-  "Little 'n' large": {
+  "Little and large": {
     "Description": "Visit the biggest and smallest ground",
     "Requirement": ""
   },
-  "Cockney Conquerer": {
+  "Cockney Conqueror": {
     "Description": "Visit all grounds inside the m25",
     "Requirement": ""
   },
@@ -75,8 +75,8 @@
     "Description": "Visit St James' Park and St James Park",
     "Requirement": ""
   },
-  "Claret 'n' Blue": {
-    "Description": "Visit St James' Park and St James Park",
+  "Claret and Blue": {
+    "Description": "Visit all Claret and Blue grounds",
     "Requirement": ""
   },
   "City Slicker": {

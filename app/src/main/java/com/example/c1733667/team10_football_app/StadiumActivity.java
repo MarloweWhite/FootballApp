@@ -62,6 +62,48 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(StadiumActivity.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(StadiumActivity.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(StadiumActivity.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(StadiumActivity.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(StadiumActivity.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -84,35 +126,15 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
             startActivity(intent);
         }
     }
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Log.d("Item", String.valueOf(item));
-        int id = item.getItemId();
-        Log.d("id", String.valueOf(id));
-        navDrawer.closeDrawers();
-        switch (id){
-            case R.id.stadium_nav:
-                intent = new Intent(getApplicationContext(),StadiumActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.score_nav:
-                intent = new Intent(getApplicationContext(),Score.class);
-                startActivity(intent);
-                break;
-            case R.id.map_nav:
-                intent = new Intent(getApplicationContext(),MapsActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.exit_nav:
-                System.exit(0);
-                break;
-        }
-        return true;
-    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }
 
