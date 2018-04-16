@@ -2,12 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
+<<<<<<< HEAD
 
     <FrameLayout
        android:layout_width="match_parent"
+=======
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Score" />
+
+    <ProgressBar
+        android:id="@+id/circular_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+>>>>>>> 16bf80bb8029e2db399e7c1c72b83d1f1920619d
         android:layout_height="0dp"
         android:layout_weight="1"
 <<<<<<< HEAD

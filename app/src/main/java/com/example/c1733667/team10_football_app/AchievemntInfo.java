@@ -215,11 +215,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Liverpool")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Burnley")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Everton")
-<<<<<<< HEAD
-                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield"))) {
-=======
-                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield Town")) {
->>>>>>> a3b7d3409f93725bd7cebe544824ebdf0edc31ef
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield Town"))) {
                 northern = northern + 1;
             }
             if (map2.get(key).equals(true)
@@ -546,6 +542,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
             theCompass.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
     }
+
 
     public void getAchievementInfo() {
         Resources res = getResources();

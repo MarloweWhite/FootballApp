@@ -6,7 +6,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Adapter;
@@ -18,7 +24,7 @@ import android.widget.TextView;
 import java.util.Map;
 
 
-public class Score extends AppCompatActivity implements AdapterView.OnClickListener{
+public class Score extends AppCompatActivity implements AdapterView.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
 
     private Button btnShare;
     private int mainScore;
@@ -28,11 +34,13 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
     ProgressBar mprogressBar3;
     ProgressBar mprogressBar4;
     ProgressBar mprogressBar5;
+    DrawerLayout navDrawer;
+    private NavigationView navView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scoring_system);
+        setContentView(R.layout.activity_scoring_system_outer);
         shareButtonListener();
         SharedPreferences pref1 = getSharedPreferences("ChampionPreference", 0);
         SharedPreferences pref2 = getSharedPreferences("PremierPreference", 0);
@@ -121,6 +129,62 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         anim5.setInterpolator(new DecelerateInterpolator());
         anim5.start();
 
+
+        Toolbar toolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+        this.navDrawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,navDrawer,toolbar,R.string.open,R.string.close);
+        navDrawer.addDrawerListener(toggle);
+        toggle.syncState();
+        this.navView = findViewById(R.id.nav_view);
+        this.navView.setNavigationItemSelectedListener(this);
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(Score.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(Score.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(Score.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(Score.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(Score.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                    case R.id.help:
+                        Intent intent5 = new Intent(Score.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
 
@@ -143,5 +207,10 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
                 startActivity(Intent.createChooser(shareIntent, "Share via:"));
             }
         });
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

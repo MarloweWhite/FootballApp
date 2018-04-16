@@ -115,6 +115,11 @@ public class PremierLeague extends AppCompatActivity implements AdapterView.OnIt
                         startActivity(intent4);
                         break;
 
+                    case R.id.help:
+                        Intent intent5 = new Intent(PremierLeague.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
+
                 }
                 return false;
             }

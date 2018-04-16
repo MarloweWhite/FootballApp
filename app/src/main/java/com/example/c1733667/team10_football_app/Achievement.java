@@ -76,6 +76,11 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
                         startActivity(intent4);
                         break;
 
+                    case R.id.help:
+                        Intent intent5 = new Intent(Achievement.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
+
                 }
                 return false;
             }
