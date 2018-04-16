@@ -80,6 +80,16 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         textView.setText("Your percentage of clubs you have been too :" + totalPerc1 + "%");
         TextView textView2 = (TextView) findViewById(R.id.textViewName2);
         textView2.setText("Your Score is :" + mainScore );
+        TextView textView3 = (TextView) findViewById(R.id.championsleagueperc);
+        textView3.setText(total+"/24");
+
+        TextView textView4 = (TextView) findViewById(R.id.premierleagueperc);
+        textView4.setText(total2 +"/20");
+        TextView textView5 = (TextView) findViewById(R.id.leagueoneperc);
+        textView5.setText(total3+"/24");
+        TextView textView6 = (TextView) findViewById(R.id.leaguetwoperc);
+        textView6.setText(total4+"/24");
+
 
         mprogressBar = (ProgressBar) findViewById(R.id.circular_progress_bar);
         ObjectAnimator anim = ObjectAnimator.ofInt(mprogressBar, "progress", 0, total);
