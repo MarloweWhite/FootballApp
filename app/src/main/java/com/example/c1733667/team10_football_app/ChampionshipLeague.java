@@ -110,6 +110,11 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
                         startActivity(intent4);
                         break;
 
+                    case R.id.help:
+                        Intent intent5 = new Intent(ChampionshipLeague.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
+
                 }
                 return false;
             }

@@ -128,6 +128,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         Intent intent3 = new Intent(MapsActivity.this, MainActivity.class);
                         startActivity(intent3);
                         break;
+
+                    case R.id.help:
+                        Intent intent5 = new Intent(MapsActivity.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
                 }
                 return false;
             }

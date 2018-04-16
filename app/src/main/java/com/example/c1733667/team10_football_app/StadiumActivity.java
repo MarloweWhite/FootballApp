@@ -100,6 +100,11 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
                         startActivity(intent4);
                         break;
 
+                    case R.id.help:
+                        Intent intent5 = new Intent(StadiumActivity.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
+
                 }
                 return false;
             }
