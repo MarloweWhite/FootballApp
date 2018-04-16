@@ -23,7 +23,7 @@ import android.support.design.widget.NavigationView;
 
 import java.util.Map;
 
-public class LeagueTwo extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class LeagueTwo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemLongClickListener, AdapterView.OnItemClickListener {
     private String[] leagueTwo;
     private Intent intent;
     private SharedPreferences sharedPreferences;
@@ -50,6 +50,8 @@ public class LeagueTwo extends AppCompatActivity implements AdapterView.OnItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_league_two_outer);
 
+
+
         sharedPreferences = getSharedPreferences("LeagueTwoPreference", Context.MODE_PRIVATE);
 
         ArrayAdapter<String> leagueTwoAdapter;
@@ -74,6 +76,7 @@ public class LeagueTwo extends AppCompatActivity implements AdapterView.OnItemCl
         for(Object key : map.keySet()){
             lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
         }
+
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.c1733667.team10_football_app.adapterpack.AchievementCustomAdapter;
+
 public class Achievement extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
     private ListView listView;
     private String[] achievements;

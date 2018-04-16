@@ -3,10 +3,8 @@ package com.example.c1733667.team10_football_app;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -142,7 +140,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void getClubInfo() {
         Resources res = getResources();
-        InputStream is = res.openRawResource(R.raw.championleague);
+        InputStream is = res.openRawResource(R.raw.clubs);
         Scanner scanner = new Scanner(is);
         StringBuilder builder = new StringBuilder();
         while (scanner.hasNextLine()) {
