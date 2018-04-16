@@ -1,6 +1,7 @@
 package com.example.c1733667.team10_football_app;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,7 +23,7 @@ import java.util.Map;
  * Created by c1741877 on 15/04/2018.
  */
 
-public class HelpActivity extends AppCompatActivity implements AdapterView.OnClickListener {
+public class HelpActivity extends AppCompatActivity implements AdapterView.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout navDrawer;
     private NavigationView navView;
 
@@ -42,6 +43,62 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
         aboutTheApp.setText("About the app:\n\nOur app is an app designed to help its users keep track of all the football stadiums that they have visited throughout the UKn\n");
         help.setText("How To Use:\n\nAdding Stadiums:\nTo add stadiums that you've visited, simply press the \"Stadiums\" button from the home screen and then select the league that the satdium is associated with.\nThen simply tap the name of a stadium to tick it, or long press it to view more information\n");
 
+        Toolbar toolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+        this.navDrawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,navDrawer,toolbar,R.string.open,R.string.close);
+        navDrawer.addDrawerListener(toggle);
+        toggle.syncState();
+        this.navView = findViewById(R.id.nav_view);
+        this.navView.setNavigationItemSelectedListener(this);
+
+        NavigationView navigationView = navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.stad:
+                        Intent intent = new Intent(HelpActivity.this, StadiumActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    case R.id.scores:
+                        Intent intent1 = new Intent(HelpActivity.this, Score.class);
+                        startActivity(intent1);
+                        break;
+
+
+
+                    case R.id.maps:
+                        Intent intent2 = new Intent(HelpActivity.this, MapsActivity.class);
+                        startActivity(intent2);
+                        break;
+
+
+
+                    case R.id.exit:
+                        System.exit(0);
+
+
+                    case R.id.home:
+                        Intent intent3 = new Intent(HelpActivity.this, MainActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(HelpActivity.this, Achievement.class);
+                        startActivity(intent4);
+                        break;
+
+                    case R.id.help:
+                        Intent intent5 = new Intent(HelpActivity.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
+
+                }
+                return false;
+            }
+        });
 
     }
 
@@ -51,5 +108,10 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

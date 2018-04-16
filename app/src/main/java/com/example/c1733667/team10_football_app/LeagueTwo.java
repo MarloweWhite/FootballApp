@@ -113,6 +113,11 @@ public class LeagueTwo extends AppCompatActivity implements AdapterView.OnItemCl
                         startActivity(intent4);
                         break;
 
+                    case R.id.help:
+                        Intent intent5 = new Intent(LeagueTwo.this, HelpActivity.class);
+                        startActivity(intent5);
+                        break;
+
                 }
                 return false;
             }
