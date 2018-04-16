@@ -10,6 +10,7 @@
        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+<<<<<<< HEAD
         android:layout_marginTop="30dp">
 
        <ProgressBar
@@ -39,6 +40,16 @@
    </FrameLayout>
 
     <FrameLayout
+=======
+        android:layout_marginTop="30dp"
+        android:indeterminate="false"
+        android:max="24"
+        android:progress="1"
+        android:progressDrawable="@drawable/circular_progressbar" />
+    <ProgressBar
+        android:id="@+id/circular_progress_bar2"
+        style="?android:attr/progressBarStyleHorizontal"
+>>>>>>> 0ea7a6e3b277eacb1160fdbafba50c11271251cd
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
