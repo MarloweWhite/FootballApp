@@ -4,6 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.drawable.RippleDrawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -56,6 +57,15 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
     int cockney = 0;
     int claretNBlue = 0;
     int city = 0;
+    int ranger = 0;
+    int thechampions = 0;
+    int lechampions = 0;
+    int eleders = 0;
+    int neighbour = 0;
+    int longestAndShortest = 0;
+    int albion = 0;
+    int athlete = 0;
+    int compass = 0;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -144,6 +154,38 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || championLeague[Integer.parseInt(String.valueOf(key))].equals("Norwich City"))) {
                 city = city + 1;
             }
+            if (map.get(key).equals(true)
+                    && (championLeague[Integer.parseInt(String.valueOf(key))].equals("Aston Villa")
+                    || championLeague[Integer.parseInt(String.valueOf(key))].equals("Brentford")
+                    || championLeague[Integer.parseInt(String.valueOf(key))].equals("Derby County"))) {
+                ranger = ranger + 1;
+            }
+            if (map.get(key).equals(true)
+                    && (championLeague[Integer.parseInt(String.valueOf(key))].equals("Aston Villa")
+                    || championLeague[Integer.parseInt(String.valueOf(key))].equals("Nottingham Forest"))) {
+                lechampions = lechampions + 1;
+            }
+            if (map.get(key).equals(true)
+                    && (championLeague[Integer.parseInt(String.valueOf(key))].equals("Sheffield United")
+                    || championLeague[Integer.parseInt(String.valueOf(key))].equals("Preston North End"))) {
+                eleders = eleders + 1;
+            }
+            if (map.get(key).equals(true)
+                    && championLeague[Integer.parseInt(String.valueOf(key))].equals("Nottingham Forest")) {
+                neighbour = neighbour + 1;
+            }
+            if (map.get(key).equals(true)
+                    && championLeague[Integer.parseInt(String.valueOf(key))].equals("Wolverhampton Wanderers")) {
+                longestAndShortest = longestAndShortest + 1;
+            }
+            if (map.get(key).equals(true)
+                    && championLeague[Integer.parseInt(String.valueOf(key))].equals("Burton Albion")) {
+                albion = albion + 1;
+            }
+            if (map.get(key).equals(true)
+                    && championLeague[Integer.parseInt(String.valueOf(key))].equals("Preston North End")) {
+                compass = compass + 1;
+            }
 
         }
         Map map2 = pref2.getAll();
@@ -167,12 +209,12 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                 masterApprentice = masterApprentice + 1;
             }
             if (map2.get(key).equals(true)
-                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("Newcastle United"))
+                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("Newcastle United")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Manchester United")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Manchester City")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Liverpool")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Everton")
-                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield")) {
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield"))) {
                 northern = northern + 1;
             }
             if (map2.get(key).equals(true)
@@ -202,6 +244,42 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Swansea City")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Stoke City"))) {
                 city = city + 1;
+            }
+            if (map2.get(key).equals(key)
+                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("Crystal Palace")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Everton")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Newcastle United"))) {
+                ranger = ranger + 1;
+            }
+            if (map2.get(key).equals(true)
+                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("Arsenal")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Chelsea")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Manchester United")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Manchester City")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Leicester City"))) {
+                thechampions = thechampions + 1;
+            }
+            if (map2.get(key).equals(true)
+                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("Manchester United")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Liverpool")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Chelsea"))) {
+                lechampions = lechampions + 1;
+            }
+            if (map2.get(key).equals(true)
+                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("Chelsea")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Newcastle United"))) {
+                eleders = eleders + 1;
+            }
+            if (map2.get(key).equals(true)
+                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("West Brom")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Brighton"))) {
+                albion = albion + 1;
+            }
+            if (map2.get(key).equals(true)
+                    && (premierLeague[Integer.parseInt(String.valueOf(key))].equals("West Ham")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("West Brom")
+                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Southampton"))) {
+                compass = compass + 1;
             }
         }
         Map map3 = pref3.getAll();
@@ -254,6 +332,33 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     && leagueOne[Integer.parseInt(String.valueOf(key))].equals("Bradford City")) {
                 city = city + 1;
             }
+            if (map3.get(key).equals(true)
+                    && (leagueOne[Integer.parseInt(String.valueOf(key))].equals("Blackburn Rovers")
+                    || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Oldham Athletic")
+                    || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Plymouth Argyle")
+                    || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Portsmouth")
+                    || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Scunthorpe United"))) {
+                ranger = ranger + 1;
+            }
+            if (map3.get(key).equals(true)
+                    && leagueOne[Integer.parseInt(String.valueOf(key))].equals("Blackburn Rovers")) {
+                thechampions = thechampions + 1;
+            }
+            if (map3.get(key).equals(true)
+                    && leagueOne[Integer.parseInt(String.valueOf(key))].equals("Bury")) {
+                longestAndShortest = longestAndShortest + 1;
+            }
+            if (map3.get(key).equals(true)
+                    && (leagueOne[Integer.parseInt(String.valueOf(key))].equals("Oldham Athletic")
+                    || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Wigan Athletic")
+                    || leagueOne[Integer.parseInt(String.valueOf(key))].equals("Charlton Athletic"))) {
+                athlete = athlete + 1;
+            }
+            if (map3.get(key).equals(true)
+                    && (leagueOne[Integer.parseInt(String.valueOf(key))].equals("Northampton Town")
+            ||leagueOne[Integer.parseInt(String.valueOf(key))].equals("Southend United"))) {
+                compass = compass + 1;
+            }
         }
         Map map4 = pref4.getAll();
         Iterator iterator3 = map4.keySet().iterator();
@@ -293,6 +398,23 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Exeter City")
                     || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Lincoln City"))) {
                 city = city + 1;
+            }
+            if (map4.get(key).equals(true)
+                    && (leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Carlisle United")
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Exeter City")
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Grimsby Town")
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Port Vale")
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Wycombe Wanderers")
+                    || leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Yeovil Town"))) {
+                ranger = ranger + 1;
+            }
+            if (map4.get(key).equals(true)
+                    && leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Mansfield Town")) {
+                eleders = eleders + 1;
+            }
+            if (map4.get(key).equals(true)
+                    && leagueTwo[Integer.parseInt(String.valueOf(key))].equals("Notts County")) {
+                neighbour = neighbour + 1;
             }
         }
 
@@ -380,6 +502,42 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         if (achievementName.equals("City Slicker")) {
             AchievementClass citySlicker = new AchievementClass("City Slicker", 12, city);
             citySlicker.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("Park Ranger")) {
+            AchievementClass parkRanger = new AchievementClass("Park Ranger", 17, ranger);
+            parkRanger.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("The Champions")) {
+            AchievementClass theChampions = new AchievementClass("The Chhampions", 6, thechampions);
+            theChampions.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("Le Champions")) {
+            AchievementClass leChampions = new AchievementClass("Le Champions", 5, lechampions);
+            leChampions.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("Respect your Elders")) {
+            AchievementClass respectYourElders = new AchievementClass("Respect your Elders", 5, eleders);
+            respectYourElders.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("Neighbours")) {
+            AchievementClass neighbours = new AchievementClass("Neighbours", 2, neighbour);
+            neighbours.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("Longest and Shortest")) {
+            AchievementClass longestAndshortest = new AchievementClass("Longest and Shortest", 2, longestAndShortest);
+            longestAndshortest.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("What even is an Albion?!")) {
+            AchievementClass whatIsAnAlbion = new AchievementClass("What even is an Albion", 3, albion);
+            whatIsAnAlbion.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("Im an athlete!")) {
+            AchievementClass imAnAthlete = new AchievementClass("Im an Athlete", 3, athlete);
+            imAnAthlete.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+        }
+        if (achievementName.equals("The Compass")) {
+            AchievementClass theCompass = new AchievementClass("The compass", 6, compass);
+            theCompass.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
         }
     }
 
