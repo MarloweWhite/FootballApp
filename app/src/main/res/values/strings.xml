@@ -2,4 +2,15 @@
     <string name="app_name">Team10_Football_App</string>
     <string name="your_score"> Your Score is : %1$d </string>
     <string name="title_activity_maps">Map</string>
+    <string name="open" />
+    <string name="close" />
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="champions_league">Champions League</string>
+    <string name="premier_league">Premier League</string>
+    <string name="league_one">League One</string>
+    <string name="league_two">League Two</string>
+
+    <string name="action_settings">Settings</string>
+
 </resources>

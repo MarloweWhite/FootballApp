@@ -5,7 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.c1733667.team10_football_app.MainActivity">
+    tools:context="com.example.c1733667.team10_football_app.activities.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Home" />
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/AdImage"
@@ -20,7 +27,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
         android:text="Stadiums" />
 
     <android.support.v7.widget.AppCompatButton
@@ -39,6 +45,20 @@
         android:text="map"
         tools:ignore="MissingConstraints" />
 
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnAchievement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Achievements"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="How To Use"/>
+
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
@@ -47,7 +67,9 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+
+    </com.google.android.gms.ads.AdView>
 
 
 </android.support.v7.widget.LinearLayoutCompat>
