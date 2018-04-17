@@ -1,4 +1,4 @@
-package com.example.c1733667.team10_football_app;
+package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.adapterpack.AchievementCustomAdapter;
 
 public class Achievement extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
     private ListView listView;

@@ -1,15 +1,16 @@
-package com.example.c1733667.team10_football_app;
+package com.example.c1733667.team10_football_app.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.ListViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,12 +19,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import com.example.c1733667.team10_football_app.R;
 
-public class StadiumActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
-    private String[] leaugueArray;
+import java.util.Map;
+
+public class PremierLeague extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, NavigationView.OnNavigationItemSelectedListener {
+    private String[] premierLeague;
     private Intent intent;
+    private SharedPreferences sharedPreferences;
+    private ListViewCompat lv;
+
     private DrawerLayout navDrawer;
     private NavigationView navView;
 
@@ -40,19 +45,21 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
         return super.onOptionsItemSelected(item);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stadium_outer);
+        setContentView(R.layout.activity_premier_league_outer);
 
-        ArrayAdapter<String> adapter;
-        leaugueArray = getResources().getStringArray(R.array.football_leagues);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, leaugueArray);
+        sharedPreferences = getSharedPreferences("PremierPreference", Context.MODE_PRIVATE);
 
-        ListViewCompat lv = findViewById(R.id.list_view);
-        lv.setAdapter(adapter);
+        ArrayAdapter<String> premierAdapter;
+        premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
+        premierAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, premierLeague);
+        lv = findViewById(R.id.premierList);
+        lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
+        lv.setAdapter(premierAdapter);
         lv.setOnItemClickListener(this);
+        lv.setOnItemLongClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
@@ -62,25 +69,32 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
+
+
+        Map map = sharedPreferences.getAll();
+        for(Object key : map.keySet()){
+            lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
+        }
+
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.stad:
-                        Intent intent = new Intent(StadiumActivity.this, StadiumActivity.class);
+                        Intent intent = new Intent(PremierLeague.this, StadiumActivity.class);
                         startActivity(intent);
                         break;
 
                     case R.id.scores:
-                        Intent intent1 = new Intent(StadiumActivity.this, Score.class);
+                        Intent intent1 = new Intent(PremierLeague.this, Score.class);
                         startActivity(intent1);
                         break;
 
 
 
                     case R.id.maps:
-                        Intent intent2 = new Intent(StadiumActivity.this, MapsActivity.class);
+                        Intent intent2 = new Intent(PremierLeague.this, MapsActivity.class);
                         startActivity(intent2);
                         break;
 
@@ -91,17 +105,17 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
 
 
                     case R.id.home:
-                        Intent intent3 = new Intent(StadiumActivity.this, MainActivity.class);
+                        Intent intent3 = new Intent(PremierLeague.this, MainActivity.class);
                         startActivity(intent3);
                         break;
 
                     case R.id.achievements:
-                        Intent intent4 = new Intent(StadiumActivity.this, Achievement.class);
+                        Intent intent4 = new Intent(PremierLeague.this, Achievement.class);
                         startActivity(intent4);
                         break;
 
                     case R.id.help:
-                        Intent intent5 = new Intent(StadiumActivity.this, HelpActivity.class);
+                        Intent intent5 = new Intent(PremierLeague.this, HelpActivity.class);
                         startActivity(intent5);
                         break;
 
@@ -109,37 +123,34 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
                 return false;
             }
         });
+
+
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-        if (position==0){
-            intent=new Intent(getApplicationContext(),PremierLeague.class);
-            startActivity(intent);
-        }
-        if(position==1){
-            intent = new Intent(getApplicationContext(),ChampionshipLeague.class);
-            startActivity(intent);
-        }
-        if(position==2){
-            intent = new Intent(getApplicationContext(),LeagueOne.class);
-            startActivity(intent);
-        }
-        if(position==3){
-            intent = new Intent(getApplicationContext(),LeagueTwo.class);
-            startActivity(intent);
-        }
+
+        SparseBooleanArray checkeditems = lv.getCheckedItemPositions();
+        sharedPreferences.edit().putBoolean(String.valueOf(position), checkeditems.get(position)).commit();
+
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        intent = new Intent(getApplicationContext(), InfoActivity.class);
+        intent.putExtra("Club Name", premierLeague[position]);
+        startActivity(intent);
+        return true;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return true;
     }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
-    }
 }
-

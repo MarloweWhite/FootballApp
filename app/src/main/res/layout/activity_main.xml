@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.c1733667.team10_football_app.MainActivity">
+    tools:context="com.example.c1733667.team10_football_app.activities.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Achievments"/>
+        android:text="Achievements"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnHelp"

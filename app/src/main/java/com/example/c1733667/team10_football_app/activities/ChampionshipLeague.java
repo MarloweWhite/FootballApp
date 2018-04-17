@@ -1,17 +1,15 @@
-package com.example.c1733667.team10_football_app;
+package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,10 +19,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
+import com.example.c1733667.team10_football_app.R;
+
 import java.util.Map;
 
-public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, NavigationView.OnNavigationItemSelectedListener {
-    private String[] leagueOne;
+public class ChampionshipLeague extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, NavigationView.OnNavigationItemSelectedListener {
+    private String[] championLeague;
     private Intent intent;
     private SharedPreferences sharedPreferences;
     private ListViewCompat lv;
@@ -33,7 +33,7 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -47,31 +47,30 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_league_one_outer);
+        setContentView(R.layout.activity_championship_league_outer);
 
-        sharedPreferences = getSharedPreferences("LeagueOnePreference", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("ChampionPreference", Context.MODE_PRIVATE);
 
-        ArrayAdapter<String> leagueOneAdapter;
-        leagueOne = getResources().getStringArray(R.array.EFL1);
-        leagueOneAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, leagueOne);
-        lv = findViewById(R.id.leagueOneList);
-        lv.setAdapter(leagueOneAdapter);
+        ArrayAdapter<String> championAdapter;
+        championLeague = getResources().getStringArray(R.array.EFLC);
+        championAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, championLeague);
+        lv = findViewById(R.id.championList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
+        lv.setAdapter(championAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,navDrawer,toolbar,R.string.open,R.string.close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
         navDrawer.addDrawerListener(toggle);
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
 
-
         Map map = sharedPreferences.getAll();
-        for(Object key : map.keySet()){
+        for (Object key : map.keySet()) {
             lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
         }
 
@@ -79,24 +78,22 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.stad:
-                        Intent intent = new Intent(LeagueOne.this, StadiumActivity.class);
+                        Intent intent = new Intent(ChampionshipLeague.this, StadiumActivity.class);
                         startActivity(intent);
                         break;
 
                     case R.id.scores:
-                        Intent intent1 = new Intent(LeagueOne.this, Score.class);
+                        Intent intent1 = new Intent(ChampionshipLeague.this, Score.class);
                         startActivity(intent1);
                         break;
 
 
-
                     case R.id.maps:
-                        Intent intent2 = new Intent(LeagueOne.this, MapsActivity.class);
+                        Intent intent2 = new Intent(ChampionshipLeague.this, MapsActivity.class);
                         startActivity(intent2);
                         break;
-
 
 
                     case R.id.exit:
@@ -104,24 +101,25 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
 
 
                     case R.id.home:
-                        Intent intent3 = new Intent(LeagueOne.this, MainActivity.class);
+                        Intent intent3 = new Intent(ChampionshipLeague.this, MainActivity.class);
                         startActivity(intent3);
                         break;
 
-
                     case R.id.achievements:
-                        Intent intent4 = new Intent(LeagueOne.this, Achievement.class);
+                        Intent intent4 = new Intent(ChampionshipLeague.this, Achievement.class);
                         startActivity(intent4);
                         break;
 
                     case R.id.help:
-                        Intent intent5 = new Intent(LeagueOne.this, HelpActivity.class);
+                        Intent intent5 = new Intent(ChampionshipLeague.this, HelpActivity.class);
                         startActivity(intent5);
                         break;
+
                 }
                 return false;
             }
         });
+
     }
 
     @Override
@@ -130,17 +128,15 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
 
         SparseBooleanArray checkeditems = lv.getCheckedItemPositions();
         sharedPreferences.edit().putBoolean(String.valueOf(position), checkeditems.get(position)).commit();
-        Log.d("shared preference",String.valueOf(leagueOne[position]));
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
         intent = new Intent(getApplicationContext(), InfoActivity.class);
-        intent.putExtra("Club Name", leagueOne[position]);
+        intent.putExtra("Club Name", championLeague[position]);
         startActivity(intent);
         return true;
     }
-
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

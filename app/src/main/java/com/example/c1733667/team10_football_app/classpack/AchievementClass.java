@@ -1,10 +1,12 @@
-package com.example.c1733667.team10_football_app;
+package com.example.c1733667.team10_football_app.classpack;
 
 import android.animation.ObjectAnimator;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ProgressBar;
+
+import com.example.c1733667.team10_football_app.R;
 
 /**
  * Created by c1733667 on 12/04/2018.

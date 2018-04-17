@@ -1,26 +1,22 @@
-package com.example.c1733667.team10_football_app;
+package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.support.design.widget.NavigationView;
 
+import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.ButtonClass;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-
-import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,14 +25,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button btnMap;
     private Button btnAchievement;
     private Button btnHelp;
-    private Intent intent;
     private AdView mAdView;
     private DrawerLayout navDrawer;
     private NavigationView navView;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -52,16 +47,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_outer);
-        stadiumButtonListener();
-        helpButtonListener();
-        scoreButtonListener();
-        mapbuttonListener();
-        achievementButtonListener();
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,navDrawer,toolbar,R.string.open,R.string.close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
         navDrawer.addDrawerListener(toggle);
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
@@ -76,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.stad:
                         Intent intent = new Intent(MainActivity.this, StadiumActivity.class);
                         startActivity(intent);
@@ -88,12 +78,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
 
 
-
                     case R.id.maps:
                         Intent intent2 = new Intent(MainActivity.this, MapsActivity.class);
                         startActivity(intent2);
                         break;
-
 
 
                     case R.id.exit:
@@ -118,63 +106,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return false;
             }
         });
+        ButtonClass stadiumButton = new ButtonClass("Stadium Button");
+        stadiumButton.stadiumButtonListener( btnStadium = findViewById(R.id.btnStadium),this);
 
-    }
+        ButtonClass helpButton = new ButtonClass("Help Button");
+        helpButton.helpButtonListener(btnHelp =findViewById(R.id.btnHelp),this);
 
-    public void stadiumButtonListener() {
-        btnStadium = findViewById(R.id.btnStadium);
-        btnStadium.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(getApplicationContext(), StadiumActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
+        ButtonClass scoreButton = new ButtonClass("Score Button");
+        scoreButton.scoreButtonListener(btnScore = findViewById(R.id.btnScore),this);
 
-    public void helpButtonListener() {
-        btnHelp = findViewById(R.id.btnHelp);
-        btnHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(getApplicationContext(), HelpActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
+        ButtonClass mapButton = new ButtonClass("Map Button");
+        mapButton.mapbuttonListener(btnMap = findViewById(R.id.btnMap),this);
 
-    public void scoreButtonListener() {
-        btnScore = findViewById(R.id.btnScore);
-        btnScore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(getApplicationContext(), Score.class);
-                startActivity(intent);
-            }
-        });
-    }
+        ButtonClass achievementButton = new ButtonClass("Achievement Button");
+        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement),this);
+}
 
-    public void mapbuttonListener() {
-        btnMap = findViewById(R.id.btnMap);
-        btnMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(getApplicationContext(), MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    public void achievementButtonListener(){
-        btnAchievement = findViewById(R.id.btnAchievement);
-        btnAchievement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent = new Intent(getApplicationContext(),Achievement.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
