@@ -40,7 +40,7 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
 
         TextView aboutTheApp = (TextView) findViewById(R.id.aboutTheApp);
         TextView help = (TextView) findViewById(R.id.howToUse);
-        aboutTheApp.setText("About the app:\n\nOur app is an app designed to help its users keep track of all the football stadiums that they have visited throughout the UKn\n");
+        aboutTheApp.setText("About the app:\n\nOur app is an app designed to help its users keep track of all the football stadiums that they have visited throughout the UK\n");
         help.setText("How To Use:\n\nAdding Stadiums:\nTo add stadiums that you've visited, simply press the \"Stadiums\" button from the home screen and then select the league that the satdium is associated with.\nThen simply tap the name of a stadium to tick it, or long press it to view more information\n");
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
