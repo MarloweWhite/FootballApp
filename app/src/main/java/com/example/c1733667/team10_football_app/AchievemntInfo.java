@@ -216,12 +216,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Liverpool")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Burnley")
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Everton")
-<<<<<<< HEAD
-                    || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield"))) {
-                Log.d("premiere Team", premierLeague[Integer.parseInt(String.valueOf(key))]);
-=======
                     || premierLeague[Integer.parseInt(String.valueOf(key))].equals("Huddersfield Town"))) {
->>>>>>> 7660becea80139d1bbcdfed707b036d02e6ea0ab
                 northern = northern + 1;
             }
             if (map2.get(key).equals(true)
