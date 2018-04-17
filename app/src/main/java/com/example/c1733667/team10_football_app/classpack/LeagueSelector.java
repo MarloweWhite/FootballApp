@@ -3,18 +3,11 @@ package com.example.c1733667.team10_football_app.classpack;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.EditText;
 
-import com.example.c1733667.team10_football_app.ChampionshipLeague;
-import com.example.c1733667.team10_football_app.LeagueOne;
-import com.example.c1733667.team10_football_app.LeagueTwo;
-import com.example.c1733667.team10_football_app.PremierLeague;
-import com.example.c1733667.team10_football_app.StadiumActivity;
-
-import static android.support.v4.content.ContextCompat.startActivity;
+import com.example.c1733667.team10_football_app.activities.ChampionshipLeague;
+import com.example.c1733667.team10_football_app.activities.LeagueOne;
+import com.example.c1733667.team10_football_app.activities.LeagueTwo;
+import com.example.c1733667.team10_football_app.activities.PremierLeague;
 
 /**
  * Created by c1733667 on 16/04/2018.
