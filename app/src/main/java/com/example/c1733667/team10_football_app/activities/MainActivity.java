@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ButtonClass mapButton = new ButtonClass("Map Button");
         mapButton.mapbuttonListener(btnMap = findViewById(R.id.btnMap),this);
 
-        ButtonClass achievementButton = new ButtonClass("Achievement Button");
+        ButtonClass achievementButton = new ButtonClass("AchievementLogic Button");
         achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement),this);
 }
 

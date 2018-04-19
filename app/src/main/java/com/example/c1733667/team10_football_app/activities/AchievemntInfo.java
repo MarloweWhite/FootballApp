@@ -17,7 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
-import com.example.c1733667.team10_football_app.classpack.AchievementClass;
+import com.example.c1733667.team10_football_app.classpack.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -83,7 +83,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         championLeague = getResources().getStringArray(R.array.EFLC);
         leagueOne = getResources().getStringArray(R.array.EFL1);
         leagueTwo = getResources().getStringArray(R.array.EFL2);
-        String achievementName = this.getIntent().getStringExtra("Achievement Name");
+        String achievementName = this.getIntent().getStringExtra("AchievementLogic Name");
         if (achievementName != null) {
             toolbar.setTitle(achievementName);
             getAchievementInfo();
@@ -105,7 +105,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         for (Object key : map.keySet()) {
             if ((Boolean) map.get((String) key).equals(true)) {
                 total = total + 1;
-                champion = champion + 1;
+//                champion = champion + 1;
             }
             if (map.get(key).equals(true)
                     && (championLeague[Integer.parseInt(String.valueOf(key))].equals("Wolverhampton Wanderers")
@@ -559,7 +559,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
 
     private void parseJson(String json) {
         achievementInfo = (TextView) findViewById(R.id.achievementInfo);
-        String achievementName = this.getIntent().getStringExtra("Achievement Name");
+        String achievementName = this.getIntent().getStringExtra("AchievementLogic Name");
         StringBuilder info = new StringBuilder();
         try {
             JSONObject root = new JSONObject(json);

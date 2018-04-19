@@ -98,7 +98,7 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         intent = new Intent(getApplicationContext(), AchievemntInfo.class);
-        intent.putExtra("Achievement Name", achievements[position]);
+        intent.putExtra("AchievementLogic Name", achievements[position]);
         startActivity(intent);
     }
 }
