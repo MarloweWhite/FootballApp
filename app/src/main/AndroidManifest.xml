@@ -47,7 +47,8 @@
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".activities.Achievement" />
-        <activity android:name=".activities.AchievemntInfo"></activity>
+        <activity android:name=".activities.AchievemntInfo" />
+        <activity android:name=".activities.SettingActivity"/>
     </application>
 
 </manifest>

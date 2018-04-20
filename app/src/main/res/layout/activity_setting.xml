@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.c1733667.team10_football_app.activities.SettingActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Settings" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/highContrastTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="High Contrast"
+        android:textSize="24sp" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/highContrast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:layout_gravity="center"
+        android:text="high contrast" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/textSizeSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Text size"
+        android:textSize="24sp" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/smallcheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:layout_gravity="center"
+        android:text="Small" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/mediumcheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="onCheckboxClicked"
+        android:text="Medium" />
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/largechckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:layout_gravity="center"
+        android:text="Large" />
+
+</android.support.v7.widget.LinearLayoutCompat>

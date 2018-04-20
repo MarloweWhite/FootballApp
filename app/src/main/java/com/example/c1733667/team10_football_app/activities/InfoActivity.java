@@ -100,6 +100,10 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
                         Intent intent4 = new Intent(InfoActivity.this, Achievement.class);
                         startActivity(intent4);
                         break;
+                    case R.id.settings:
+                        Intent intent5 = new Intent(getApplicationContext(),SettingActivity.class);
+                        startActivity(intent5);
+                        break;
 
                 }
                 return false;

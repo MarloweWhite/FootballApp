@@ -66,47 +66,50 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.stad:
-                        Intent intent = new Intent(MainActivity.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
 
-                    case R.id.scores:
-                        Intent intent1 = new Intent(MainActivity.this, Score.class);
-                        startActivity(intent1);
-                        break;
+                switch (item.getItemId()){
+                        case R.id.stad:
+                            Intent intent = new Intent(getApplicationContext(), StadiumActivity.class);
+                            startActivity(intent);
+                            break;
 
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(MainActivity.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
+                        case R.id.scores:
+                            Intent intent1 = new Intent(getApplicationContext(), Score.class);
+                            startActivity(intent1);
+                            break;
 
 
-                    case R.id.exit:
-                        System.exit(0);
+
+                        case R.id.maps:
+                            Intent intent2 = new Intent(getApplicationContext(), MapsActivity.class);
+                            startActivity(intent2);
+                            break;
 
 
-                    case R.id.home:
-                        Intent intent3 = new Intent(MainActivity.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
 
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(MainActivity.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
+                        case R.id.exit:
+                            System.exit(0);
 
-                    case R.id.help:
-                        Intent intent5 = new Intent(MainActivity.this, HelpActivity.class);
+
+                        case R.id.home:
+                            Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent3);
+                            break;
+
+                        case R.id.achievements:
+                            Intent intent4 = new Intent(getApplicationContext(), Achievement.class);
+                            startActivity(intent4);
+                            break;
+                    case R.id.settings:
+                        Intent intent5 = new Intent(getApplicationContext(),SettingActivity.class);
                         startActivity(intent5);
                         break;
+
+                    }
+                    return false;
                 }
-                return false;
-            }
-        });
-        ButtonClass stadiumButton = new ButtonClass("Stadium Button");
+            });
+            ButtonClass stadiumButton = new ButtonClass("Stadium Button");
         stadiumButton.stadiumButtonListener( btnStadium = findViewById(R.id.btnStadium),this);
 
         ButtonClass helpButton = new ButtonClass("Help Button");
