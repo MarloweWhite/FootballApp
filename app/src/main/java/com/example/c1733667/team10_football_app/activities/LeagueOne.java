@@ -119,6 +119,10 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
                         Intent intent5 = new Intent(LeagueOne.this, HelpActivity.class);
                         startActivity(intent5);
                         break;
+                    case R.id.settings:
+                        Intent intent6 = new Intent(getApplicationContext(), SettingActivity.class);
+                        startActivity(intent6);
+                        break;
                 }
                 return false;
             }

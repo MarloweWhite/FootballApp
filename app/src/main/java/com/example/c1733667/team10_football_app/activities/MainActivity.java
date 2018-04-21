@@ -67,63 +67,61 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch (item.getItemId()){
-                        case R.id.stad:
-                            Intent intent = new Intent(getApplicationContext(), StadiumActivity.class);
-                            startActivity(intent);
-                            break;
+                switch (item.getItemId()) {
+                    case R.id.stad:
+                        Intent intent = new Intent(getApplicationContext(), StadiumActivity.class);
+                        startActivity(intent);
+                        break;
 
-                        case R.id.scores:
-                            Intent intent1 = new Intent(getApplicationContext(), Score.class);
-                            startActivity(intent1);
-                            break;
-
-
-
-                        case R.id.maps:
-                            Intent intent2 = new Intent(getApplicationContext(), MapsActivity.class);
-                            startActivity(intent2);
-                            break;
+                    case R.id.scores:
+                        Intent intent1 = new Intent(getApplicationContext(), Score.class);
+                        startActivity(intent1);
+                        break;
 
 
+                    case R.id.maps:
+                        Intent intent2 = new Intent(getApplicationContext(), MapsActivity.class);
+                        startActivity(intent2);
+                        break;
 
-                        case R.id.exit:
-                            System.exit(0);
+
+                    case R.id.exit:
+                        System.exit(0);
 
 
-                        case R.id.home:
-                            Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent3);
-                            break;
+                    case R.id.home:
+                        Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent3);
+                        break;
 
-                        case R.id.achievements:
-                            Intent intent4 = new Intent(getApplicationContext(), Achievement.class);
-                            startActivity(intent4);
-                            break;
+                    case R.id.achievements:
+                        Intent intent4 = new Intent(getApplicationContext(), Achievement.class);
+                        startActivity(intent4);
+                        break;
                     case R.id.settings:
-                        Intent intent5 = new Intent(getApplicationContext(),SettingActivity.class);
+                        Intent intent5 = new Intent(getApplicationContext(), SettingActivity.class);
                         startActivity(intent5);
                         break;
 
-                    }
-                    return false;
                 }
-            });
-            ButtonClass stadiumButton = new ButtonClass("Stadium Button");
-        stadiumButton.stadiumButtonListener( btnStadium = findViewById(R.id.btnStadium),this);
+                return false;
+            }
+        });
+        ButtonClass stadiumButton = new ButtonClass("Stadium Button");
+        stadiumButton.stadiumButtonListener(btnStadium = findViewById(R.id.btnStadium), this);
 
         ButtonClass helpButton = new ButtonClass("Help Button");
-        helpButton.helpButtonListener(btnHelp =findViewById(R.id.btnHelp),this);
+        helpButton.helpButtonListener(btnHelp = findViewById(R.id.btnHelp), this);
 
         ButtonClass scoreButton = new ButtonClass("Score Button");
-        scoreButton.scoreButtonListener(btnScore = findViewById(R.id.btnScore),this);
+        scoreButton.scoreButtonListener(btnScore = findViewById(R.id.btnScore), this);
 
         ButtonClass mapButton = new ButtonClass("Map Button");
-        mapButton.mapbuttonListener(btnMap = findViewById(R.id.btnMap),this);
+        mapButton.mapbuttonListener(btnMap = findViewById(R.id.btnMap), this);
 
         ButtonClass achievementButton = new ButtonClass("AchievementLogic Button");
-        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement),this);
-}
+        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement), this);
+    }
 
 
     @Override

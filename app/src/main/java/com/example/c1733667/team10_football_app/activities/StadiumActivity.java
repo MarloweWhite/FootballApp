@@ -27,7 +27,7 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -55,7 +55,7 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,navDrawer,toolbar,R.string.open,R.string.close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
         navDrawer.addDrawerListener(toggle);
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
@@ -64,7 +64,7 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
+                switch (item.getItemId()) {
                     case R.id.stad:
                         Intent intent = new Intent(StadiumActivity.this, StadiumActivity.class);
                         startActivity(intent);
@@ -76,12 +76,10 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
                         break;
 
 
-
                     case R.id.maps:
                         Intent intent2 = new Intent(StadiumActivity.this, MapsActivity.class);
                         startActivity(intent2);
                         break;
-
 
 
                     case R.id.exit:
@@ -101,6 +99,10 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
                     case R.id.help:
                         Intent intent5 = new Intent(StadiumActivity.this, HelpActivity.class);
                         startActivity(intent5);
+                        break;
+                    case R.id.settings:
+                        Intent intent6 = new Intent(getApplicationContext(), SettingActivity.class);
+                        startActivity(intent6);
                         break;
 
                 }

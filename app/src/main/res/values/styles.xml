@@ -19,14 +19,13 @@
         <item name="colorPrimary">@color/HighContrastTextColor</item>
         <item name="android:textColorSecondary">@color/HighContrastTextColor</item>
         <item name="android:textColorSecondaryInverse">@color/HighContrastTextColor</item>
-        <item name="android:actionBarStyle">@style/myActionBar</item>
+        <item name="android:headerBackground">@style/myActionBar</item>
         <item name="android:checkboxStyle">@style/myCheckBox</item>
         <item name="android:textColorPrimary">@color/HighContrastTextColor</item>
     </style>
 
-    <style name="myActionBar" parent="HighContrastTheme">
-        <item name="android:background">#000000</item>
-        <item name="android:textColor">@color/HighContrastTextColor</item>
+    <style name="myActionBar" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorPrimary">#000</item>
     </style>
 
     <style name="myCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">

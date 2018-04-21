@@ -180,6 +180,10 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
                         Intent intent5 = new Intent(Score.this, HelpActivity.class);
                         startActivity(intent5);
                         break;
+                    case R.id.settings:
+                        Intent intent6 = new Intent(getApplicationContext(), SettingActivity.class);
+                        startActivity(intent6);
+                        break;
                 }
                 return false;
             }
