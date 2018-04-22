@@ -21,6 +21,7 @@ import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
@@ -50,27 +51,8 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
         super.onCreate(savedInstanceState);
 
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        Map setting = pref1.getAll();
-        for (Object key : setting.keySet()) {
-            Log.d("preference", (String) key);
-            Log.d("highcontrast", String.valueOf(R.id.highContrast));
-            if (setting.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                setTheme(R.style.HighContrastTheme);
-                setContentView(R.layout.activity_league_one_outer);
-            } else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_league_one_outer);
-            }
-            if (setting.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
-                setTheme(R.style.smallText);
-            }
-            if (setting.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
-                setTheme(R.style.mediumText);
-            }
-            if (setting.get(String.valueOf(R.id.largecheckbox)).equals(true)){
-                setTheme(R.style.largeText);
-            }
-        }
+        ThemeSetting leagueOneSetting = new ThemeSetting(pref1,LeagueOne.this);
+        leagueOneSetting.setHighContrast(R.layout.activity_league_one_outer);
 
         sharedPreferences = getSharedPreferences("LeagueOnePreference", Context.MODE_PRIVATE);
 

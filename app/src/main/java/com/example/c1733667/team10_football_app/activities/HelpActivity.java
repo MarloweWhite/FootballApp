@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
@@ -39,27 +40,8 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
         super.onCreate(savedInstanceState);
 
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        Map map = pref1.getAll();
-        for (Object key : map.keySet()) {
-            Log.d("preference", (String) key);
-            Log.d("highcontrast", String.valueOf(R.id.highContrast));
-            if (map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                setTheme(R.style.HighContrastTheme);
-                setContentView(R.layout.activity_help_outer);
-            } else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_help_outer);
-            }
-            if (map.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
-                setTheme(R.style.smallText);
-            }
-            if (map.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
-                setTheme(R.style.mediumText);
-            }
-            if (map.get(String.valueOf(R.id.largecheckbox)).equals(true)){
-                setTheme(R.style.largeText);
-            }
-        }
+        ThemeSetting helpSetting = new ThemeSetting(pref1,HelpActivity.this);
+        helpSetting.setHighContrast(R.layout.activity_help_outer);
 
         TextView aboutTheApp = (TextView) findViewById(R.id.aboutTheApp);
         TextView help = (TextView) findViewById(R.id.howToUse);

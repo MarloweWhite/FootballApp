@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,27 +50,8 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
 
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        Map map = pref1.getAll();
-        for (Object key : map.keySet()) {
-            Log.d("preference", (String) key);
-            Log.d("highcontrast", String.valueOf(R.id.highContrast));
-            if (map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                setTheme(R.style.HighContrastTheme);
-                setContentView(R.layout.activity_info_outer);
-            } else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_info_outer);
-            }
-            if (map.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
-                setTheme(R.style.smallText);
-            }
-            if (map.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
-                setTheme(R.style.mediumText);
-            }
-            if (map.get(String.valueOf(R.id.largecheckbox)).equals(true)){
-                setTheme(R.style.largeText);
-            }
-        }
+        ThemeSetting infoSetting = new ThemeSetting(pref1,InfoActivity.this);
+        infoSetting.setHighContrast(R.layout.activity_info_outer);
 
         clubInfo = findViewById(R.id.clubName);
         clubLocation = findViewById(R.id.clubLocation);

@@ -20,6 +20,7 @@ import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.classpack.LeagueSelector;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
@@ -48,27 +49,8 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
 
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        Map map = pref1.getAll();
-        for (Object key : map.keySet()) {
-            Log.d("preference", (String) key);
-            Log.d("highcontrast", String.valueOf(R.id.highContrast));
-            if (map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                setTheme(R.style.HighContrastTheme);
-                setContentView(R.layout.activity_stadium_outer);
-            } else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_stadium_outer);
-            }
-            if (map.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
-                setTheme(R.style.smallText);
-            }
-            if (map.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
-                setTheme(R.style.mediumText);
-            }
-            if (map.get(String.valueOf(R.id.largecheckbox)).equals(true)){
-                setTheme(R.style.largeText);
-            }
-        }
+        ThemeSetting stadiumSetting = new ThemeSetting(pref1,StadiumActivity.this);
+        stadiumSetting.setHighContrast(R.layout.activity_stadium_outer);
 
         ArrayAdapter<String> adapter;
         leaugueArray = getResources().getStringArray(R.array.football_leagues);

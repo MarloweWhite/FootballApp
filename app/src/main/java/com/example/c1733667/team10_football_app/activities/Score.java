@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
@@ -42,27 +43,8 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         super.onCreate(savedInstanceState);
 
         SharedPreferences setting = getSharedPreferences("High contrast", 0);
-        Map settingTheme = setting.getAll();
-        for (Object key : settingTheme.keySet()) {
-            Log.d("preference", (String) key);
-            Log.d("highcontrast", String.valueOf(R.id.highContrast));
-            if (settingTheme.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                setTheme(R.style.HighContrastTheme);
-                setContentView(R.layout.activity_scoring_system_outer);
-            } else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_scoring_system_outer);
-            }
-            if (settingTheme.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
-                setTheme(R.style.smallText);
-            }
-            if (settingTheme.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
-                setTheme(R.style.mediumText);
-            }
-            if (settingTheme.get(String.valueOf(R.id.largecheckbox)).equals(true)){
-                setTheme(R.style.largeText);
-            }
-        }
+        ThemeSetting scoreSetting = new ThemeSetting(setting,Score.this);
+        scoreSetting.setHighContrast(R.layout.activity_scoring_system_outer);
 
         shareButtonListener();
         SharedPreferences pref1 = getSharedPreferences("ChampionPreference", 0);

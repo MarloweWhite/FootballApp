@@ -77,27 +77,8 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences pref = getSharedPreferences("High contrast", 0);
-        Map theme = pref.getAll();
-        for (Object key : theme.keySet()) {
-            Log.d("preference", (String) key);
-            Log.d("highcontrast", String.valueOf(R.id.highContrast));
-            if (theme.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                setTheme(R.style.HighContrastTheme);
-                setContentView(R.layout.activity_achievement_info_outer);
-            } else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_achievement_info_outer);
-            }
-            if (theme.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
-                setTheme(R.style.smallText);
-            }
-            if (theme.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
-                setTheme(R.style.mediumText);
-            }
-            if (theme.get(String.valueOf(R.id.largecheckbox)).equals(true)){
-                setTheme(R.style.largeText);
-            }
-        }
+        ThemeSetting achievementInfoSetting =new ThemeSetting(pref,AchievemntInfo.this);
+        achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);
         toolbar = findViewById(R.id.infoToolbar);
         setSupportActionBar(toolbar);
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);

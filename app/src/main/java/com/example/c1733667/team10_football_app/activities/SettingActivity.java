@@ -1,5 +1,6 @@
 package com.example.c1733667.team10_football_app.activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -43,29 +44,8 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        Map map = pref1.getAll();
-        for (Object key : map.keySet()) {
-            Log.d("preference", (String) key);
-            Log.d("highcontrast", String.valueOf(R.id.highContrast));
-            if (map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                setTheme(R.style.HighContrastTheme);
-                setContentView(R.layout.activity_setting_outer);
-            } else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_setting_outer);
-            }
-            if (map.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
-                setTheme(R.style.smallText);
-            }
-            if (map.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
-                setTheme(R.style.mediumText);
-            }
-            if (map.get(String.valueOf(R.id.largecheckbox)).equals(true)){
-                setTheme(R.style.largeText);
-            }
-        }
-//        ThemeSetting settingTheme = new ThemeSetting(pref1);
-//        settingTheme.setHighContrast(R.layout.activity_setting_outer);
+        ThemeSetting settingTheme = new ThemeSetting(pref1, SettingActivity.this);
+        settingTheme.setHighContrast(R.layout.activity_setting_outer);
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
