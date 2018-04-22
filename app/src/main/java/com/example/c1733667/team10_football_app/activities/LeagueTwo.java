@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,9 +49,29 @@ public class LeagueTwo extends AppCompatActivity implements NavigationView.OnNav
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_league_two_outer);
 
-
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        Map setting = pref1.getAll();
+        for (Object key : setting.keySet()) {
+            Log.d("preference", (String) key);
+            Log.d("highcontrast", String.valueOf(R.id.highContrast));
+            if (setting.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                setTheme(R.style.HighContrastTheme);
+                setContentView(R.layout.activity_league_two_outer);
+            } else {
+                setTheme(R.style.AppTheme);
+                setContentView(R.layout.activity_league_two_outer);
+            }
+            if (setting.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
+                setTheme(R.style.smallText);
+            }
+            if (setting.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
+                setTheme(R.style.mediumText);
+            }
+            if (setting.get(String.valueOf(R.id.largecheckbox)).equals(true)){
+                setTheme(R.style.largeText);
+            }
+        }
 
         sharedPreferences = getSharedPreferences("LeagueTwoPreference", Context.MODE_PRIVATE);
 

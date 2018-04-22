@@ -49,7 +49,29 @@ public class PremierLeague extends AppCompatActivity implements AdapterView.OnIt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_premier_league_outer);
+
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        Map setting = pref1.getAll();
+        for (Object key : setting.keySet()) {
+            Log.d("preference", (String) key);
+            Log.d("highcontrast", String.valueOf(R.id.highContrast));
+            if (setting.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                setTheme(R.style.HighContrastTheme);
+                setContentView(R.layout.activity_premier_league_outer);
+            } else {
+                setTheme(R.style.AppTheme);
+                setContentView(R.layout.activity_premier_league_outer);
+            }
+            if (setting.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
+                setTheme(R.style.smallText);
+            }
+            if (setting.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
+                setTheme(R.style.mediumText);
+            }
+            if (setting.get(String.valueOf(R.id.largecheckbox)).equals(true)){
+                setTheme(R.style.largeText);
+            }
+        }
 
         sharedPreferences = getSharedPreferences("PremierPreference", Context.MODE_PRIVATE);
 

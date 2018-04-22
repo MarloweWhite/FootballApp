@@ -1,6 +1,7 @@
 package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -8,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,6 +17,8 @@ import android.widget.ListView;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.adapterpack.AchievementCustomAdapter;
+
+import java.util.Map;
 
 public class Achievement extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
     private ListView listView;
@@ -27,7 +31,30 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_achievement_outer);
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        Map map = pref1.getAll();
+        for (Object key : map.keySet()) {
+            Log.d("preference", (String) key);
+            Log.d("highcontrast", String.valueOf(R.id.highContrast));
+            if (map.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                setTheme(R.style.HighContrastTheme);
+                setContentView(R.layout.activity_achievement_outer);
+            } else {
+                setTheme(R.style.AppTheme);
+                setContentView(R.layout.activity_achievement_outer);
+            }
+            if (map.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
+                setTheme(R.style.smallText);
+            }
+            if (map.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
+                setTheme(R.style.mediumText);
+            }
+            if (map.get(String.valueOf(R.id.largecheckbox)).equals(true)){
+                setTheme(R.style.largeText);
+            }
+        }
+
+
         achievements = getResources().getStringArray(R.array.achievements);
         listView = (ListView) findViewById(R.id.achievementList);
         AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(Achievement.this, achievements, imageID);

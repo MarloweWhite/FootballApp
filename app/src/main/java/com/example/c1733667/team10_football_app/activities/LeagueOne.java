@@ -48,7 +48,29 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_league_one_outer);
+
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        Map setting = pref1.getAll();
+        for (Object key : setting.keySet()) {
+            Log.d("preference", (String) key);
+            Log.d("highcontrast", String.valueOf(R.id.highContrast));
+            if (setting.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                setTheme(R.style.HighContrastTheme);
+                setContentView(R.layout.activity_league_one_outer);
+            } else {
+                setTheme(R.style.AppTheme);
+                setContentView(R.layout.activity_league_one_outer);
+            }
+            if (setting.get(String.valueOf(R.id.smallcheckbox)).equals(true)){
+                setTheme(R.style.smallText);
+            }
+            if (setting.get(String.valueOf(R.id.mediumcheckbox)).equals(true)){
+                setTheme(R.style.mediumText);
+            }
+            if (setting.get(String.valueOf(R.id.largecheckbox)).equals(true)){
+                setTheme(R.style.largeText);
+            }
+        }
 
         sharedPreferences = getSharedPreferences("LeagueOnePreference", Context.MODE_PRIVATE);
 

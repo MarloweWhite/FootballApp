@@ -32,6 +32,16 @@
         <item name="android:textColor">@color/HighContrastTextColor</item>
     </style>
 
+    <style name="smallText" parent="AppTheme">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="mediumText" parent="AppTheme">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="largeText" parent="AppTheme">
+        <item name="android:textSize">28sp</item>
+    </style>
+
 
 
 </resources>
