@@ -10,6 +10,8 @@
     <string name="premier_league">Premier League</string>
     <string name="league_one">League One</string>
     <string name="league_two">League Two</string>
+    <string name="channel_name">Channel name</string>
+    <string name="channel_description">Channel_description</string>
 
     <string name="action_settings">Settings</string>
 
