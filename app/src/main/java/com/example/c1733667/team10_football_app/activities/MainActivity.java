@@ -54,17 +54,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
 
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        if (pref1 != null) {
+//        if (pref1 != null) {
             ThemeSetting mainSetting = new ThemeSetting(pref1, MainActivity.this);
             mainSetting.setHighContrast(R.layout.activity_main_outer);
-        }else {
-                setTheme(R.style.AppTheme);
-                setContentView(R.layout.activity_main_outer);
-        }
+//        }else {
+//                setTheme(R.style.AppTheme);
+//                setContentView(R.layout.activity_main_outer);
+//        }
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
-        setSupportActionBar(toolbar);
+
+
+
         this.navDrawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
         navDrawer.addDrawerListener(toggle);

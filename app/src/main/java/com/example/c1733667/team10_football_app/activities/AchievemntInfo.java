@@ -79,7 +79,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         SharedPreferences pref = getSharedPreferences("High contrast", 0);
         ThemeSetting achievementInfoSetting =new ThemeSetting(pref,AchievemntInfo.this);
         achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);
-        toolbar = findViewById(R.id.infoToolbar);
+        toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);

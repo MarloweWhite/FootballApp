@@ -56,7 +56,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
 
         clubInfo = findViewById(R.id.clubName);
         clubLocation = findViewById(R.id.clubLocation);
-        toolbar = findViewById(R.id.infoToolbar);
+        toolbar = findViewById(R.id.my_toolbar);
         String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
         if (clubFromOtherActivity != null) {
             toolbar.setTitle(clubFromOtherActivity);

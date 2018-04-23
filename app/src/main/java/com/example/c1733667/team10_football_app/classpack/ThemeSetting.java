@@ -2,6 +2,8 @@ package com.example.c1733667.team10_football_app.classpack;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.example.c1733667.team10_football_app.R;
@@ -13,11 +15,11 @@ import java.util.Map;
  * Created by c1733667 on 22/04/2018.
  */
 
-public class ThemeSetting extends Activity {
+public class ThemeSetting {
     private SharedPreferences sharedPreferences;
-    private Activity activity;
+    private AppCompatActivity activity;
 
-    public ThemeSetting(SharedPreferences sharedPreferences, Activity activity) {
+    public ThemeSetting(SharedPreferences sharedPreferences, AppCompatActivity activity) {
         this.sharedPreferences = sharedPreferences;
         this.activity = activity;
     }
@@ -30,9 +32,16 @@ public class ThemeSetting extends Activity {
                         && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
                     activity.setTheme(R.style.HighContrastTheme);
                     activity.setContentView(contentView);
+
+                    Toolbar toolbar = activity.findViewById(R.id.my_toolbar);
+                    activity.setSupportActionBar(toolbar);
+
                 } else {
                     activity.setTheme(R.style.AppTheme);
                     activity.setContentView(contentView);
+
+                    Toolbar toolbar = activity.findViewById(R.id.my_toolbar);
+                    activity.setSupportActionBar(toolbar);
                 }
                 Log.d("keys", (String) key);
                 if (map.get(String.valueOf(R.id.smallcheckbox)) != null
@@ -51,6 +60,9 @@ public class ThemeSetting extends Activity {
         } else {
             activity.setTheme(R.style.AppTheme);
             activity.setContentView(contentView);
+
+            Toolbar toolbar = activity.findViewById(R.id.my_toolbar);
+            activity.setSupportActionBar(toolbar);
         }
     }
 }

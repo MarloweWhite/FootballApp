@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.activities.Achievement;
+import com.example.c1733667.team10_football_app.activities.HelpActivity;
 import com.example.c1733667.team10_football_app.activities.InfoActivity;
 import com.example.c1733667.team10_football_app.activities.MainActivity;
 import com.example.c1733667.team10_football_app.activities.MapsActivity;
@@ -60,8 +61,13 @@ public class Navigation extends Activity {
                 intent = new Intent(context, Achievement.class);
                 context.startActivity(intent);
                 break;
+
             case R.id.settings:
                 intent = new Intent(context, SettingActivity.class);
+                context.startActivity(intent);
+                break;
+            case R.id.help:
+                intent = new Intent(context, HelpActivity.class);
                 context.startActivity(intent);
                 break;
 
