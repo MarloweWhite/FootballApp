@@ -45,8 +45,10 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        ThemeSetting settingTheme = new ThemeSetting(pref1, SettingActivity.this);
-        settingTheme.setHighContrast(R.layout.activity_setting_outer);
+        if (pref1 != null) {
+            ThemeSetting settingTheme = new ThemeSetting(pref1, SettingActivity.this);
+            settingTheme.setHighContrast(R.layout.activity_setting_outer);
+        }
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);

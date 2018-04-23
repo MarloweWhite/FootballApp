@@ -96,6 +96,15 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView =navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Navigation navigation = new Navigation(item,AchievemntInfo.this);
+                navigation.activityNavigation(getApplicationContext());
+                return false;
+            }
+        });
 
         SharedPreferences pref1 = getSharedPreferences("ChampionPreference", 0);
         SharedPreferences pref2 = getSharedPreferences("PremierPreference", 0);
