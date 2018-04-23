@@ -45,7 +45,17 @@ public class PremierLeague extends AppCompatActivity implements AdapterView.OnIt
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         //event handling thing majig
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+
+            case R.id.action_info:
+                Toast.makeText(this, "Long press clubs for further details",
+                        Toast.LENGTH_LONG).show();
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return false;
     }
 
     @Override

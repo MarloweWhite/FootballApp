@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:title="Home" android:id="@+id/home" android:icon="@mipmap/ic_exit_to_app_black_18dp"/>
     <item android:title="Stadium" android:id="@+id/stad" android:icon="@mipmap/ic_event_seat_black_24dp" />
     <item android:title="Score" android:id="@+id/scores" android:icon="@mipmap/ic_trending_up_black_24dp"  />
@@ -8,4 +9,5 @@
     <item android:title="Settings" android:id="@+id/settings" android:icon="@drawable/ic_build_black_24dp"/>
     <item android:title="Help" android:id="@+id/help" android:icon="@mipmap/ic_help_black_24dp" />
     <item android:title="Exit" android:id="@+id/exit" android:icon="@mipmap/ic_exit_to_app_black_18dp"/>
+    <item android:id="@+id/action_info" android:title="Information" app:showAsAction="ifRoom" android:icon="@mipmap/ic_info_black_24dp" />
 </menu>
