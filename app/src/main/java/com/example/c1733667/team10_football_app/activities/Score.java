@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -19,7 +20,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
+<<<<<<< HEAD
 import com.example.c1733667.team10_football_app.classpack.ScoreSystem;
+=======
+import com.example.c1733667.team10_football_app.classpack.Navigation;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
+>>>>>>> settingMode
 
 import java.util.Map;
 
@@ -40,7 +46,11 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scoring_system_outer);
+
+        SharedPreferences setting = getSharedPreferences("High contrast", 0);
+        ThemeSetting scoreSetting = new ThemeSetting(setting,Score.this);
+        scoreSetting.setHighContrast(R.layout.activity_scoring_system_outer);
+
         shareButtonListener();
 
         SharedPreferences championPreference = getSharedPreferences("ChampionPreference", 0);
@@ -118,45 +128,8 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.stad:
-                        Intent intent = new Intent(Score.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(Score.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(Score.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(Score.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(Score.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                    case R.id.help:
-                        Intent intent5 = new Intent(Score.this, HelpActivity.class);
-                        startActivity(intent5);
-                        break;
-                }
+                Navigation navigation = new Navigation(item, Score.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });

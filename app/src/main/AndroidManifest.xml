@@ -48,6 +48,7 @@
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".activities.Achievement" />
+<<<<<<< HEAD
         <activity android:name=".activities.AchievemntInfo"></activity>
 
         <service android:name=".activities.NotificationService" android:exported="false">
@@ -62,6 +63,10 @@
 
 
 
+=======
+        <activity android:name=".activities.AchievemntInfo" />
+        <activity android:name=".activities.SettingActivity"/>
+>>>>>>> 8076fa5c9b3946a7ba0106a73e7b5081fb933892
     </application>
 
 </manifest>

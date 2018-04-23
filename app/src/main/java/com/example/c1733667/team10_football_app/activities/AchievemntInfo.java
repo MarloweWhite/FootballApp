@@ -17,7 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
-import com.example.c1733667.team10_football_app.classpack.AchievementClass;
+import com.example.c1733667.team10_football_app.classpack.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,14 +76,16 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_achievement_info_outer);
-        toolbar = findViewById(R.id.infoToolbar);
+        SharedPreferences pref = getSharedPreferences("High contrast", 0);
+        ThemeSetting achievementInfoSetting =new ThemeSetting(pref,AchievemntInfo.this);
+        achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);
+        toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);
         leagueOne = getResources().getStringArray(R.array.EFL1);
         leagueTwo = getResources().getStringArray(R.array.EFL2);
-        String achievementName = this.getIntent().getStringExtra("Achievement Name");
+        String achievementName = this.getIntent().getStringExtra("AchievementLogic Name");
         if (achievementName != null) {
             toolbar.setTitle(achievementName);
             getAchievementInfo();
@@ -94,6 +96,15 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView =navView;
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Navigation navigation = new Navigation(item,AchievemntInfo.this);
+                navigation.activityNavigation(getApplicationContext());
+                return false;
+            }
+        });
 
         SharedPreferences pref1 = getSharedPreferences("ChampionPreference", 0);
         SharedPreferences pref2 = getSharedPreferences("PremierPreference", 0);
@@ -105,7 +116,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         for (Object key : map.keySet()) {
             if ((Boolean) map.get((String) key).equals(true)) {
                 total = total + 1;
-                champion = champion + 1;
+//                champion = champion + 1;
             }
             if (map.get(key).equals(true)
                     && (championLeague[Integer.parseInt(String.valueOf(key))].equals("Wolverhampton Wanderers")
@@ -558,7 +569,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
 
     private void parseJson(String json) {
         achievementInfo = (TextView) findViewById(R.id.achievementInfo);
-        String achievementName = this.getIntent().getStringExtra("Achievement Name");
+        String achievementName = this.getIntent().getStringExtra("AchievementLogic Name");
         StringBuilder info = new StringBuilder();
         try {
             JSONObject root = new JSONObject(json);

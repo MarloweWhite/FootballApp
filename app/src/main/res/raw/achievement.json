@@ -25,27 +25,79 @@
   },
   "The Wanderer": {
     "Description": "Visited all of the Wanderers",
-    "Requirement": ""
+    "Requirement": [
+      "Wolverhampton Wanderers",
+      "Bolton Wanderers",
+      "Wycombe Wanderers"
+    ]
   },
   "The Wild Rover": {
     "Description": "Visited all of the Rovers",
-    "Requirement": ""
+    "Requirement": [
+      "Blackburn Rovers",
+      "Doncaster Rovers",
+      "Bristol Rovers",
+      "Forest Green Rovers"
+    ]
   },
   "Cymru am byth": {
     "Description": "Visited all the Welsh grounds",
-    "Requirement": ""
+    "Requirement": [
+      "Cardiff City",
+      "Newport County",
+      "Swansea City"
+    ]
   },
   "Far and Wide": {
     "Description": "Visited the NESW grounds",
-    "Requirement": ""
+    "Requirement": [
+      "Plymouth Argyle",
+      "Newcastle United",
+      "Norwich City"
+    ]
   },
   "Master and Apprentice": {
     "Description": "Visit the oldest and newest grounds",
-    "Requirement": ""
+    "Requirement": [
+      "Sheffield United",
+      "West Ham United"
+    ]
   },
   "Oop North": {
     "Description": "Visit all grounds up north",
-    "Requirement": ""
+    "Requirement": [
+      "Carlisle United",
+      "Newcastle United",
+      "Sunderland",
+      "Middlesbrough",
+      "Morcambe",
+      "Fleetwood Town",
+      "Blackpool",
+      "Preston North End",
+      "Blackburn Rovers",
+      "Accrington Stanley",
+      "Burnley",
+      "Bradford City",
+      "Leeds United",
+      "Hull City",
+      "Grimsby Town",
+      "Scunthorpe United",
+      "Doncaster Rovers",
+      "Sheffield Wednesday",
+      "Sheffield United",
+      "Rotherham United",
+      "Huddersfield Town",
+      "Barnsley",
+      "Manchester United",
+      "Manchester City",
+      "Liverpool",
+      "Everton",
+      "Oldham Athletic",
+      "Bury",
+      "Rochdale",
+      "Wigan Athletic",
+      "Bolton Wanderers"
+    ]
   },
   "Perfect Premier": {
     "Description": "Visit all PL grounds",
@@ -65,58 +117,153 @@
   },
   "Little and large": {
     "Description": "Visit the biggest and smallest ground",
-    "Requirement": ""
+    "Requirement": [
+      "AFC Wimbledon",
+      "Tottenham Hotspur"
+    ]
   },
   "Cockney Conqueror": {
     "Description": "Visit all grounds inside the m25",
-    "Requirement": ""
+    "Requirement": [
+      "Barnet",
+      "Millwall",
+      "Charlton Athletic",
+      "AFC Wimbledon",
+      "Queens Park Rangers",
+      "Fulham",
+      "Brentford",
+      "West Ham United",
+      "Tottenham Hotspur",
+      "Crystal Palace",
+      "Chelsea",
+      "Arsenal"
+    ]
   },
   "All sit down": {
     "Description": "Visit St James' Park and St James Park",
-    "Requirement": ""
+    "Requirement": [
+      "Exeter City",
+      "Newcastle United"
+    ]
   },
   "Claret and Blue": {
     "Description": "Visit all Claret and Blue grounds",
-    "Requirement": ""
+    "Requirement": [
+      "Aston Villa",
+      "Scunthorpe United",
+      "West Ham United",
+      "Burnley"
+    ]
   },
   "City Slicker": {
     "Description": "Visit all the City club grounds",
-    "Requirement": ""
+    "Requirement": [
+      "Manchester City",
+      "Leicester City",
+      "Swansea City",
+      "Stoke City",
+      "Cardiff City",
+      "Norwich City",
+      "Hull City",
+      "Birmingham City",
+      "Bradford City",
+      "Coventry City",
+      "Exeter City",
+      "Lincoln City"
+    ]
   },
   "Park Ranger": {
     "Description": "Visit all the grounds named park",
-    "Requirement": ""
+    "Requirement": [
+      "Crystal palace",
+      "Everton",
+      "Newcastle United",
+      "Aston Villa",
+      "Brentford",
+      "Derby County",
+      "Blackburn Rovers",
+      "Oldham Athletic",
+      "Plymouth Argyle",
+      "Portsmouth",
+      "Scunthorpe United",
+      "Carlisle United",
+      "Exeter City",
+      "Grimsby Town",
+      "Port Vale",
+      "Wycombe Wanderers",
+      "Yeovil Town"
+    ]
   },
   "The Champions": {
     "Description": "Visit all grounds of PL champions",
-    "Requirement": ""
+    "Requirement": [
+      "Manchester United",
+      "Arsenal",
+      "Chelsea",
+      "Manchester City",
+      "Blackburn Rovers",
+      "Leicester City"
+    ]
   },
   "Le Champions": {
     "Description": "Visit all grounds of European champions",
-    "Requirement": ""
+    "Requirement": [
+      "Manchester United",
+      "Liverpool",
+      "Chelsea",
+      "Nottingham Forest",
+      "Aston Villa"
+    ]
   },
   "Respect your Elders": {
     "Description": "Visit the 5 oldest grounds",
-    "Requirement": ""
+    "Requirement": [
+      "Sheffield United",
+      "Mansfield Town",
+      "Preston North End",
+      "Chelsea",
+      "Newcastle United"
+    ]
   },
   "Neighbours": {
     "Description": "Visit the two closest grounds in the UK",
-    "Requirement": ""
+    "Requirement": [
+      "Notts County",
+      "Nottingham Forest"
+    ]
   },
   "Longest and Shortest": {
     "Description": "Visit the grounds of the teams with the longest and shortest names",
-    "Requirement": ""
+    "Requirement": [
+      "Wolverhampton Wanderers",
+      "Bury"
+    ]
   },
   "What even is an Albion?!": {
     "Description": "Visit all of the Albions",
-    "Requirement": ""
+    "Requirement": [
+      "Brighton and Hove Albion",
+      "West Bromwich Albion",
+      "Burton Albion"
+    ]
   },
   "Im an athlete!": {
     "Description": "Visit all of the Athletics",
-    "Requirement": ""
+    "Requirement": [
+      "Oldham Athletic",
+      "Wigan Athletic",
+      "Charlton Athletic"
+    ]
   },
   "The Compass": {
     "Description": "Visit all teams with North, East, South or West in their names",
-    "Requirement": ""
+    "Requirement": [
+      "Northampton Town",
+      "Preston North End",
+      "West Ham United",
+      "West Bromwich Albion",
+      "Southampton",
+      "Southend United"
+    ]
   }
 }
