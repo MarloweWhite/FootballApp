@@ -120,6 +120,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         ButtonClass achievementButton = new ButtonClass("Achievement Button");
         achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement),this);
+
+        setContentView(R.layout.activity_main);
+
+        startService(new Intent(this, NotificationService.class));
 }
 
 
@@ -127,5 +131,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return true;
     }
+
+
+
 
 }
