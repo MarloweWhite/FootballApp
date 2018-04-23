@@ -76,7 +76,7 @@ public class NotificationService extends Service {
     public void onDestroy() {
         try {
             mTimer = new Timer();
-            mTimer.schedule(timerTask,3600000*24 , 3600000*12);
+            mTimer.schedule(timerTask,3600000*24 , 3600000*24);
         }catch(Exception e){
             e.printStackTrace();
         }
