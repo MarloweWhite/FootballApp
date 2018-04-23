@@ -8,6 +8,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
         android:allowBackup="true"
@@ -47,8 +48,25 @@
             android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".activities.Achievement" />
+<<<<<<< HEAD
+        <activity android:name=".activities.AchievemntInfo"></activity>
+
+        <service android:name=".activities.NotificationService" android:exported="false">
+        </service>
+
+        <receiver android:name=".activities.BootReceiver">
+            <intent-filter>
+                <action android:name="com.example.c1733667.team10_football_app.activities"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+
+
+=======
         <activity android:name=".activities.AchievemntInfo" />
         <activity android:name=".activities.SettingActivity"/>
+>>>>>>> 8076fa5c9b3946a7ba0106a73e7b5081fb933892
     </application>
 
 </manifest>
