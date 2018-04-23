@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -17,12 +16,11 @@ import android.support.design.widget.NavigationView;
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.classpack.ButtonClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
+import com.example.c1733667.team10_football_app.classpack.NotificationService;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
-
-import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,8 +53,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
 //        if (pref1 != null) {
-            ThemeSetting mainSetting = new ThemeSetting(pref1, MainActivity.this);
-            mainSetting.setHighContrast(R.layout.activity_main_outer);
+        ThemeSetting mainSetting = new ThemeSetting(pref1, MainActivity.this);
+        mainSetting.setHighContrast(R.layout.activity_main_outer);
 //        }else {
 //                setTheme(R.style.AppTheme);
 //                setContentView(R.layout.activity_main_outer);
@@ -64,8 +62,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
-
-
 
         this.navDrawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
@@ -100,27 +96,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ButtonClass mapButton = new ButtonClass("Map Button");
         mapButton.mapbuttonListener(btnMap = findViewById(R.id.btnMap), this);
 
-<<<<<<< HEAD
         ButtonClass achievementButton = new ButtonClass("Achievement Button");
-        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement),this);
-
-        setContentView(R.layout.activity_main);
+        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement), this);
 
         startService(new Intent(this, NotificationService.class));
-}
-=======
-        ButtonClass achievementButton = new ButtonClass("AchievementLogic Button");
-        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement), this);
     }
->>>>>>> 8076fa5c9b3946a7ba0106a73e7b5081fb933892
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return true;
     }
-
-
 
 
 }

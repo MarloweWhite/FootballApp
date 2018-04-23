@@ -1,4 +1,4 @@
-package com.example.c1733667.team10_football_app.activities;
+package com.example.c1733667.team10_football_app.classpack;
 
 
 
