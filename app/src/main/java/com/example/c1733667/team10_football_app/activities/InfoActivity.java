@@ -1,6 +1,7 @@
 package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -10,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,11 +19,14 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.util.Map;
 import java.util.Scanner;
 
 public class InfoActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
@@ -44,11 +49,14 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_outer);
+
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        ThemeSetting infoSetting = new ThemeSetting(pref1,InfoActivity.this);
+        infoSetting.setHighContrast(R.layout.activity_info_outer);
 
         clubInfo = findViewById(R.id.clubName);
         clubLocation = findViewById(R.id.clubLocation);
-        toolbar = findViewById(R.id.infoToolbar);
+        toolbar = findViewById(R.id.my_toolbar);
         String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
         if (clubFromOtherActivity != null) {
             toolbar.setTitle(clubFromOtherActivity);
@@ -67,41 +75,8 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.stad:
-                        Intent intent = new Intent(InfoActivity.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(InfoActivity.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(InfoActivity.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(InfoActivity.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(InfoActivity.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                }
+                Navigation navigation = new Navigation(item, InfoActivity.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });
