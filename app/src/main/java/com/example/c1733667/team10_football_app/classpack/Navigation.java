@@ -1,18 +1,10 @@
 package com.example.c1733667.team10_football_app.classpack;
 
-<<<<<<< HEAD
 /**
  * Created by c1733667 on 19/04/2018.
  */
 
-public class Navigation {
-    private String name;
 
-    public Navigation(String name) {
-        this.name = name;
-    }
-    
-=======
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -86,5 +78,4 @@ public class Navigation extends Activity {
 
         }
     }
->>>>>>> settingMode
 }
