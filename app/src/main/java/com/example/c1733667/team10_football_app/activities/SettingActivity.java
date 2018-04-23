@@ -19,6 +19,7 @@ import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
@@ -86,43 +87,8 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch (item.getItemId()) {
-                    case R.id.stad:
-                        Intent intent = new Intent(getApplicationContext(), StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(getApplicationContext(), Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(getApplicationContext(), MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(getApplicationContext(), Achievement.class);
-                        startActivity(intent4);
-                        break;
-                    case R.id.settings:
-                        Intent intent5 = new Intent(getApplicationContext(), SettingActivity.class);
-                        startActivity(intent5);
-                        break;
-
-                }
+                Navigation navigation = new Navigation(item, SettingActivity.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });

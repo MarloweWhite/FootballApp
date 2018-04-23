@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
@@ -61,50 +62,8 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.stad:
-                        Intent intent = new Intent(HelpActivity.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(HelpActivity.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(HelpActivity.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(HelpActivity.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(HelpActivity.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                    case R.id.help:
-                        Intent intent5 = new Intent(HelpActivity.this, HelpActivity.class);
-                        startActivity(intent5);
-                        break;
-                    case R.id.settings:
-                        Intent intent6 = new Intent(getApplicationContext(), SettingActivity.class);
-                        startActivity(intent6);
-                        break;
-
-                }
+                Navigation navigation = new Navigation(item, HelpActivity.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });

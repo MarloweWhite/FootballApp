@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -95,48 +96,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.stad:
-                        Intent intent = new Intent(MapsActivity.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(MapsActivity.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(MapsActivity.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(MapsActivity.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(MapsActivity.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.help:
-                        Intent intent5 = new Intent(MapsActivity.this, HelpActivity.class);
-                        startActivity(intent5);
-                        break;
-                    case R.id.settings:
-                        Intent intent6 = new Intent(getApplicationContext(), SettingActivity.class);
-                        startActivity(intent6);
-                        break;
-                }
+                Navigation navigation = new Navigation(item, MapsActivity.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });

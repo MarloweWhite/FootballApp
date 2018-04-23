@@ -17,6 +17,7 @@ import android.widget.ListView;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.adapterpack.AchievementCustomAdapter;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
@@ -33,7 +34,7 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        ThemeSetting achievementSetting = new ThemeSetting(pref1,Achievement.this);
+        ThemeSetting achievementSetting = new ThemeSetting(pref1, Achievement.this);
         achievementSetting.setHighContrast(R.layout.activity_achievement_outer);
 
 
@@ -56,48 +57,8 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.stad:
-                        Intent intent = new Intent(Achievement.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(Achievement.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(Achievement.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(Achievement.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(Achievement.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                    case R.id.help:
-                        Intent intent5 = new Intent(Achievement.this, HelpActivity.class);
-                        startActivity(intent5);
-                        break;
-                    case R.id.settings:
-                        Intent intent6 = new Intent(getApplicationContext(), SettingActivity.class);
-                        startActivity(intent6);
-                        break;
-
-                }
+                Navigation navigation = new Navigation(item, Achievement.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });
