@@ -30,7 +30,6 @@
         <item name="android:checkboxStyle">@style/myCheckBox</item>
         <item name="android:textColorPrimary">@color/HighContrastTextColor</item>
         <item name="android:title">#000</item>
-        <item name="android:actionMenuTextColor">#F00</item>
     </style>
 
     <style name="myActionBarHighContrast" parent="ThemeOverlay.AppCompat.Light">
@@ -44,13 +43,13 @@
         <item name="android:textColor">@color/HighContrastTextColor</item>
     </style>
 
-    <style name="smallText" parent="AppTheme">
+    <style name="smallText" >
         <item name="android:textSize">12sp</item>
     </style>
-    <style name="mediumText" parent="AppTheme">
+    <style name="mediumText">
         <item name="android:textSize">20sp</item>
     </style>
-    <style name="largeText" parent="AppTheme">
+    <style name="largeText">
         <item name="android:textSize">28sp</item>
     </style>
 
