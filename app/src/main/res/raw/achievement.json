@@ -1,27 +1,33 @@
 {
   "Over 50%": {
     "Description": "Visited over 50% of UK grounds",
-    "Requirement": ""
+    "Requirement": "",
+    "Share": "I have visited 50% of all of the Premier League and Football League clubs in the UK"
   },
   "Over 60%": {
     "Description": "Visited over 60% of UK grounds",
-    "Requirement": ""
+    "Requirement": "",
+    "Share": "I have visited 60% of all of the Premier League and Football League clubs in the UK"
   },
   "Over 70%": {
     "Description": "Visited over 70% of UK grounds",
-    "Requirement": ""
+    "Requirement": "",
+    "Share": "I have visited 70% of all of the Premier League and Football League clubs in the UK"
   },
   "Over 80%": {
     "Description": "Visited over 80% of UK grounds",
-    "Requirement": ""
+    "Requirement": "",
+    "Share": "I have visited 80% of all of the Premier League and Football League clubs in the UK"
   },
   "Over 90%": {
     "Description": "Visited over 90% of UK grounds",
-    "Requirement": ""
+    "Requirement": "",
+    "Share": "I have visited 90% of all of the Premier League and Football League clubs in the UK"
   },
   "Done the lot!": {
     "Description": "Visited over 100% of UK grounds",
-    "Requirement": ""
+    "Requirement": "",
+    "Share": "I have visited every Premier League and Football League club in the UK"
   },
   "The Wanderer": {
     "Description": "Visited all of the Wanderers",
@@ -29,7 +35,8 @@
       "Wolverhampton Wanderers",
       "Bolton Wanderers",
       "Wycombe Wanderers"
-    ]
+    ],
+    "Share": "I have visited all of the Wanderers football stadiums in the UK"
   },
   "The Wild Rover": {
     "Description": "Visited all of the Rovers",
@@ -38,7 +45,8 @@
       "Doncaster Rovers",
       "Bristol Rovers",
       "Forest Green Rovers"
-    ]
+    ],
+    "Share": "I have visited all of the Rovers football stadiums in the UK"
   },
   "Cymru am byth": {
     "Description": "Visited all the Welsh grounds",
@@ -46,7 +54,8 @@
       "Cardiff City",
       "Newport County",
       "Swansea City"
-    ]
+    ],
+    "Share": "I have visited all of the Premier League and Football League clubs in Wales"
   },
   "Far and Wide": {
     "Description": "Visited the NESW grounds",
@@ -61,7 +70,8 @@
     "Requirement": [
       "Sheffield United",
       "West Ham United"
-    ]
+    ],
+    "Share": "I have visited the oldest and newest football grounds in the UK"
   },
   "Oop North": {
     "Description": "Visit all grounds up north",
