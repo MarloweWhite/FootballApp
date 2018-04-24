@@ -1,23 +1,14 @@
 package com.example.c1733667.team10_football_app.classpack;
 
-<<<<<<< HEAD
+import com.example.c1733667.team10_football_app.activities.HelpActivity;
 /**
  * Created by c1733667 on 19/04/2018.
  */
 
-public class Navigation {
-    private String name;
-
-    public Navigation(String name) {
-        this.name = name;
-    }
-    
-=======
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
-
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.activities.Achievement;
 import com.example.c1733667.team10_football_app.activities.HelpActivity;
@@ -86,5 +77,4 @@ public class Navigation extends Activity {
 
         }
     }
->>>>>>> settingMode
 }

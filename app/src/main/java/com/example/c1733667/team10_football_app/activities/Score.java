@@ -20,12 +20,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
-<<<<<<< HEAD
 import com.example.c1733667.team10_football_app.classpack.ScoreSystem;
-=======
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
->>>>>>> settingMode
 
 import java.util.Map;
 
