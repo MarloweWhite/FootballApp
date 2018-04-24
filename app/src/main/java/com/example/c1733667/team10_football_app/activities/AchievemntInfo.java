@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -34,6 +36,8 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
     private DrawerLayout navDrawer;
     private NavigationView navView;
     private ProgressBar progressBar;
+    private Button btnShare;
+    private Intent shareIntent = new Intent(Intent.ACTION_SEND);
     Intent intent;
     private String[] premierLeague;
     private String[] championLeague;
@@ -80,6 +84,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         ThemeSetting achievementInfoSetting =new ThemeSetting(pref,AchievemntInfo.this);
         achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);
         toolbar = findViewById(R.id.my_toolbar);
+        shareButtonListener();
         setSupportActionBar(toolbar);
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);
@@ -580,6 +585,39 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
             e.printStackTrace();
         }
         achievementInfo.setText(info.toString());
+    }
+    public String getAchievementDetails(String field){
+        Resources res = getResources();
+        InputStream is = res.openRawResource(R.raw.achievement);
+        Scanner scanner = new Scanner(is);
+        StringBuilder builder = new StringBuilder();
+        while (scanner.hasNextLine()) {
+            builder.append(scanner.nextLine());
+        }
+        StringBuilder r = new StringBuilder();
+        try {
+            JSONObject root = new JSONObject(builder.toString());
+            JSONObject achievementInfo = root.getJSONObject(this.getIntent().getStringExtra("AchievementLogic Name"));
+            r.append(achievementInfo.getString(field));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return r.toString();
+
+    }
+    public void shareButtonListener() {
+        btnShare = findViewById(R.id.btnShareAch);
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                String shareContent = (getAchievementDetails("Share"));
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareContent);
+
+                startActivity(Intent.createChooser(shareIntent, "Share via:"));
+            }
+        });
     }
 
 
