@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Team10_Football_App</string>
+    <string name="app_name">Stad Check</string>
     <string name="your_score"> Your Score is : %1$d </string>
     <string name="title_activity_maps">Map</string>
     <string name="open" />
