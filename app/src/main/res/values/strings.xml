@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Team10_Football_App</string>
+    <string name="app_name">Stad Checks</string>
     <string name="your_score"> Your Score is : %1$d </string>
     <string name="title_activity_maps">Map</string>
     <string name="open" />
@@ -12,7 +12,6 @@
     <string name="league_two">League Two</string>
     <string name="channel_name">Channel name</string>
     <string name="channel_description">Channel_description</string>
-
     <string name="action_settings">Settings</string>
 
 </resources>
