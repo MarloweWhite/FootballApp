@@ -1,6 +1,7 @@
 package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,10 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
+
+import java.util.Map;
 
 /**
  * Created by c1741877 on 15/04/2018.
@@ -33,7 +39,10 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help_outer);
+
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        ThemeSetting helpSetting = new ThemeSetting(pref1,HelpActivity.this);
+        helpSetting.setHighContrast(R.layout.activity_help_outer);
 
         TextView aboutTheApp = (TextView) findViewById(R.id.aboutTheApp);
         TextView help = (TextView) findViewById(R.id.howToUse);
@@ -53,46 +62,8 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.stad:
-                        Intent intent = new Intent(HelpActivity.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(HelpActivity.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(HelpActivity.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(HelpActivity.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(HelpActivity.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                    case R.id.help:
-                        Intent intent5 = new Intent(HelpActivity.this, HelpActivity.class);
-                        startActivity(intent5);
-                        break;
-
-                }
+                Navigation navigation = new Navigation(item, HelpActivity.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });

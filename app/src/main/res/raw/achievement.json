@@ -1,122 +1,128 @@
 {
   "Over 50%": {
     "Description": "Visited over 50% of UK grounds",
-    "Requirement": ""
+    "Requirement": "%50",
+    "Share": "I have visited 50% of all of the Premier League and Football League clubs"
   },
   "Over 60%": {
     "Description": "Visited over 60% of UK grounds",
-    "Requirement": ""
+    "Requirement": "%60",
+    "Share": "I have visited 60% of all of the Premier League and Football League clubs"
   },
   "Over 70%": {
     "Description": "Visited over 70% of UK grounds",
-    "Requirement": ""
+    "Requirement": "%70",
+    "Share": "I have visited 70% of all of the Premier League and Football League clubs"
   },
   "Over 80%": {
     "Description": "Visited over 80% of UK grounds",
-    "Requirement": ""
+    "Requirement": "%80",
+    "Share": "I have visited 80% of all of the Premier League and Football League clubs"
   },
   "Over 90%": {
     "Description": "Visited over 90% of UK grounds",
-    "Requirement": ""
+    "Requirement": "%90",
+    "Share": "I have visited 90% of all of the Premier League and Football League clubs"
   },
   "Done the lot!": {
     "Description": "Visited over 100% of UK grounds",
-    "Requirement": ""
+    "Requirement": "%100",
+    "Share": "I have visited every Premier League and Football League club in the UK"
   },
   "The Wanderer": {
     "Description": "Visited all of the Wanderers",
-    "Requirement": ""
+    "Requirement": "Wolverhampton Wanderers, Bolton Wanderers, Wycombe Wanderers"
   },
   "The Wild Rover": {
     "Description": "Visited all of the Rovers",
-    "Requirement": ""
+    "Requirement": "Blackburn Rovers, Bristol Rovers, Doncaster Rovers, Forest Green Rovers"
   },
   "Cymru am byth": {
     "Description": "Visited all the Welsh grounds",
-    "Requirement": ""
+    "Requirement": "Cardiff City, Swansea City, Newport County"
   },
   "Far and Wide": {
     "Description": "Visited the NESW grounds",
-    "Requirement": ""
+    "Requirement": "Norwich City, Newcastle United, Plymouth Argyle, "
   },
   "Master and Apprentice": {
     "Description": "Visit the oldest and newest grounds",
-    "Requirement": ""
+    "Requirement": "Sheffield United, West Ham"
   },
   "Oop North": {
     "Description": "Visit all grounds up north",
-    "Requirement": ""
+    "Requirement": "Sunderland, Middlesbrough, Preston North End, Leeds United, Hull City, Sheffield United, Sheffield Wednesday, Barnsley, Bolton Wanderers, Newcastle United, Manchester United, Manchester City, Liverpool, Burnley, Everton, Huddersfield Town, Fleetwood Town, Blackpool, Blackburn Rovers, Bradford City, Scunthorpe United, Doncaster Rovers, Rotherham United, Bury, Rochdale, Wigan Athletic, Wigan Athletic, Accrington Stanley, Morcambe, Grimsby Town, Carlisle United"
   },
   "Perfect Premier": {
     "Description": "Visit all PL grounds",
-    "Requirement": ""
+    "Requirement": "<Prem>"
   },
   "Championship Champ": {
     "Description": "Visit all Championship grounds",
-    "Requirement": ""
+    "Requirement": "<Champ>"
   },
   "League 1 Done": {
     "Description": "Visit all league 1 grounds",
-    "Requirement": ""
+    "Requirement": "<One>"
   },
   "League 2 Triumphed": {
     "Description": "Visit all league 2 grounds",
-    "Requirement": ""
+    "Requirement": "<Two>"
   },
   "Little and large": {
     "Description": "Visit the biggest and smallest ground",
-    "Requirement": ""
+    "Requirement": "Tottemham Hotspurs, AFC Wimbledon"
   },
   "Cockney Conqueror": {
     "Description": "Visit all grounds inside the m25",
-    "Requirement": ""
+    "Requirement": "Millwall, Queens Park Rangers, Fulham, Brentford, Arsenal, Chelsea, Crystal Palace, Tottemham Hotspurs, West Ham, AFC Wimbledon, Charlton Athletic, Barnet"
   },
   "All sit down": {
     "Description": "Visit St James' Park and St James Park",
-    "Requirement": ""
+    "Requirement": "Newcastle United, Exeter City"
   },
   "Claret and Blue": {
     "Description": "Visit all Claret and Blue grounds",
-    "Requirement": ""
+    "Requirement": "Aston Villa, West Ham, Burnley, Scunthorpe United"
   },
   "City Slicker": {
     "Description": "Visit all the City club grounds",
-    "Requirement": ""
+    "Requirement": "Cardiff City, Birmingham City, Hull City, Hull City, Manchester City, Leicester City, Swansea City, Stoke City, Bradford City, Coventry City, Exeter City, Lincoln City"
   },
   "Park Ranger": {
     "Description": "Visit all the grounds named park",
-    "Requirement": ""
+    "Requirement": "Aston Villa, Brentford, Derby County, Crystal Palace, Everton, Newcastle United, Blackburn Rovers, Oldham Athletic, Plymouth Argyle, Portsmouth, Scunthorpe United, Carlisle United, Exeter City, Grimsby Town, Port Vale, Wycombe Wanderers, Yeovil Town"
   },
   "The Champions": {
     "Description": "Visit all grounds of PL champions",
-    "Requirement": ""
+    "Requirement": "Arsenal, Chelsea, Manchester United, Manchester City, Leicester City, Blackburn Rovers"
   },
   "Le Champions": {
     "Description": "Visit all grounds of European champions",
-    "Requirement": ""
+    "Requirement": "Aston Villa, Nottingham Forest, Manchester United, Liverpool, Chelsea"
   },
   "Respect your Elders": {
     "Description": "Visit the 5 oldest grounds",
-    "Requirement": ""
+    "Requirement": "Sheffield United, Preston North End, Chelsea, Newcastle United, Mansfield Town"
   },
   "Neighbours": {
     "Description": "Visit the two closest grounds in the UK",
-    "Requirement": ""
+    "Requirement": "Nottingham Forest, Notts County"
   },
   "Longest and Shortest": {
     "Description": "Visit the grounds of the teams with the longest and shortest names",
-    "Requirement": ""
+    "Requirement": "Wolverhampton Wanderers, Bury"
   },
   "What even is an Albion?!": {
     "Description": "Visit all of the Albions",
-    "Requirement": ""
+    "Requirement": "Burton Albion, West Brom, Brighton, "
   },
   "Im an athlete!": {
     "Description": "Visit all of the Athletics",
-    "Requirement": ""
+    "Requirement": "Oldham Athletic, Wigan Athletic, Charlton Athletic, "
   },
   "The Compass": {
     "Description": "Visit all teams with North, East, South or West in their names",
-    "Requirement": ""
+    "Requirement": "Preston North End, West Ham, West Brom, Southampton, Northampton Town, Southend United"
   }
 }

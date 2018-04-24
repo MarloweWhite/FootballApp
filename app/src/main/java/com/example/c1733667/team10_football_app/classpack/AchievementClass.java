@@ -24,10 +24,6 @@ public class AchievementClass {
         this.actualNumber = actualNumber;
     }
 
-    private ProgressBar findViewById(int achievementProgressBar) {
-        progressBar = findViewById(R.id.achievementProgressBar);
-        return progressBar;
-    }
 
     public String getName() {
         return name;

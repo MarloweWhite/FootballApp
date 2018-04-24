@@ -10,6 +10,7 @@ import android.support.v7.widget.ListViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
@@ -41,13 +44,27 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         //event handling thing majig
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+
+            case R.id.action_info:
+                Toast.makeText(this, "Long press clubs for further details",
+                        Toast.LENGTH_LONG).show();
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return false;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_championship_league_outer);
+
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        ThemeSetting championSetting =new ThemeSetting(pref1,ChampionshipLeague.this);
+        championSetting.setHighContrast(R.layout.activity_championship_league_outer);
+
 
         sharedPreferences = getSharedPreferences("ChampionPreference", Context.MODE_PRIVATE);
 
@@ -78,44 +95,8 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.stad:
-                        Intent intent = new Intent(ChampionshipLeague.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(ChampionshipLeague.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(ChampionshipLeague.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(ChampionshipLeague.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(ChampionshipLeague.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                    case R.id.help:
-                        Intent intent5 = new Intent(ChampionshipLeague.this, HelpActivity.class);
-                        startActivity(intent5);
-                        break;
-
-                }
+                Navigation navigation = new Navigation(item, ChampionshipLeague.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });

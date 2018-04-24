@@ -6,13 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/infoToolbar"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
-        app:title="Info"
-        app:titleTextColor="#FFFFFF" />
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/achievementBadge"
@@ -29,8 +34,15 @@
 
     <ProgressBar
         android:id="@+id/achievementProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+        style="attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnShareAch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Share"/>
 
 </android.support.v7.widget.LinearLayoutCompat>
