@@ -25,48 +25,63 @@
         android:id="@+id/highContrastTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="5dp"
         android:gravity="center"
         android:text="High Contrast"
         android:textSize="24sp" />
 
     <android.support.v7.widget.AppCompatCheckBox
         android:id="@+id/highContrast"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
         android:layout_gravity="center"
+        android:onClick="onCheckboxClicked"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="5dp"
         android:text="high contrast" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/textSizeSetting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="5dp"
         android:gravity="center"
         android:text="Text size"
         android:textSize="24sp" />
 
     <android.support.v7.widget.AppCompatCheckBox
         android:id="@+id/smallcheckbox"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
         android:layout_gravity="center"
+        android:onClick="onCheckboxClicked"
+        android:padding="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="Small" />
 
     <android.support.v7.widget.AppCompatCheckBox
         android:id="@+id/mediumcheckbox"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="20dp"
         android:onClick="onCheckboxClicked"
+        android:padding="5dp"
         android:text="Medium" />
 
     <android.support.v7.widget.AppCompatCheckBox
         android:id="@+id/largecheckbox"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onCheckboxClicked"
         android:layout_gravity="center"
+        android:onClick="onCheckboxClicked"
+        android:padding="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:text="Large" />
 
 </android.support.v7.widget.LinearLayoutCompat>
