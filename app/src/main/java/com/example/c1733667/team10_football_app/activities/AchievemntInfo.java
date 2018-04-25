@@ -3,6 +3,7 @@ package com.example.c1733667.team10_football_app.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -97,6 +98,21 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
         NavigationView navigationView =navView;
+
+        TextView achievementInfo = findViewById(R.id.achievementInfo);
+
+        Map map0 = pref.getAll();
+        if (map0.size() > 0) {
+            for (Object key : map0.keySet()) {
+                if (map0.get(String.valueOf(R.id.highContrast)) != null
+                        && map0.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                    achievementInfo.setBackgroundColor(Color.BLUE);
+                } else {
+                    achievementInfo.setBackgroundColor(Color.WHITE);
+                }
+            }
+        }
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
