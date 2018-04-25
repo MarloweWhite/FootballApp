@@ -3,6 +3,7 @@ package com.example.c1733667.team10_football_app.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.classpack.*;
@@ -45,6 +47,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
     private String[] leagueTwo;
     private ArrayList<String> visitedClubs;
     private ArrayList<String> theWanderer;
+    boolean unlocked = false;
     int total = 0;
     int champion = 0;
     int premier = 0;
@@ -373,7 +376,7 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
             }
             if (map3.get(key).equals(true)
                     && (leagueOne[Integer.parseInt(String.valueOf(key))].equals("Northampton Town")
-            ||leagueOne[Integer.parseInt(String.valueOf(key))].equals("Southend United"))) {
+                    ||leagueOne[Integer.parseInt(String.valueOf(key))].equals("Southend United"))) {
                 compass = compass + 1;
             }
         }
@@ -440,123 +443,157 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         if (achievementName.equals("Over 50%")) {
             AchievementClass overFifty = new AchievementClass("Over 50%", 46, total);
             overFifty.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = overFifty.unlocked();
         }
         if (achievementName.equals("Over 60%")) {
             Log.d("Total", String.valueOf(total));
             AchievementClass overSixty = new AchievementClass("Over 60%", 55, total);
             overSixty.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = overSixty.unlocked();
         }
         if (achievementName.equals("Over 70%")) {
             AchievementClass overSeventy = new AchievementClass("Over 70%", 65, total);
             overSeventy.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = overSeventy.unlocked();
         }
         if (achievementName.equals("Over 80%")) {
             AchievementClass overEighty = new AchievementClass("Over 80%", 74, total);
             overEighty.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = overEighty.unlocked();
         }
         if (achievementName.equals("Over 90%")) {
             AchievementClass overNinety = new AchievementClass("Over 90%", 83, total);
             overNinety.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = overNinety.unlocked();
         }
         if (achievementName.equals("Done the lot!")) {
             AchievementClass doneTheLot = new AchievementClass("Done The Lot", 92, total);
             doneTheLot.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = doneTheLot.unlocked();
         }
         if (achievementName.equals("The Wanderer")) {
             AchievementClass theWanderer = new AchievementClass("The Wanderer", 3, wanderer);
             theWanderer.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = theWanderer.unlocked();
         }
         if (achievementName.equals("The Wild Rover")) {
             AchievementClass theWildRover = new AchievementClass("The Wild Rover", 4, rover);
             theWildRover.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = theWildRover.unlocked();
         }
         if (achievementName.equals("Cymru am byth")) {
             AchievementClass cymruAmByth = new AchievementClass("Cymru am byth", 3, cymru);
             cymruAmByth.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = cymruAmByth.unlocked();
         }
         if (achievementName.equals("Far and Wide")) {
             AchievementClass farAndWide = new AchievementClass("Far and Wide", 3, NESW);
             farAndWide.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = farAndWide.unlocked();
         }
         if (achievementName.equals("Master and Apprentice")) {
             AchievementClass masterAndApprentice = new AchievementClass("Master and Apprentice", 2, masterApprentice);
             masterAndApprentice.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = masterAndApprentice.unlocked();
         }
         if (achievementName.equals("Oop North")) {
             AchievementClass oopNorth = new AchievementClass("Oop North", 31, northern);
             oopNorth.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = oopNorth.unlocked();
         }
         if (achievementName.equals("Perfect Premier")) {
             AchievementClass perfectPremier = new AchievementClass("Perfect Premier", 20, premier);
             perfectPremier.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = perfectPremier.unlocked();
         }
         if (achievementName.equals("Championship Champ")) {
             AchievementClass championshipChamp = new AchievementClass("Championship Champ", 24, champion);
             championshipChamp.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = championshipChamp.unlocked();
         }
         if (achievementName.equals("League 1 Done")) {
             AchievementClass leagueOneDone = new AchievementClass("League one done", 24, leagueone);
             leagueOneDone.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = leagueOneDone.unlocked();
         }
         if (achievementName.equals("League 2 Triumphed")) {
             AchievementClass leagueTwoTriumphed = new AchievementClass("League two triumphed", 24, leaguetwo);
             leagueTwoTriumphed.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = leagueTwoTriumphed.unlocked();
         }
         if (achievementName.equals("Little and large")) {
             AchievementClass littleAndLarge = new AchievementClass("Little and Large", 2, littleNLarge);
             littleAndLarge.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = littleAndLarge.unlocked();
         }
         if (achievementName.equals("Cockney Conqueror")) {
             AchievementClass cockneyConqueror = new AchievementClass("Cockney Conqueror", 12, cockney);
             cockneyConqueror.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = cockneyConqueror.unlocked();
         }
         if (achievementName.equals("All sit down")) {
             AchievementClass allSitDown = new AchievementClass("All sit down", 2, sitDown);
             allSitDown.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = allSitDown.unlocked();
         }
         if (achievementName.equals("Claret and Blue")) {
             AchievementClass claretAndBlue = new AchievementClass("Claret and blue", 4, claretNBlue);
             claretAndBlue.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = claretAndBlue.unlocked();
         }
         if (achievementName.equals("City Slicker")) {
             AchievementClass citySlicker = new AchievementClass("City Slicker", 12, city);
             citySlicker.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = citySlicker.unlocked();
         }
         if (achievementName.equals("Park Ranger")) {
             AchievementClass parkRanger = new AchievementClass("Park Ranger", 17, ranger);
             parkRanger.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = parkRanger.unlocked();
         }
         if (achievementName.equals("The Champions")) {
             AchievementClass theChampions = new AchievementClass("The Chhampions", 6, thechampions);
             theChampions.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = theChampions.unlocked();
         }
         if (achievementName.equals("Le Champions")) {
             AchievementClass leChampions = new AchievementClass("Le Champions", 5, lechampions);
             leChampions.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = leChampions.unlocked();
         }
         if (achievementName.equals("Respect your Elders")) {
             AchievementClass respectYourElders = new AchievementClass("Respect your Elders", 5, eleders);
             respectYourElders.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = respectYourElders.unlocked();
         }
         if (achievementName.equals("Neighbours")) {
             AchievementClass neighbours = new AchievementClass("Neighbours", 2, neighbour);
             neighbours.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = neighbours.unlocked();
         }
         if (achievementName.equals("Longest and Shortest")) {
             AchievementClass longestAndshortest = new AchievementClass("Longest and Shortest", 2, longestAndShortest);
             longestAndshortest.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = longestAndshortest.unlocked();
         }
         if (achievementName.equals("What even is an Albion?!")) {
             AchievementClass whatIsAnAlbion = new AchievementClass("What even is an Albion", 3, albion);
             whatIsAnAlbion.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = whatIsAnAlbion.unlocked();
         }
         if (achievementName.equals("Im an athlete!")) {
             AchievementClass imAnAthlete = new AchievementClass("Im an Athlete", 3, athlete);
             imAnAthlete.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = imAnAthlete.unlocked();
         }
         if (achievementName.equals("The Compass")) {
             AchievementClass theCompass = new AchievementClass("The compass", 6, compass);
             theCompass.createProgessBar(progressBar = findViewById(R.id.achievementProgressBar));
+            unlocked = theCompass.unlocked();
+        }
+        if (!unlocked){
+            btnShare.setClickable(false);
+            btnShare.setTextColor(Color.parseColor("#A0A0A0"));
         }
     }
 
@@ -610,12 +647,15 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                shareIntent = new Intent(Intent.ACTION_SEND);
-                shareIntent.setType("text/plain");
-                String shareContent = (getAchievementDetails("Share"));
-                shareIntent.putExtra(Intent.EXTRA_TEXT, shareContent);
+                if (unlocked){
+                    shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    String shareContent = (getAchievementDetails("Share"));
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareContent);
 
-                startActivity(Intent.createChooser(shareIntent, "Share via:"));
+                    startActivity(Intent.createChooser(shareIntent, "Share via:"));
+                }else{
+                }
             }
         });
     }
