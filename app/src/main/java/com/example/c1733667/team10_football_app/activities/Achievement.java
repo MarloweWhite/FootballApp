@@ -2,6 +2,7 @@ package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -40,6 +41,7 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
 
         achievements = getResources().getStringArray(R.array.achievements);
         listView = (ListView) findViewById(R.id.achievementList);
+        listView.setBackgroundColor(Color.WHITE);
         AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(Achievement.this, achievements, imageID);
         listView.setAdapter(customAdapter);
         listView.setOnItemClickListener(this);
