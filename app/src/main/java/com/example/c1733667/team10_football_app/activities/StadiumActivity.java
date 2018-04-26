@@ -1,7 +1,9 @@
 package com.example.c1733667.team10_football_app.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,12 +22,13 @@ import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.classpack.LeagueSelector;
+import com.example.c1733667.team10_football_app.classpack.ListViewClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
-public class StadiumActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class StadiumActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
     private String[] leaugueArray;
     private Intent intent;
     private DrawerLayout navDrawer;
@@ -57,9 +60,21 @@ public class StadiumActivity extends AppCompatActivity implements AdapterView.On
         leaugueArray = getResources().getStringArray(R.array.football_leagues);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, leaugueArray);
 
-        ListViewCompat lv = findViewById(R.id.list_view);
-        lv.setAdapter(adapter);
-        lv.setOnItemClickListener(this);
+
+        ListViewCompat listViewCompat = findViewById(R.id.list_view);
+//        lv.setAdapter(adapter);
+        // TODO: 25/04/2018 make listview a seperate class
+//        Map map = pref1.getAll();
+//        if (map.get(String.valueOf(R.id.highContrast)) !=null
+//                && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
+//            lv.setBackgroundColor(Color.BLUE);
+//        }else {
+//            lv.setBackgroundColor(Color.WHITE);
+//        }
+//
+        ListViewClass lv = new ListViewClass(pref1,StadiumActivity.this);
+        lv.setListView(R.id.list_view, adapter);
+        listViewCompat.setOnItemClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);

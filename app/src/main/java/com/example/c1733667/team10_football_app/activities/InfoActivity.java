@@ -3,6 +3,7 @@ package com.example.c1733667.team10_football_app.activities;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -70,6 +71,24 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
+
+        Map map = pref1.getAll();
+        if (map.size() > 0) {
+            for (Object key : map.keySet()) {
+                if (map.get(String.valueOf(R.id.highContrast)) != null
+                        && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                    clubInfo.setBackgroundColor(Color.BLUE);
+                    clubLocation.setBackgroundColor(Color.BLUE);
+                    clubName.setBackgroundColor(Color.BLUE);
+                    clubStadium.setBackgroundColor(Color.BLUE);
+                } else {
+                    clubInfo.setBackgroundColor(Color.WHITE);
+                    clubLocation.setBackgroundColor(Color.WHITE);
+                    clubName.setBackgroundColor(Color.WHITE);
+                    clubStadium.setBackgroundColor(Color.WHITE);
+                }
+            }
+        }
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
@@ -60,6 +62,9 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
 
+        TextView highContrastTitle = findViewById(R.id.highContrastTitle);
+        TextView textSize = findViewById(R.id.textSizeSetting);
+
         CheckBox HighContrastcheckBox = findViewById(R.id.highContrast);
         HighContrastcheckBox.setChecked(getSharedPreferences("High contrast",
                 Context.MODE_PRIVATE)
@@ -83,6 +88,28 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
                 Context.MODE_PRIVATE)
                 .getBoolean(String.valueOf(R.id.largecheckbox),
                         false));
+
+        Map map = pref1.getAll();
+        if (map.size() > 0) {
+            for (Object key : map.keySet()) {
+                if (map.get(String.valueOf(R.id.highContrast)) != null
+                        && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                    highContrastTitle.setBackgroundColor(Color.BLUE);
+                    textSize.setBackgroundColor(Color.BLUE);
+                    HighContrastcheckBox.setBackgroundColor(Color.BLUE);
+                    smallTextCheckBox.setBackgroundColor(Color.BLUE);
+                    mediumTextCheckBox.setBackgroundColor(Color.BLUE);
+                    largeTextCheckBox.setBackgroundColor(Color.BLUE);
+                } else {
+                    highContrastTitle.setBackgroundColor(Color.WHITE);
+                    textSize.setBackgroundColor(Color.WHITE);
+                    HighContrastcheckBox.setBackgroundColor(Color.WHITE);
+                    smallTextCheckBox.setBackgroundColor(Color.WHITE);
+                    mediumTextCheckBox.setBackgroundColor(Color.WHITE);
+                    largeTextCheckBox.setBackgroundColor(Color.WHITE);
+                }
+            }
+        }
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

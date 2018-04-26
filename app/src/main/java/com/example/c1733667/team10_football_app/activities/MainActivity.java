@@ -52,17 +52,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
 
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-//        if (pref1 != null) {
-            ThemeSetting mainSetting = new ThemeSetting(pref1, MainActivity.this);
-            mainSetting.setHighContrast(R.layout.activity_main_outer);
-//        }else {
-//                setTheme(R.style.AppTheme);
-//                setContentView(R.layout.activity_main_outer);
-//        }
+        ThemeSetting mainSetting = new ThemeSetting(pref1, MainActivity.this);
+        mainSetting.setHighContrast(R.layout.activity_main_outer);
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
-
 
 
         this.navDrawer = findViewById(R.id.drawer_layout);
@@ -99,19 +93,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mapButton.mapbuttonListener(btnMap = findViewById(R.id.btnMap), this);
 
         ButtonClass achievementButton = new ButtonClass("Achievement Button");
-        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement),this);
+        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement), this);
 
         startService(new Intent(this, NotificationService.class));
-}
-
+    }
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return true;
     }
-
-
 
 
 }

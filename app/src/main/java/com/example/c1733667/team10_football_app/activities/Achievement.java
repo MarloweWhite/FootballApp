@@ -2,6 +2,7 @@ package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -17,6 +18,7 @@ import android.widget.ListView;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.adapterpack.AchievementCustomAdapter;
+import com.example.c1733667.team10_football_app.classpack.ListViewClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
@@ -41,7 +43,8 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
         achievements = getResources().getStringArray(R.array.achievements);
         listView = (ListView) findViewById(R.id.achievementList);
         AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(Achievement.this, achievements, imageID);
-        listView.setAdapter(customAdapter);
+        ListViewClass listViewClass = new ListViewClass(pref1,Achievement.this);
+        listViewClass.setListView(R.id.achievementList,customAdapter);
         listView.setOnItemClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
