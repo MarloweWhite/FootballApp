@@ -21,14 +21,6 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/infoToolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:theme="@android:style/Theme.Light"-->
-        <!--app:titleTextColor="#FFFFFF" />-->
-    <!--android:background="@color/colorPrimaryDark"-->
-
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/clubName"
         android:layout_width="match_parent"

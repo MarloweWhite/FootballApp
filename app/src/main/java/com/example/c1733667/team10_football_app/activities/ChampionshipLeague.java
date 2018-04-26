@@ -65,8 +65,9 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
         listViewCompat = findViewById(R.id.championList);
         listViewCompat.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass lv = new ListViewClass(pref1,ChampionshipLeague.this);
+        ThemeSetting lv = new ThemeSetting(pref1,ChampionshipLeague.this);
         lv.setListView(R.id.championList, championAdapter);
+
         listViewCompat.setOnItemClickListener(this);
         listViewCompat.setOnItemLongClickListener(this);
 
@@ -81,7 +82,7 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
 
         Map map = sharedPreferences.getAll();
         for (Object key : map.keySet()) {
-            lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
+            listViewCompat.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
         }
 
         NavigationView navigationView = navView;

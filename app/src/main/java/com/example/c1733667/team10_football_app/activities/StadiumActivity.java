@@ -59,20 +59,8 @@ public class StadiumActivity extends AppCompatActivity implements NavigationView
         ArrayAdapter<String> adapter;
         leaugueArray = getResources().getStringArray(R.array.football_leagues);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, leaugueArray);
-
-
         ListViewCompat listViewCompat = findViewById(R.id.list_view);
-//        lv.setAdapter(adapter);
-        // TODO: 25/04/2018 make listview a seperate class
-//        Map map = pref1.getAll();
-//        if (map.get(String.valueOf(R.id.highContrast)) !=null
-//                && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-//            lv.setBackgroundColor(Color.BLUE);
-//        }else {
-//            lv.setBackgroundColor(Color.WHITE);
-//        }
-//
-        ListViewClass lv = new ListViewClass(pref1,StadiumActivity.this);
+        ThemeSetting lv = new ThemeSetting(pref1,StadiumActivity.this);
         lv.setListView(R.id.list_view, adapter);
         listViewCompat.setOnItemClickListener(this);
 

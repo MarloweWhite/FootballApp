@@ -62,11 +62,27 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         return super.onOptionsItemSelected(item);
     }
 
+
+    @Override
+    protected void onDestroy() {
+        System.out.println("TEST");
+
+        super.onDestroy();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps_outer);
+
+        //setTheme(R.style.HighContrastTheme);
+        //setContentView(R.layout.activity_maps_outer);
+
+//        setContentView(R.layout.activity_maps_outer);
         SharedPreferences pref = getSharedPreferences("High contrast", 0);
+        ThemeSetting highcontrastmode = new ThemeSetting(pref,MapsActivity.this);
+        highcontrastmode.setHighContrast(R.layout.activity_maps_outer);
+
+
 
         visitedClubs = new ArrayList<>();
         clubName = new ArrayList<>();
@@ -89,6 +105,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);
         leagueOne = getResources().getStringArray(R.array.EFL1);

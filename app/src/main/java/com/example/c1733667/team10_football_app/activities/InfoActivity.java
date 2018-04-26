@@ -72,23 +72,15 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
 
-        Map map = pref1.getAll();
-        if (map.size() > 0) {
-            for (Object key : map.keySet()) {
-                if (map.get(String.valueOf(R.id.highContrast)) != null
-                        && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                    clubInfo.setBackgroundColor(Color.BLUE);
-                    clubLocation.setBackgroundColor(Color.BLUE);
-                    clubName.setBackgroundColor(Color.BLUE);
-                    clubStadium.setBackgroundColor(Color.BLUE);
-                } else {
-                    clubInfo.setBackgroundColor(Color.WHITE);
-                    clubLocation.setBackgroundColor(Color.WHITE);
-                    clubName.setBackgroundColor(Color.WHITE);
-                    clubStadium.setBackgroundColor(Color.WHITE);
-                }
-            }
-        }
+        ThemeSetting clubInfoContrast = new ThemeSetting(pref1,InfoActivity.this);
+        clubInfoContrast.setTextviewContrast(clubInfo);
+        ThemeSetting clubLocationContrast = new ThemeSetting(pref1,InfoActivity.this);
+        clubLocationContrast.setTextviewContrast(clubLocation);
+        ThemeSetting clubNameContrast = new ThemeSetting(pref1,InfoActivity.this);
+        clubNameContrast.setTextviewContrast(clubName);
+        ThemeSetting clubStadiumContrast = new ThemeSetting(pref1,InfoActivity.this);
+        clubStadiumContrast.setTextviewContrast(clubStadium);
+
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
