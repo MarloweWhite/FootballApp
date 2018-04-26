@@ -3,6 +3,7 @@ package com.example.c1733667.team10_football_app.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.ListViewClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
@@ -63,7 +65,9 @@ public class LeagueTwo extends AppCompatActivity implements NavigationView.OnNav
         leagueTwoAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_multiple_choice,leagueTwo);
         lv = findViewById(R.id.leagueTwoList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
-        lv.setAdapter(leagueTwoAdapter);
+
+        ListViewClass listViewClass = new ListViewClass(pref1,LeagueTwo.this);
+        listViewClass.setListView(R.id.leagueTwoList,leagueTwoAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
 

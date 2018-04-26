@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -65,6 +66,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_outer);
+        SharedPreferences pref = getSharedPreferences("High contrast", 0);
+
         visitedClubs = new ArrayList<>();
         clubName = new ArrayList<>();
 
