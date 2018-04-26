@@ -1,9 +1,13 @@
 <resources>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="app_name">Stad Check</string>
 =======
     <string name="app_name">Stad Checks</string>
 >>>>>>> 223b2574c175a14c7cef4342394f5ca66b5a6f30
+=======
+    <string name="app_name">Stad Check</string>
+>>>>>>> 4ac829fd95fe66cc63ab994c5df86ac1d80a409a
     <string name="your_score"> Your Score is : %1$d </string>
     <string name="title_activity_maps">Map</string>
     <string name="open" />
@@ -17,5 +21,4 @@
     <string name="channel_name">Channel name</string>
     <string name="channel_description">Channel_description</string>
     <string name="action_settings">Settings</string>
-
 </resources>
