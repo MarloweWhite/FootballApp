@@ -80,6 +80,42 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         TextView textView6 = (TextView) findViewById(R.id.leaguetwoperc);
         textView6.setText(leagueTwoStadiumsVisited+"/24");
 
+        ThemeSetting textViewContrast = new ThemeSetting(setting,Score.this);
+        textViewContrast.setTextviewContrast(textView);
+
+        ThemeSetting textView2Contrast = new ThemeSetting(setting,Score.this);
+        textView2Contrast.setTextviewContrast(textView2);
+//
+//        ThemeSetting textView3Contrast = new ThemeSetting(setting,Score.this);
+//        textView3Contrast.setTextviewContrast(textView3);
+//
+//        ThemeSetting textView4Contrast = new ThemeSetting(setting,Score.this);
+//        textView4Contrast.setTextviewContrast(textView4);
+//
+//        ThemeSetting textView5Contrast = new ThemeSetting(setting,Score.this);
+//        textView5Contrast.setTextviewContrast(textView5);
+//
+//        ThemeSetting textView6Contrast = new ThemeSetting(setting,Score.this);
+//        textView6Contrast.setTextviewContrast(textView6);
+
+        TextView premierTextView = findViewById(R.id.premiertitle);
+        TextView championTextView = findViewById(R.id.championtitle);
+        TextView leagueOneTextView = findViewById(R.id.leagueonetitle);
+        TextView leagueTwoTextView = findViewById(R.id.leaguetwotitle);
+
+        ThemeSetting premierTitle = new ThemeSetting(setting,Score.this);
+        premierTitle.setTextviewContrast(premierTextView);
+
+        ThemeSetting championTitle = new ThemeSetting(setting,Score.this);
+        championTitle.setTextviewContrast(championTextView);
+
+        ThemeSetting leagueOneTitle = new ThemeSetting(setting,Score.this);
+        leagueOneTitle.setTextviewContrast(leagueOneTextView);
+
+        ThemeSetting leagueTwoTitle = new ThemeSetting(setting,Score.this);
+        leagueTwoTitle.setTextviewContrast(leagueTwoTextView);
+
+
 
         mprogressBar = (ProgressBar) findViewById(R.id.circular_progress_bar);
         ObjectAnimator anim = ObjectAnimator.ofInt(mprogressBar, "progress", 0, championsLeagueStadiumsVisited);
@@ -130,6 +166,8 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
                 return false;
             }
         });
+
+
     }
 
 
