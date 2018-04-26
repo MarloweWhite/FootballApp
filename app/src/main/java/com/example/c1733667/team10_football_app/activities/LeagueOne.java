@@ -65,7 +65,7 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
         lv = findViewById(R.id.leagueOneList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1,LeagueOne.this);
+        ThemeSetting listViewClass = new ThemeSetting(pref1,LeagueOne.this);
         listViewClass.setListView(R.id.leagueOneList,leagueOneAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);

@@ -108,17 +108,8 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
 
         TextView achievementInfo = findViewById(R.id.achievementInfo);
 
-        Map map0 = pref.getAll();
-        if (map0.size() > 0) {
-            for (Object key : map0.keySet()) {
-                if (map0.get(String.valueOf(R.id.highContrast)) != null
-                        && map0.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                    achievementInfo.setBackgroundColor(Color.BLUE);
-                } else {
-                    achievementInfo.setBackgroundColor(Color.WHITE);
-                }
-            }
-        }
+        ThemeSetting achievementContrast = new ThemeSetting(pref,AchievemntInfo.this);
+        achievementContrast.setTextviewContrast(achievementInfo);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

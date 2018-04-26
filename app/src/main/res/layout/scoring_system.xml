@@ -26,16 +26,6 @@
         android:layout_weight="1.2"
         android:layout_marginTop="5dp">
 
-       <ProgressBar
-           android:id="@+id/circular_progress_bar"
-           style="?android:attr/progressBarStyleHorizontal"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:indeterminate="false"
-           android:max="24"
-           android:progress="1"
-           android:progressDrawable="@drawable/circular_progressbar" />
-
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/championsleagueperc"
             android:layout_width="wrap_content"
@@ -48,9 +38,23 @@
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/champions_league"
-            android:textSize="16dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:id="@+id/championtitle" />
 
-   </FrameLayout>
+        <ProgressBar
+            android:id="@+id/circular_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:max="24"
+            android:progress="1"
+            android:layout_marginBottom="20dp"
+            android:progressDrawable="@drawable/circular_progressbar" />
+
+    </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -66,6 +70,7 @@
             android:indeterminate="false"
             android:max="20"
             android:progress="1"
+            android:layout_marginBottom="20dp"
             android:progressDrawable="@drawable/circular_progressbar2" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -80,7 +85,10 @@
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/premier_league"
-            android:textSize="16dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:id="@+id/premiertitle" />
     </FrameLayout>
 
     <FrameLayout
@@ -97,6 +105,7 @@
             android:indeterminate="false"
             android:max="24"
             android:progress="1"
+            android:layout_marginBottom="20dp"
             android:progressDrawable="@drawable/circular_progressbar3" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -112,7 +121,10 @@
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/league_one"
-            android:textSize="16dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:id="@+id/leagueonetitle" />
 
     </FrameLayout>
 
@@ -131,6 +143,7 @@
             android:indeterminate="false"
             android:max="24"
             android:progress="1"
+            android:layout_marginBottom="20dp"
             android:progressDrawable="@drawable/circular_progressbar4" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -146,7 +159,11 @@
             android:gravity="center"
             android:layout_gravity="bottom"
             android:text="@string/league_two"
-            android:textSize="16dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
+            android:id="@+id/leaguetwotitle" />
 
 
     </FrameLayout>
@@ -158,20 +175,24 @@
         android:layout_height="15dp"
         android:indeterminate="false"
         android:max="92"
-        android:progress="1" />
+        android:progress="1"
+        />
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:gravity="center|bottom"
-        android:textSize="17dp"/>
+        android:gravity="center|bottom" />
     <TextView
         android:id="@+id/textViewName2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="17sp" />
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:padding="5dp" />
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnShare"
         android:layout_width="wrap_content"

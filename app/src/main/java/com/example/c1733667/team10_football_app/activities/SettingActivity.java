@@ -25,6 +25,7 @@ import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
+import java.util.Set;
 
 public class SettingActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout navDrawer;
@@ -89,27 +90,44 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
                 .getBoolean(String.valueOf(R.id.largecheckbox),
                         false));
 
-        Map map = pref1.getAll();
-        if (map.size() > 0) {
-            for (Object key : map.keySet()) {
-                if (map.get(String.valueOf(R.id.highContrast)) != null
-                        && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                    highContrastTitle.setBackgroundColor(Color.BLUE);
-                    textSize.setBackgroundColor(Color.BLUE);
-                    HighContrastcheckBox.setBackgroundColor(Color.BLUE);
-                    smallTextCheckBox.setBackgroundColor(Color.BLUE);
-                    mediumTextCheckBox.setBackgroundColor(Color.BLUE);
-                    largeTextCheckBox.setBackgroundColor(Color.BLUE);
-                } else {
-                    highContrastTitle.setBackgroundColor(Color.WHITE);
-                    textSize.setBackgroundColor(Color.WHITE);
-                    HighContrastcheckBox.setBackgroundColor(Color.WHITE);
-                    smallTextCheckBox.setBackgroundColor(Color.WHITE);
-                    mediumTextCheckBox.setBackgroundColor(Color.WHITE);
-                    largeTextCheckBox.setBackgroundColor(Color.WHITE);
-                }
-            }
-        }
+//        Map map = pref1.getAll();
+//        if (map.size() > 0) {
+//            for (Object key : map.keySet()) {
+//                if (map.get(String.valueOf(R.id.highContrast)) != null
+//                        && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
+//                    highContrastTitle.setBackgroundColor(Color.BLUE);
+//                    textSize.setBackgroundColor(Color.BLUE);
+//                    HighContrastcheckBox.setBackgroundColor(Color.BLUE);
+//                    smallTextCheckBox.setBackgroundColor(Color.BLUE);
+//                    mediumTextCheckBox.setBackgroundColor(Color.BLUE);
+//                    largeTextCheckBox.setBackgroundColor(Color.BLUE);
+//                } else {
+//                    highContrastTitle.setBackgroundColor(Color.WHITE);
+//                    textSize.setBackgroundColor(Color.WHITE);
+//                    HighContrastcheckBox.setBackgroundColor(Color.WHITE);
+//                    smallTextCheckBox.setBackgroundColor(Color.WHITE);
+//                    mediumTextCheckBox.setBackgroundColor(Color.WHITE);
+//                    largeTextCheckBox.setBackgroundColor(Color.WHITE);
+//                }
+//            }
+//        }
+        ThemeSetting highContrastSetting = new ThemeSetting(pref1,SettingActivity.this);
+        highContrastSetting.setTextviewContrast(highContrastTitle);
+
+        ThemeSetting textSizeSetting = new ThemeSetting(pref1,SettingActivity.this);
+        textSizeSetting.setTextviewContrast(textSize);
+
+        ThemeSetting highContrastCheckbox = new ThemeSetting(pref1, SettingActivity.this);
+        highContrastCheckbox.setCheckboxContrast(HighContrastcheckBox);
+
+        ThemeSetting smallTextCheckboxContrast = new ThemeSetting(pref1,SettingActivity.this);
+        smallTextCheckboxContrast.setCheckboxContrast(smallTextCheckBox);
+
+        ThemeSetting mediumTextCheckboxContrast = new ThemeSetting(pref1,SettingActivity.this);
+        mediumTextCheckboxContrast.setCheckboxContrast(mediumTextCheckBox);
+
+        ThemeSetting largeTextCheckboxContrast = new ThemeSetting(pref1,SettingActivity.this);
+        largeTextCheckboxContrast.setCheckboxContrast(largeTextCheckBox);
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

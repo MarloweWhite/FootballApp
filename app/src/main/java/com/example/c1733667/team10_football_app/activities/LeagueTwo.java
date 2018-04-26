@@ -66,7 +66,7 @@ public class LeagueTwo extends AppCompatActivity implements NavigationView.OnNav
         lv = findViewById(R.id.leagueTwoList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1,LeagueTwo.this);
+        ThemeSetting listViewClass = new ThemeSetting(pref1,LeagueTwo.this);
         listViewClass.setListView(R.id.leagueTwoList,leagueTwoAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);

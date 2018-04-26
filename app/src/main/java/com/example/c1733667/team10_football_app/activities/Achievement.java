@@ -43,7 +43,7 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
         achievements = getResources().getStringArray(R.array.achievements);
         listView = (ListView) findViewById(R.id.achievementList);
         AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(Achievement.this, achievements, imageID);
-        ListViewClass listViewClass = new ListViewClass(pref1,Achievement.this);
+        ThemeSetting listViewClass = new ThemeSetting(pref1,Achievement.this);
         listViewClass.setListView(R.id.achievementList,customAdapter);
         listView.setOnItemClickListener(this);
 
