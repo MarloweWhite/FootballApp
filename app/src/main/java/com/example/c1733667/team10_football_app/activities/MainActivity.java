@@ -19,7 +19,13 @@ import com.example.c1733667.team10_football_app.classpack.NotificationService;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 import com.google.android.gms.ads.AdView;
 
+import fragments.AchievementFragment;
+import fragments.HelpFragment;
 import fragments.MainFragment;
+import fragments.MapsFragment;
+import fragments.ScoreFragment;
+import fragments.SettingFragment;
+import fragments.StadiumFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -86,12 +92,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.scores:
-
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new ScoreFragment())
+                        .commit();
                 break;
 
 
             case R.id.maps:
-
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new MapsFragment())
+                        .commit();
                 break;
 
 
@@ -106,14 +116,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.achievements:
-
+             //   getSupportFragmentManager().beginTransaction()
+               //         .replace(R.id.main_container, new AchievementFragment())
+                 //       .commit();
                 break;
 
             case R.id.settings:
-
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new SettingFragment())
+                        .commit();
                 break;
             case R.id.help:
-
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new HelpFragment())
+                        .commit();
                 break;
 
         }

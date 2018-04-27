@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,13 @@ import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
+
+import fragments.HelpFragment;
+import fragments.MainFragment;
+import fragments.MapsFragment;
+import fragments.ScoreFragment;
+import fragments.SettingFragment;
+import fragments.StadiumFragment;
 
 /**
  * Created by c1741877 on 15/04/2018.
@@ -95,6 +103,58 @@ public class HelpActivity extends AppCompatActivity implements AdapterView.OnCli
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        switch (item.getItemId()) {
+            case R.id.stad:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new StadiumFragment())
+                        .commit();
+                break;
+
+            case R.id.scores:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new ScoreFragment())
+                        .commit();
+                break;
+
+
+            case R.id.maps:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new MapsFragment())
+                        .commit();
+                break;
+
+
+            case R.id.exit:
+                finish();
+                break;
+
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new MainFragment())
+                        .commit();
+                break;
+
+            case R.id.achievements:
+                //   getSupportFragmentManager().beginTransaction()
+                //         .replace(R.id.main_container, new AchievementFragment())
+                //       .commit();
+                break;
+
+            case R.id.settings:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new SettingFragment())
+                        .commit();
+                break;
+            case R.id.help:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new HelpFragment())
+                        .commit();
+                break;
+
+        }
+
+        navDrawer.closeDrawer(GravityCompat.START);
+
+        return true;
     }
 }
