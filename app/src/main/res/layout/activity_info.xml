@@ -1,81 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.c1733667.team10_football_app.activities.InfoActivity">
+    >
 
-    <android.support.design.widget.AppBarLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="match_parent"
+        android:id="@+id/info_container">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/my_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" />
+    </RelativeLayout>
 
-    </android.support.design.widget.AppBarLayout>
-
-
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/infoToolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:theme="@android:style/Theme.Light"-->
-        <!--app:titleTextColor="#FFFFFF" />-->
-    <!--android:background="@color/colorPrimaryDark"-->
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/clubName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:paddingTop="5dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:textSize="20dp"
-        android:gravity="center"/>
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/clubStadium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:paddingRight="5dp"
-        android:paddingLeft="5dp"
-        android:textSize="20dp"
-        android:gravity="center"
-        />
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/clubLocation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:textSize="20dp"
-        android:gravity="center"/>
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/clubInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:paddingRight="5dp"
-        android:paddingLeft="5dp"
-        android:paddingBottom="5dp"
-        android:textSize="20dp"
-        android:gravity="center"/>
-
-
-</android.support.v7.widget.LinearLayoutCompat>
+</RelativeLayout>

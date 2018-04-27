@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,13 +15,11 @@ import android.widget.Button;
 import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
-import com.example.c1733667.team10_football_app.classpack.ButtonClass;
-import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.NotificationService;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+
+import fragments.MainFragment;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,9 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ThemeSetting mainSetting = new ThemeSetting(pref1, MainActivity.this);
         mainSetting.setHighContrast(R.layout.activity_main_outer);
 
-
         Toolbar toolbar = findViewById(R.id.my_toolbar);
-
 
         this.navDrawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
@@ -65,35 +62,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
-        MobileAds.initialize(this, "ca-app-pub-2747796691426534~5751833757");
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
         NavigationView navigationView = navView;
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Navigation navigation = new Navigation(item, MainActivity.this);
-                navigation.activityNavigation(getApplicationContext());
-                return false;
-            }
-        });
-        ButtonClass stadiumButton = new ButtonClass("Stadium Button");
-        stadiumButton.stadiumButtonListener(btnStadium = findViewById(R.id.btnStadium), this);
+        navigationView.setNavigationItemSelectedListener(this);
 
-        ButtonClass helpButton = new ButtonClass("Help Button");
-        helpButton.helpButtonListener(btnHelp = findViewById(R.id.btnHelp), this);
 
-        ButtonClass scoreButton = new ButtonClass("Score Button");
-        scoreButton.scoreButtonListener(btnScore = findViewById(R.id.btnScore), this);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_container, new MainFragment())
+                .commit();
 
-        ButtonClass mapButton = new ButtonClass("Map Button");
-        mapButton.mapbuttonListener(btnMap = findViewById(R.id.btnMap), this);
-
-        ButtonClass achievementButton = new ButtonClass("Achievement Button");
-        achievementButton.achievementButtonListener(btnAchievement = findViewById(R.id.btnAchievement), this);
 
         startService(new Intent(this, NotificationService.class));
     }
@@ -101,6 +78,48 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.stad:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new StadiumFragment())
+                        .commit();
+                break;
+
+            case R.id.scores:
+
+                break;
+
+
+            case R.id.maps:
+
+                break;
+
+
+            case R.id.exit:
+                finish();
+                break;
+
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new MainFragment())
+                        .commit();
+                break;
+
+            case R.id.achievements:
+
+                break;
+
+            case R.id.settings:
+
+                break;
+            case R.id.help:
+
+                break;
+
+        }
+
+        navDrawer.closeDrawer(GravityCompat.START);
+
         return true;
     }
 

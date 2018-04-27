@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            app:title="Score"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:layout_marginTop="5dp">
+
+        <ProgressBar
+            android:id="@+id/circular_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:max="24"
+            android:progress="1"
+            android:progressDrawable="@drawable/circular_progressbar" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/championsleagueperc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:text="@string/champions_league"
+            android:textSize="16dp"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:layout_marginTop="25dp">
+
+        <ProgressBar
+            android:id="@+id/circular_progress_bar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:max="20"
+            android:progress="1"
+            android:progressDrawable="@drawable/circular_progressbar2" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/premierleagueperc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:text="@string/premier_league"
+            android:textSize="16dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:layout_marginTop="25dp">
+
+        <ProgressBar
+            android:id="@+id/circular_progress_bar3"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:max="24"
+            android:progress="1"
+            android:progressDrawable="@drawable/circular_progressbar3" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/leagueoneperc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:text="@string/league_one"
+            android:textSize="16dp"/>
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2"
+        android:layout_marginTop="25dp">
+
+        <ProgressBar
+            android:id="@+id/circular_progress_bar4"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="false"
+            android:max="24"
+            android:progress="1"
+            android:progressDrawable="@drawable/circular_progressbar4" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/leaguetwoperc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:text="@string/league_two"
+            android:textSize="16dp"/>
+
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:indeterminate="false"
+        android:max="92"
+        android:progress="1" />
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center|bottom"
+        android:textSize="17dp"/>
+    <TextView
+        android:id="@+id/textViewName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="17sp" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Share"/>
+
+</LinearLayout>

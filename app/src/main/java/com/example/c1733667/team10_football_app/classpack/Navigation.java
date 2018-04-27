@@ -9,24 +9,26 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.MenuItem;
+import android.view.View;
+
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.activities.Achievement;
-import com.example.c1733667.team10_football_app.activities.HelpActivity;
-import com.example.c1733667.team10_football_app.activities.InfoActivity;
 import com.example.c1733667.team10_football_app.activities.MainActivity;
 import com.example.c1733667.team10_football_app.activities.MapsActivity;
 import com.example.c1733667.team10_football_app.activities.Score;
 import com.example.c1733667.team10_football_app.activities.SettingActivity;
-import com.example.c1733667.team10_football_app.activities.StadiumActivity;
+
+import static android.app.PendingIntent.getActivity;
 
 /**
  * Created by c1733667 on 22/04/2018.
  */
 
-public class Navigation extends Activity {
+public class Navigation extends Activity implements View.OnClickListener {
     private Intent intent;
     private MenuItem menuItem;
     Activity activity;
+    View v;
 
     public Navigation(MenuItem menuItem, Activity activity) {
         this.menuItem = menuItem;
@@ -34,10 +36,12 @@ public class Navigation extends Activity {
     }
 
     public void activityNavigation(Context context) {
-        switch (menuItem.getItemId()) {
+        switch (v.getId()) {
             case R.id.stad:
-                intent = new Intent(context, StadiumActivity.class);
-                context.startActivity(intent);
+               /*getFragmentManager()
+                        .beginTransaction()
+                        .replace(this, new StadiumFragment())
+                        .commit();*/
                 break;
 
             case R.id.scores:
@@ -76,5 +80,10 @@ public class Navigation extends Activity {
                 break;
 
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

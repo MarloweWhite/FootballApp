@@ -1,5 +1,7 @@
 package com.example.c1733667.team10_football_app.activities;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -22,7 +24,9 @@ import com.example.c1733667.team10_football_app.classpack.ListViewClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
-import java.util.Map;
+
+import fragments.AchievementFragment;
+
 
 public class Achievement extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
     private ListView listView;
@@ -38,6 +42,12 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
         ThemeSetting achievementSetting = new ThemeSetting(pref1, Achievement.this);
         achievementSetting.setHighContrast(R.layout.activity_achievement_outer);
+
+        FragmentManager fragmentManager = this.getFragmentManager();
+
+        /*FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.achievement_container, new AchievementFragment());
+        fragmentTransaction.commit();*/
 
 
         achievements = getResources().getStringArray(R.array.achievements);
