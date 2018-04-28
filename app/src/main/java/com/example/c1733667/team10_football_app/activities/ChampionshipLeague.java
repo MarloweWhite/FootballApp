@@ -36,7 +36,7 @@ import fragments.ScoreFragment;
 import fragments.SettingFragment;
 import fragments.StadiumFragment;
 
-public class ChampionshipLeague extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class ChampionshipLeague extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private String[] championLeague;
     private Intent intent;
     private SharedPreferences sharedPreferences;
@@ -61,22 +61,6 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        ThemeSetting championSetting =new ThemeSetting(pref1,ChampionshipLeague.this);
-        championSetting.setHighContrast(R.layout.activity_championship_league_outer);
-
-        sharedPreferences = getSharedPreferences("ChampionPreference", Context.MODE_PRIVATE);
-
-        ArrayAdapter<String> championAdapter;
-        championLeague = getResources().getStringArray(R.array.EFLC);
-        championAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, championLeague);
-        listViewCompat = findViewById(R.id.championList);
-        listViewCompat.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
-
-        ListViewClass lv = new ListViewClass(pref1,ChampionshipLeague.this);
-        lv.setListView(R.id.championList, championAdapter);
-        listViewCompat.setOnItemClickListener(this);
-        listViewCompat.setOnItemLongClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
@@ -87,10 +71,6 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
 
-        Map map = sharedPreferences.getAll();
-        for (Object key : map.keySet()) {
-            lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
-        }
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -104,20 +84,6 @@ public class ChampionshipLeague extends AppCompatActivity implements AdapterView
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-        SparseBooleanArray checkeditems = listViewCompat.getCheckedItemPositions();
-        sharedPreferences.edit().putBoolean(String.valueOf(position), checkeditems.get(position)).commit();
-    }
-
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        intent = new Intent(getApplicationContext(), InfoActivity.class);
-        intent.putExtra("Club Name", championLeague[position]);
-        startActivity(intent);
-        return true;
-    }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {

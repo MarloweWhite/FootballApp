@@ -38,7 +38,7 @@ import fragments.ScoreFragment;
 import fragments.SettingFragment;
 import fragments.StadiumFragment;
 
-public class InfoActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class InfoActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener {
     private TextView clubInfo;
     private TextView clubName;
     private TextView clubStadium;
@@ -59,19 +59,6 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        ThemeSetting infoSetting = new ThemeSetting(pref1,InfoActivity.this);
-        infoSetting.setHighContrast(R.layout.activity_info_outer);
-
-        clubInfo = findViewById(R.id.clubName);
-        clubLocation = findViewById(R.id.clubLocation);
-        toolbar = findViewById(R.id.my_toolbar);
-        String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
-        if (clubFromOtherActivity != null) {
-            toolbar.setTitle(clubFromOtherActivity);
-            getClubInfo();
-        }
-        clubLocation.setOnClickListener(this);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, navDrawer, toolbar, R.string.open, R.string.close);
@@ -79,24 +66,6 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
         toggle.syncState();
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
-
-        Map map = pref1.getAll();
-        if (map.size() > 0) {
-            for (Object key : map.keySet()) {
-                if (map.get(String.valueOf(R.id.highContrast)) != null
-                        && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-                    clubInfo.setBackgroundColor(Color.BLUE);
-                    clubLocation.setBackgroundColor(Color.BLUE);
-                    clubName.setBackgroundColor(Color.BLUE);
-                    clubStadium.setBackgroundColor(Color.BLUE);
-                } else {
-                    clubInfo.setBackgroundColor(Color.WHITE);
-                    clubLocation.setBackgroundColor(Color.WHITE);
-                    clubName.setBackgroundColor(Color.WHITE);
-                    clubStadium.setBackgroundColor(Color.WHITE);
-                }
-            }
-        }
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -110,76 +79,7 @@ public class InfoActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void getClubInfo() {
-        Resources res = getResources();
-        InputStream is = res.openRawResource(R.raw.clubs);
-        Scanner scanner = new Scanner(is);
-        StringBuilder builder = new StringBuilder();
-        while (scanner.hasNextLine()) {
-            builder.append(scanner.nextLine());
-        }
-        parseJson(builder.toString());
-    }
 
-    private void parseJson(String json) {
-        clubInfo = (TextView) findViewById(R.id.clubInfo);
-        clubName = (TextView) findViewById(R.id.clubName);
-        clubLocation = (TextView) findViewById(R.id.clubLocation);
-        clubStadium = (TextView) findViewById(R.id.clubStadium);
-
-        String clubFromOtherActivity = this.getIntent().getStringExtra("Club Name");
-        StringBuilder info = new StringBuilder();
-        StringBuilder name = new StringBuilder();
-        StringBuilder location = new StringBuilder();
-        StringBuilder stadium = new StringBuilder();
-
-        try {
-            JSONObject root = new JSONObject(json);
-            JSONObject clubInfo = root.getJSONObject(clubFromOtherActivity);
-
-            info.append("Stadium capacity: ")
-                    .append(clubInfo.getString("Stadium capacity"))
-                    .append("\n")
-                    .append("Manager: ")
-                    .append(clubInfo.getString("Manager"))
-                    .append("\n")
-                    .append("History: ")
-                    .append(clubInfo.getString("History"));
-            name.append("Name: ")
-                    .append(clubInfo.getString("club name"));
-            location.append("Location: ")
-                    .append(clubInfo.getString("Stadium Location"));
-            stadium.append("Stadium: ")
-                    .append(clubInfo.getString("Stadium "));
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        clubInfo.setText(info.toString());
-        clubName.setText(name.toString());
-        clubLocation.setText(location.toString());
-        clubStadium.setText(stadium.toString());
-    }
-
-
-    @Override
-    public void onClick(View v) {
-        String str = clubName.getText().toString();
-        String[] location = str.split(" ", 2);
-        Uri gmmIntentUri = Uri.parse("geo:51.488762, -3.174134?q=" + location[1].toString() + " " + "Football Stadium");
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
-        if (mapIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(mapIntent);
-        }
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

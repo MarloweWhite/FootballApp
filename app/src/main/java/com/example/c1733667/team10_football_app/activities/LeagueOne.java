@@ -36,7 +36,7 @@ import fragments.ScoreFragment;
 import fragments.SettingFragment;
 import fragments.StadiumFragment;
 
-public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class LeagueOne extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private String[] leagueOne;
     private Intent intent;
     private SharedPreferences sharedPreferences;
@@ -61,22 +61,7 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        ThemeSetting leagueOneSetting = new ThemeSetting(pref1,LeagueOne.this);
-        leagueOneSetting.setHighContrast(R.layout.activity_league_one_outer);
 
-        sharedPreferences = getSharedPreferences("LeagueOnePreference", Context.MODE_PRIVATE);
-
-        ArrayAdapter<String> leagueOneAdapter;
-        leagueOne = getResources().getStringArray(R.array.EFL1);
-        leagueOneAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, leagueOne);
-        lv = findViewById(R.id.leagueOneList);
-        lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
-
-        ListViewClass listViewClass = new ListViewClass(pref1,LeagueOne.this);
-        listViewClass.setListView(R.id.leagueOneList,leagueOneAdapter);
-        lv.setOnItemClickListener(this);
-        lv.setOnItemLongClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
@@ -88,11 +73,6 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
         this.navView.setNavigationItemSelectedListener(this);
 
 
-        Map map = sharedPreferences.getAll();
-        for(Object key : map.keySet()){
-            lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
-        }
-
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -102,23 +82,6 @@ public class LeagueOne extends AppCompatActivity implements AdapterView.OnItemCl
                 return false;
             }
         });
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-
-        SparseBooleanArray checkeditems = lv.getCheckedItemPositions();
-        sharedPreferences.edit().putBoolean(String.valueOf(position), checkeditems.get(position)).commit();
-        Log.d("shared preference",String.valueOf(leagueOne[position]));
-    }
-
-    @Override
-    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        intent = new Intent(getApplicationContext(), InfoActivity.class);
-        intent.putExtra("Club Name", leagueOne[position]);
-        startActivity(intent);
-        return true;
     }
 
 

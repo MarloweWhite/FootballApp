@@ -52,72 +52,10 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         SharedPreferences setting = getSharedPreferences("High contrast", 0);
-        ThemeSetting scoreSetting = new ThemeSetting(setting,Score.this);
+        ThemeSetting scoreSetting = new ThemeSetting(setting, Score.this);
         scoreSetting.setHighContrast(R.layout.activity_scoring_system_outer);
-
-        shareButtonListener();
-
-        SharedPreferences championPreference = getSharedPreferences("ChampionPreference", 0);
-        SharedPreferences premierPreference = getSharedPreferences("PremierPreference", 0);
-        SharedPreferences leagueOnePreference = getSharedPreferences("LeagueOnePreference", 0);
-        SharedPreferences leagueTwoPreference = getSharedPreferences("LeagueTwoPreference", 0);
-
-        ScoreSystem scoreSystem = new ScoreSystem(championPreference, premierPreference, leagueOnePreference, leagueTwoPreference);
-
-        int championsLeagueStadiumsVisited = scoreSystem.getChampionsLeagueStadiumsVisited();
-        int premierLeagueStadiumsVisited = scoreSystem.getPremierLeagueStadiumsVisited();
-        int leagueOneStadiumsVisited = scoreSystem.getLeagueOneStadiumsVisited();
-        int leagueTwoStadiumsVisited = scoreSystem.getLeagueTwoStadiumsVisited();
-        long totalPercentageOfStadiumsVisited = scoreSystem.getTotalPercentageOfStadiumsVisited();
-        totalStadiumsVisited = scoreSystem.getTotalStadiumsVisited();
-
-
-
-        TextView textView = (TextView) findViewById(R.id.textViewName);
-        textView.setText("Your percentage of clubs you have been too :" + totalPercentageOfStadiumsVisited + "%");
-        TextView textView2 = (TextView) findViewById(R.id.textViewName2);
-        textView2.setText("Your Score is :" + totalStadiumsVisited );
-        TextView textView3 = (TextView) findViewById(R.id.championsleagueperc);
-        textView3.setText(championsLeagueStadiumsVisited+"/24");
-
-        TextView textView4 = (TextView) findViewById(R.id.premierleagueperc);
-        textView4.setText(premierLeagueStadiumsVisited +"/20");
-        TextView textView5 = (TextView) findViewById(R.id.leagueoneperc);
-        textView5.setText(leagueOneStadiumsVisited+"/24");
-        TextView textView6 = (TextView) findViewById(R.id.leaguetwoperc);
-        textView6.setText(leagueTwoStadiumsVisited+"/24");
-
-
-        mprogressBar = (ProgressBar) findViewById(R.id.circular_progress_bar);
-        ObjectAnimator anim = ObjectAnimator.ofInt(mprogressBar, "progress", 0, championsLeagueStadiumsVisited);
-        anim.setDuration(850);
-        anim.setInterpolator(new DecelerateInterpolator());
-        anim.start();
-
-        mprogressBar2 = (ProgressBar) findViewById(R.id.circular_progress_bar2);
-        ObjectAnimator anim2 = ObjectAnimator.ofInt(mprogressBar2, "progress", 0, premierLeagueStadiumsVisited);
-        anim2.setDuration(850);
-        anim2.setInterpolator(new DecelerateInterpolator());
-        anim2.start();
-
-        mprogressBar3 = (ProgressBar) findViewById(R.id.circular_progress_bar3);
-        ObjectAnimator anim3 = ObjectAnimator.ofInt(mprogressBar3, "progress", 0, leagueOneStadiumsVisited);
-        anim3.setDuration(850);
-        anim3.setInterpolator(new DecelerateInterpolator());
-        anim3.start();
-
-        mprogressBar4 = (ProgressBar) findViewById(R.id.circular_progress_bar4);
-        ObjectAnimator anim4 = ObjectAnimator.ofInt(mprogressBar4, "progress", 0, leagueTwoStadiumsVisited);
-        anim4.setDuration(850);
-        anim4.setInterpolator(new DecelerateInterpolator());
-        anim4.start();
-
-        mprogressBar5 = (ProgressBar) findViewById(R.id.progress_bar);
-        ObjectAnimator anim5 = ObjectAnimator.ofInt(mprogressBar5, "progress", 0, totalStadiumsVisited);
-        anim5.setDuration(850);
-        anim5.setInterpolator(new DecelerateInterpolator());
-        anim5.start();
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);

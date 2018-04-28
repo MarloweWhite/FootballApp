@@ -35,34 +35,14 @@ import fragments.SettingFragment;
 import fragments.StadiumFragment;
 
 
-public class Achievement extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
-    private ListView listView;
-    private String[] achievements;
-    private Integer[] imageID;
+public class Achievement extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout navDrawer;
     private NavigationView navView;
-    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        ThemeSetting achievementSetting = new ThemeSetting(pref1, Achievement.this);
-        achievementSetting.setHighContrast(R.layout.activity_achievement_outer);
 
-        FragmentManager fragmentManager = this.getFragmentManager();
-
-        /*FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.achievement_container, new AchievementFragment());
-        fragmentTransaction.commit();*/
-
-
-        achievements = getResources().getStringArray(R.array.achievements);
-        listView = (ListView) findViewById(R.id.achievementList);
-        AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(Achievement.this, achievements, imageID);
-        ListViewClass listViewClass = new ListViewClass(pref1,Achievement.this);
-        listViewClass.setListView(R.id.achievementList,customAdapter);
-        listView.setOnItemClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
@@ -139,12 +119,5 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
         navDrawer.closeDrawer(GravityCompat.START);
 
         return true;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        intent = new Intent(getApplicationContext(), AchievemntInfo.class);
-        intent.putExtra("AchievementLogic Name", achievements[position]);
-        startActivity(intent);
     }
 }

@@ -37,19 +37,44 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         mAdView.loadAd(adRequest);
 
         btnStadium = v.findViewById(R.id.btnStadium);
-        btnStadium.setOnClickListener(this);
+        btnStadium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         btnHelp = v.findViewById(R.id.btnHelp);
-        btnHelp.setOnClickListener(this);
+        btnHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         btnScore = v.findViewById(R.id.btnScore);
-        btnScore.setOnClickListener(this);
+        btnScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         btnMap = v.findViewById(R.id.btnMap);
-        btnMap.setOnClickListener(this);
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         btnAchievement = v.findViewById(R.id.btnAchievement);
-        btnAchievement.setOnClickListener(this);
+        btnAchievement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         return v;
     }

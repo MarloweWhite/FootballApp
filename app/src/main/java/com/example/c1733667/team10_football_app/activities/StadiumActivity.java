@@ -36,7 +36,7 @@ import fragments.ScoreFragment;
 import fragments.SettingFragment;
 import fragments.StadiumFragment;
 
-public class StadiumActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
+public class StadiumActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private String[] leaugueArray;
     private Intent intent;
     private DrawerLayout navDrawer;
@@ -60,29 +60,6 @@ public class StadiumActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
-        ThemeSetting stadiumSetting = new ThemeSetting(pref1,StadiumActivity.this);
-        stadiumSetting.setHighContrast(R.layout.activity_stadium_outer);
-
-        ArrayAdapter<String> adapter;
-        leaugueArray = getResources().getStringArray(R.array.football_leagues);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, leaugueArray);
-
-
-        ListViewCompat listViewCompat = findViewById(R.id.list_view);
-//        lv.setAdapter(adapter);
-        // TODO: 25/04/2018 make listview a seperate class
-//        Map map = pref1.getAll();
-//        if (map.get(String.valueOf(R.id.highContrast)) !=null
-//                && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
-//            lv.setBackgroundColor(Color.BLUE);
-//        }else {
-//            lv.setBackgroundColor(Color.WHITE);
-//        }
-//
-        ListViewClass lv = new ListViewClass(pref1,StadiumActivity.this);
-        lv.setListView(R.id.list_view, adapter);
-        listViewCompat.setOnItemClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
@@ -101,13 +78,6 @@ public class StadiumActivity extends AppCompatActivity implements NavigationView
                 return false;
             }
         });
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, String.format("Item clicked on = %d", position), Toast.LENGTH_SHORT).show();
-        LeagueSelector selector = new LeagueSelector(position);
-        selector.selectLeague(position, this);
     }
 
     @Override
