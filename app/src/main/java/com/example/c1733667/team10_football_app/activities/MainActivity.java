@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        
+
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
         ThemeSetting mainSetting = new ThemeSetting(pref1, MainActivity.this);
         mainSetting.setHighContrast(R.layout.activity_main_outer);

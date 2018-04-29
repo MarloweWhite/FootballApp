@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,7 @@ private Toolbar toolbar;
         View v = inflater.inflate(R.layout.fragment_info, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting infoSetting = new ThemeSetting(pref1,InfoActivity.this);
+        ThemeSetting infoSetting = new ThemeSetting(pref1, getActivity());
         infoSetting.setHighContrast(R.layout.activity_info_outer);
 
         clubInfo = v.findViewById(R.id.clubName);
@@ -90,10 +91,10 @@ private Toolbar toolbar;
     }
 
     private void parseJson(String json) {
-        clubInfo = (TextView) findViewById(R.id.clubInfo);
-        clubName = (TextView) findViewById(R.id.clubName);
-        clubLocation = (TextView) findViewById(R.id.clubLocation);
-        clubStadium = (TextView) findViewById(R.id.clubStadium);
+        clubInfo = (TextView) getActivity().findViewById(R.id.clubInfo);
+        clubName = (TextView) getActivity().findViewById(R.id.clubName);
+        clubLocation = (TextView) getActivity().findViewById(R.id.clubLocation);
+        clubStadium = (TextView) getActivity().findViewById(R.id.clubStadium);
 
         String clubFromOtherActivity = this.getActivity().getIntent().getStringExtra("Club Name");
         StringBuilder info = new StringBuilder();

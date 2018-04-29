@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ListViewCompat;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -34,7 +35,7 @@ public class PremierLeagueFragment extends Fragment implements AdapterView.OnIte
         View v = inflater.inflate(R.layout.fragment_score, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting premiereSetting = new ThemeSetting(pref1, );
+        ThemeSetting premiereSetting = new ThemeSetting(pref1,  getActivity());
         premiereSetting.setHighContrast(R.layout.activity_premier_league_outer);
 
         sharedPreferences = getActivity().getSharedPreferences("PremierPreference", Context.MODE_PRIVATE);
@@ -45,7 +46,7 @@ public class PremierLeagueFragment extends Fragment implements AdapterView.OnIte
         lv = v.findViewById(R.id.premierList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1, );
+        ListViewClass listViewClass = new ListViewClass(pref1,  getActivity());
         listViewClass.setListView(R.id.premierList, premierAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);

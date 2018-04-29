@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ListViewCompat;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -36,7 +37,7 @@ public class LeagueOneFragment extends Fragment implements AdapterView.OnItemCli
         View v = inflater.inflate(R.layout.fragment_league_one, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting leagueOneSetting = new ThemeSetting(pref1, LeagueOne.this);
+        ThemeSetting leagueOneSetting = new ThemeSetting(pref1,  getActivity());
         leagueOneSetting.setHighContrast(R.layout.activity_league_one_outer);
 
         sharedPreferences = getActivity().getSharedPreferences("LeagueOnePreference", Context.MODE_PRIVATE);
@@ -47,7 +48,7 @@ public class LeagueOneFragment extends Fragment implements AdapterView.OnItemCli
         lv = v.findViewById(R.id.leagueOneList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1, LeagueOne.this);
+        ListViewClass listViewClass = new ListViewClass(pref1,  getActivity());
         listViewClass.setListView(R.id.leagueOneList, leagueOneAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);

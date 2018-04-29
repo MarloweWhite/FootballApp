@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ private Intent intent;
         View v = inflater.inflate(R.layout.fragment_achievement, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting achievementSetting = new ThemeSetting(pref1, Achievement.this);
+        ThemeSetting achievementSetting = new ThemeSetting(pref1, getActivity());
         achievementSetting.setHighContrast(R.layout.activity_achievement_outer);
 
         FragmentManager fragmentManager = this.getFragmentManager();
@@ -51,7 +52,7 @@ private Intent intent;
         achievements = getResources().getStringArray(R.array.achievements);
         listView = (ListView) v.findViewById(R.id.achievementList);
         AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(getActivity(), achievements, imageID);
-        ListViewClass listViewClass = new ListViewClass(pref1,Achievement.this);
+        ListViewClass listViewClass = new ListViewClass(pref1, getActivity());
         listViewClass.setListView(R.id.achievementList,customAdapter);
         listView.setOnItemClickListener(this);
 

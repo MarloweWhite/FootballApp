@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ public class HelpFragment extends Fragment implements AdapterView.OnClickListene
         View v = inflater.inflate(R.layout.fragment_help, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting helpSetting = new ThemeSetting(pref1,HelpActivity.this);
+        ThemeSetting helpSetting = new ThemeSetting(pref1, getActivity());
         helpSetting.setHighContrast(R.layout.activity_help_outer);
 
         TextView aboutTheApp = (TextView) v.findViewById(R.id.aboutTheApp);

@@ -6,8 +6,12 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,13 +27,17 @@ import java.util.Map;
 
 public class SettingFragment extends Fragment {
 
+    private DrawerLayout navDrawer;
+    private NavigationView navView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_setting, container, false);
 
+
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
         if (pref1 != null) {
-            ThemeSetting settingTheme = new ThemeSetting(pref1, (AppCompatActivity) getActivity());
+            ThemeSetting settingTheme = new ThemeSetting(pref1,  getActivity());
             settingTheme.setHighContrast(R.layout.activity_setting_outer);
         }
 

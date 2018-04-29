@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -81,7 +82,7 @@ public class AchievementInfoFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_achievement_info, container, false);
         shareButtonListener();
         SharedPreferences pref = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting achievementInfoSetting =new ThemeSetting(pref,AchievemntInfo.this);
+        ThemeSetting achievementInfoSetting =new ThemeSetting(pref, getActivity());
         achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);
 
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
@@ -608,7 +609,7 @@ public class AchievementInfoFragment extends Fragment {
     }
 
     private void parseJson(String json) {
-        achievementInfo = (TextView) v.findViewById(R.id.achievementInfo);
+        achievementInfo = (TextView) getActivity().findViewById(R.id.achievementInfo);
         String achievementName = this.getActivity().getIntent().getStringExtra("AchievementLogic Name");
         StringBuilder info = new StringBuilder();
         try {
@@ -641,7 +642,7 @@ public class AchievementInfoFragment extends Fragment {
 
     }
     public void shareButtonListener() {
-        btnShare = v.findViewById(R.id.btnShareAch);
+        btnShare = getActivity().findViewById(R.id.btnShareAch);
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

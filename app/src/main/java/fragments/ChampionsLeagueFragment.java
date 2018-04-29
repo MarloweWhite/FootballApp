@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ListViewCompat;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ public class ChampionsLeagueFragment extends Fragment implements AdapterView.OnI
         View v = inflater.inflate(R.layout.fragment_champions_league, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting championSetting =new ThemeSetting(pref1,ChampionshipLeague.this);
+        ThemeSetting championSetting =new ThemeSetting(pref1, getActivity());
         championSetting.setHighContrast(R.layout.activity_championship_league_outer);
 
         sharedPreferences = getActivity().getSharedPreferences("ChampionPreference", Context.MODE_PRIVATE);
@@ -46,7 +47,7 @@ public class ChampionsLeagueFragment extends Fragment implements AdapterView.OnI
         listViewCompat = v.findViewById(R.id.championList);
         listViewCompat.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass lv = new ListViewClass(pref1,ChampionshipLeague.this);
+        ListViewClass lv = new ListViewClass(pref1,  getActivity());
         lv.setListView(R.id.championList, championAdapter);
         listViewCompat.setOnItemClickListener(this);
         listViewCompat.setOnItemLongClickListener(this);
