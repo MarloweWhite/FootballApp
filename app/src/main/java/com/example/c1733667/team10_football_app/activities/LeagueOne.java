@@ -22,7 +22,6 @@ import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
-import com.example.c1733667.team10_football_app.classpack.ListViewClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 

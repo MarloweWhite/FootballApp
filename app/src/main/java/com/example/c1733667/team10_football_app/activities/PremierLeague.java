@@ -22,7 +22,6 @@ import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
-import com.example.c1733667.team10_football_app.classpack.ListViewClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
@@ -66,7 +65,7 @@ public class PremierLeague extends AppCompatActivity implements AdapterView.OnIt
         lv = findViewById(R.id.premierList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1, PremierLeague.this);
+        ThemeSetting listViewClass = new ThemeSetting(pref1, PremierLeague.this);
         listViewClass.setListView(R.id.premierList, premierAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
