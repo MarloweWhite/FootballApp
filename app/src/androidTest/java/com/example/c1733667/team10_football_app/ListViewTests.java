@@ -99,6 +99,7 @@ public class ListViewTests {
         helpActivity = helpActivityActivityTestRule.getActivity();
         premierLeague = premierLeagueActivityTestRule.getActivity();
         infoActivity = infoActivityActivityTestRule.getActivity();
+
     }
 
     @Test
@@ -166,18 +167,20 @@ public class ListViewTests {
         intended(hasComponent(InfoActivity.class.getName()));
         Intents.release();
     }
-    @Test
-    public void AchievementListViewClickTest(){
-        Intents.init();
-        onView(withId(R.id.btnAchievement)).perform(click());
-        DataInteraction a = onData(anything())
-                .inAdapterView(withId(R.id.achievementList))
-                .atPosition(0);
+    // TODO: 30/04/2018 write up more tests 
+    
+//    @Test
+//    public void AchievementListViewClickTest(){
+////        Intents.init();
+//        onView(withId(R.id.btnAchievement)).perform(click());
+//        DataInteraction a = onData(anything())
+//                .inAdapterView(withId(R.id.achievementList))
+//                .atPosition(0);
 //        a.perform(click());
-        onView(withId(R.id.achievementList)).check(matches(isDisplayed()));
-        intended(hasComponent(Achievement.class.getName()));
-        Intents.release();
-    }
+//        onView(withId(R.id.achievementList)).check(matches(isDisplayed()));
+//        intended(hasComponent(Achievement.class.getName()));
+//        Intents.release();
+//    }
 //    @Test
 //    public void ClubListViewClickTest() {
 //        onView(withId(R.id.btnStadium)).perform(click());
