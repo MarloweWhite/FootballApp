@@ -8,13 +8,10 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<<<<<<< HEAD
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-=======
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
->>>>>>> Not2
+
 
     <application
         android:allowBackup="true"
@@ -53,7 +50,8 @@
 
         <service
             android:name=".classpack.NotificationService"
-            android:exported="false"></service>
+            android:exported="false">
+        </service>
 
         <receiver android:name=".classpack.BootReceiver">
             <intent-filter>
@@ -66,14 +64,10 @@
         <activity android:name=".activities.SplashPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-<<<<<<< HEAD
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-=======
 
-        <activity android:name=".activities.SettingActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -84,7 +78,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
->>>>>>> Not2
     </application>
 
 </manifest>
