@@ -26,6 +26,7 @@ import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 
 import java.util.Map;
 
@@ -36,13 +37,10 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
     private ShareButton fbButton;
     private int totalStadiumsVisited ;
     private Intent shareIntent = new Intent(Intent.ACTION_SEND);
-    ProgressBar mprogressBar;
-    ProgressBar mprogressBar2;
-    ProgressBar mprogressBar3;
-    ProgressBar mprogressBar4;
-    ProgressBar mprogressBar5;
+    ProgressBar mprogressBar, mprogressBar2, mprogressBar3, mprogressBar4, mprogressBar5;
     DrawerLayout navDrawer;
     private NavigationView navView;
+    ShareDialog shareDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +50,18 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         ThemeSetting scoreSetting = new ThemeSetting(setting,Score.this);scoreSetting.setHighContrast(R.layout.activity_scoring_system_outer);
 
          shareButtonListener();
-         ShareLinkContent fbContent = new ShareLinkContent.Builder()
-                .setContentUrl(Uri.parse("https://developers.facebook.com"))
-                .build();
+
+
         fbButton = (ShareButton)findViewById(R.id.fbBtn);
-        fbButton.setShareContent(fbContent);
+        fbButton.setShareContent(
+                new ShareLinkContent.Builder()
+                        .setQuote("I have visited "+ totalStadiumsVisited  +" out of the 92 football stadiums in the UK!\nHow many have you visited?")
+                        .setContentUrl(Uri.parse(getString(R.string.google_play_url)))
+                        .build()
+
+        );
+
+
 
         SharedPreferences championPreference = getSharedPreferences("ChampionPreference", 0);
         SharedPreferences premierPreference = getSharedPreferences("PremierPreference", 0);
@@ -199,6 +204,7 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
             }
         });
     }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
