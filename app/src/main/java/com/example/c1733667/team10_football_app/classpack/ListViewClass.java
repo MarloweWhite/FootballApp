@@ -27,12 +27,26 @@ public class ListViewClass {
         this.activity = activity;
     }
 
+
+    public static void setListViewTheme(ListViewCompat listView, SharedPreferences sharedPreferences) {
+        Map map = sharedPreferences.getAll();
+        if (map.size() > 0) {
+            if (map.get(String.valueOf(R.id.highContrast)) != null
+                    && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
+                listView.setBackgroundColor(Color.BLUE);
+//                    listView.setOnItemClickListener(this);
+            } else
+                listView.setBackgroundColor(Color.WHITE);
+//                listView.setOnItemClickListener(this);
+        }
+    }
+
+
     public void setListView(int lv, ArrayAdapter adapter) {
         ListViewCompat listView = activity.findViewById(lv);
         listView.setAdapter(adapter);
         Map map = sharedPreferences.getAll();
         if (map.size() > 0) {
-            for (Object key : map.keySet()) {
                 if (map.get(String.valueOf(R.id.highContrast)) != null
                         && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
                     listView.setBackgroundColor(Color.BLUE);
@@ -40,7 +54,6 @@ public class ListViewClass {
                 } else
                     listView.setBackgroundColor(Color.WHITE);
 //                listView.setOnItemClickListener(this);
-            }
         }
     }
 

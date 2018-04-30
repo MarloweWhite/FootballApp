@@ -81,9 +81,10 @@ public class AchievementInfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_achievement_info, container, false);
         shareButtonListener();
+
         SharedPreferences pref = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting achievementInfoSetting =new ThemeSetting(pref, getActivity());
-        achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);
+        /*ThemeSetting achievementInfoSetting =new ThemeSetting(pref, (AppCompatActivity) getActivity());
+        achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);*/
 
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);

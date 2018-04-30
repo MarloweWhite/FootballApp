@@ -36,8 +36,8 @@ public class ChampionsLeagueFragment extends Fragment implements AdapterView.OnI
         View v = inflater.inflate(R.layout.fragment_champions_league, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting championSetting =new ThemeSetting(pref1, getActivity());
-        championSetting.setHighContrast(R.layout.activity_championship_league_outer);
+        //ThemeSetting championSetting =new ThemeSetting(pref1, (AppCompatActivity) getActivity());
+        //championSetting.setHighContrast(R.layout.activity_championship_league_outer);
 
         sharedPreferences = getActivity().getSharedPreferences("ChampionPreference", Context.MODE_PRIVATE);
 
@@ -47,14 +47,17 @@ public class ChampionsLeagueFragment extends Fragment implements AdapterView.OnI
         listViewCompat = v.findViewById(R.id.championList);
         listViewCompat.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass lv = new ListViewClass(pref1,  getActivity());
-        lv.setListView(R.id.championList, championAdapter);
+        ListViewClass.setListViewTheme(listViewCompat, sharedPreferences);
+        listViewCompat.setAdapter(championAdapter);
+
+        //ListViewClass lv = new ListViewClass(pref1, (AppCompatActivity) getActivity());
+        //lv.setListView(R.id.championList, championAdapter);
         listViewCompat.setOnItemClickListener(this);
         listViewCompat.setOnItemLongClickListener(this);
 
         Map map = sharedPreferences.getAll();
         for (Object key : map.keySet()) {
-            lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
+            listViewCompat.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
         }
 
 

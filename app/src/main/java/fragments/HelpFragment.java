@@ -26,8 +26,8 @@ public class HelpFragment extends Fragment implements AdapterView.OnClickListene
         View v = inflater.inflate(R.layout.fragment_help, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting helpSetting = new ThemeSetting(pref1, getActivity());
-        helpSetting.setHighContrast(R.layout.activity_help_outer);
+        /*ThemeSetting helpSetting = new ThemeSetting(pref1, (AppCompatActivity) getActivity());
+        helpSetting.setHighContrast(R.layout.activity_help_outer);*/
 
         TextView aboutTheApp = (TextView) v.findViewById(R.id.aboutTheApp);
         TextView help = (TextView) v.findViewById(R.id.howToUse);

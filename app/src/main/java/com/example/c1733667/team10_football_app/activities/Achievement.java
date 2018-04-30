@@ -12,12 +12,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.adapterpack.AchievementCustomAdapter;
@@ -38,11 +40,27 @@ import fragments.StadiumFragment;
 public class Achievement extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout navDrawer;
     private NavigationView navView;
+    private ListViewCompat listView;
+    private String[] achievements;
+    private Integer[] imageID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        ThemeSetting achievementSetting = new ThemeSetting(pref1, this);
+        achievementSetting.setHighContrast(R.layout.activity_achievement_outer);
+
+        achievements = getResources().getStringArray(R.array.achievements);
+        listView = (ListViewCompat) findViewById(R.id.achievementList);
+        AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(this, achievements, imageID);
+        //ListViewClass listViewClass = new ListViewClass(pref1, (AppCompatActivity) getActivity());
+        //listViewClass.setListView(R.id.achievementList,customAdapter);
+        listView.setOnItemClickListener((AdapterView.OnItemClickListener) this);
+
+        ListViewClass.setListViewTheme(listView, (SharedPreferences) this);
+        listView.setAdapter(customAdapter);
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
@@ -98,9 +116,9 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
                 break;
 
             case R.id.achievements:
-                //   getSupportFragmentManager().beginTransaction()
-                //         .replace(R.id.main_container, new AchievementFragment())
-                //       .commit();
+                   getSupportFragmentManager().beginTransaction()
+                         .replace(R.id.main_container, new AchievementFragment())
+                       .commit();
                 break;
 
             case R.id.settings:

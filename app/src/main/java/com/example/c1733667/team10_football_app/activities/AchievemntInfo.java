@@ -33,6 +33,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
+import fragments.AchievementFragment;
 import fragments.HelpFragment;
 import fragments.MainFragment;
 import fragments.MapsFragment;
@@ -152,9 +153,9 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
                 break;
 
             case R.id.achievements:
-                //   getSupportFragmentManager().beginTransaction()
-                //         .replace(R.id.main_container, new AchievementFragment())
-                //       .commit();
+                  getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new AchievementFragment())
+                       .commit();
                 break;
 
             case R.id.settings:

@@ -22,13 +22,13 @@ import android.widget.Toast;
 import android.support.design.widget.NavigationView;
 
 import com.example.c1733667.team10_football_app.R;
-import com.example.c1733667.team10_football_app.classpack.LeagueSelector;
 import com.example.c1733667.team10_football_app.classpack.ListViewClass;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
+import fragments.AchievementFragment;
 import fragments.HelpFragment;
 import fragments.MainFragment;
 import fragments.MapsFragment;
@@ -119,9 +119,9 @@ public class StadiumActivity extends AppCompatActivity implements NavigationView
                 break;
 
             case R.id.achievements:
-                //   getSupportFragmentManager().beginTransaction()
-                //         .replace(R.id.main_container, new AchievementFragment())
-                //       .commit();
+                   getSupportFragmentManager().beginTransaction()
+                         .replace(R.id.main_container, new AchievementFragment())
+                       .commit();
                 break;
 
             case R.id.settings:

@@ -36,10 +36,10 @@ public class SettingFragment extends Fragment {
 
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        if (pref1 != null) {
-            ThemeSetting settingTheme = new ThemeSetting(pref1,  getActivity());
+        /*if (pref1 != null) {
+            ThemeSetting settingTheme = new ThemeSetting(pref1, (AppCompatActivity) getActivity());
             settingTheme.setHighContrast(R.layout.activity_setting_outer);
-        }
+        }*/
 
 
         TextView highContrastTitle = v.findViewById(R.id.highContrastTitle);

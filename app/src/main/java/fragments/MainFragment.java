@@ -40,7 +40,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         btnStadium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new StadiumFragment())
+                        .commit();
             }
         });
 
@@ -48,7 +50,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         btnHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new HelpFragment())
+                        .commit();
             }
         });
 
@@ -56,7 +60,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         btnScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new ScoreFragment())
+                        .commit();
             }
         });
 
@@ -64,7 +70,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new MapsFragment())
+                        .commit();
             }
         });
 
@@ -72,7 +80,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         btnAchievement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.main_container, new AchievementFragment())
+                        .commit();
             }
         });
 

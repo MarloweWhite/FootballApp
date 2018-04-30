@@ -32,11 +32,11 @@ public class PremierLeagueFragment extends Fragment implements AdapterView.OnIte
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_score, container, false);
+        View v = inflater.inflate(R.layout.fragment_premier_league, container, false);
 
-        SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting premiereSetting = new ThemeSetting(pref1,  getActivity());
-        premiereSetting.setHighContrast(R.layout.activity_premier_league_outer);
+        //SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
+        //ThemeSetting premiereSetting = new ThemeSetting(pref1,  getActivity());
+        //premiereSetting.setHighContrast(R.layout.activity_premier_league_outer);
 
         sharedPreferences = getActivity().getSharedPreferences("PremierPreference", Context.MODE_PRIVATE);
 
@@ -46,8 +46,11 @@ public class PremierLeagueFragment extends Fragment implements AdapterView.OnIte
         lv = v.findViewById(R.id.premierList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1,  getActivity());
-        listViewClass.setListView(R.id.premierList, premierAdapter);
+        ListViewClass.setListViewTheme(lv, sharedPreferences);
+        lv.setAdapter(premierAdapter);
+        //ListViewClass listViewClass = new ListViewClass(sharedPreferences,  (AppCompatActivity) getActivity());
+        //listViewClass.setListView(R.id.premierList, premierAdapter);
+
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
 

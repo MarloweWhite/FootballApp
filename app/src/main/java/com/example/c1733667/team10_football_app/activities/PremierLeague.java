@@ -29,6 +29,7 @@ import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
+import fragments.AchievementFragment;
 import fragments.HelpFragment;
 import fragments.MainFragment;
 import fragments.MapsFragment;
@@ -59,6 +60,10 @@ public class PremierLeague extends AppCompatActivity implements  NavigationView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        ThemeSetting premiereSetting = new ThemeSetting(pref1, this);
+        premiereSetting.setHighContrast(R.layout.activity_premier_league_outer);
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
@@ -120,9 +125,9 @@ public class PremierLeague extends AppCompatActivity implements  NavigationView.
                 break;
 
             case R.id.achievements:
-                //   getSupportFragmentManager().beginTransaction()
-                //         .replace(R.id.main_container, new AchievementFragment())
-                //       .commit();
+                   getSupportFragmentManager().beginTransaction()
+                         .replace(R.id.main_container, new AchievementFragment())
+                       .commit();
                 break;
 
             case R.id.settings:

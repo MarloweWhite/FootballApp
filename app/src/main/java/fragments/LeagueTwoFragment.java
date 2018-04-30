@@ -34,9 +34,6 @@ public class LeagueTwoFragment extends Fragment implements AdapterView.OnItemLon
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_league_two, container, false);
 
-        SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting leagueTwoSetting = new ThemeSetting(pref1, getActivity());
-        leagueTwoSetting.setHighContrast(R.layout.activity_league_two_outer);
 
         sharedPreferences = getActivity().getSharedPreferences("LeagueTwoPreference", Context.MODE_PRIVATE);
 
@@ -46,8 +43,12 @@ public class LeagueTwoFragment extends Fragment implements AdapterView.OnItemLon
         lv = v.findViewById(R.id.leagueTwoList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1, getActivity());
-        listViewClass.setListView(R.id.leagueTwoList,leagueTwoAdapter);
+        ListViewClass.setListViewTheme(lv, sharedPreferences);
+        lv.setAdapter(leagueTwoAdapter);
+
+        //ListViewClass listViewClass = new ListViewClass(pref1, (AppCompatActivity) getActivity());
+        //listViewClass.setListView(R.id.leagueTwoList,leagueTwoAdapter);
+
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
 

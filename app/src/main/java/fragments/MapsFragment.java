@@ -30,7 +30,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
-public class MapsFragment extends Fragment implements OnMapReadyCallback {
+public class MapsFragment extends Fragment {
 
 
     private GoogleMap mMap;
@@ -63,9 +63,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         pref4 = getActivity().getSharedPreferences("LeagueTwoPreference", 0);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getActivity().getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);
         leagueOne = getResources().getStringArray(R.array.EFL1);
@@ -155,62 +153,6 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        LatLng defaultMap = new LatLng(52.644031, -2.321991);
-        Map map = pref1.getAll();
-        Map map1 = pref2.getAll();
-        Map map2 = pref3.getAll();
-        Map map3 = pref4.getAll();
-        Iterator iterator = map.keySet().iterator();
-        Iterator iterator1 = map1.keySet().iterator();
-        Iterator iterator2 = map2.keySet().iterator();
-        Iterator iterator3 = map3.keySet().iterator();
 
-        while (iterator.hasNext()) {
-            String key = (String) iterator.next();
-//            Log.d("iterator", String.valueOf(iterator.next()));
-            mMap.addMarker(new MarkerOptions()
-                    .position(visitedClubs.get(Integer.parseInt(key)))
-                    .visible((Boolean) map.get(key))
-                    .title(clubName.get(Integer.parseInt(key))));
-        }
-        while (iterator1.hasNext()) {
-            String key = (String) iterator1.next();
-            mMap.addMarker(new MarkerOptions()
-                    .position(visitedClubs.get(championLeague.length
-                            + Integer.parseInt(key)))
-                    .visible((Boolean) map1.get(key))
-                    .title(clubName.get(championLeague.length
-                            + Integer.parseInt(key))));
-        }
-        while (iterator2.hasNext()) {
-            String key = (String) iterator2.next();
-            mMap.addMarker(new MarkerOptions()
-                    .position(visitedClubs.get(championLeague.length
-                            + premierLeague.length
-                            + Integer.parseInt(key)))
-                    .visible((Boolean) map2.get(key))
-                    .title(clubName.get(championLeague.length
-                            + premierLeague.length
-                            + Integer.parseInt(key))));
-        }
-        while (iterator3.hasNext()) {
-            String key = (String) iterator3.next();
-            mMap.addMarker(new MarkerOptions()
-                    .position(visitedClubs.get(championLeague.length
-                            + premierLeague.length
-                            + leagueOne.length - 1
-                            + Integer.parseInt(key)))
-                    .visible((Boolean) map3.get(key))
-                    .title(clubName.get(championLeague.length
-                            + premierLeague.length
-                            + leagueOne.length - 1
-                            + Integer.parseInt(key))));
-        }
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultMap, 6));
-    }
 
 }

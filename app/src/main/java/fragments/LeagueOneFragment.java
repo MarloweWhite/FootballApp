@@ -35,12 +35,14 @@ public class LeagueOneFragment extends Fragment implements AdapterView.OnItemCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_league_one, container, false);
+        Log.d("TESTING TAG", "IT WORKED");
 
-        SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting leagueOneSetting = new ThemeSetting(pref1,  getActivity());
-        leagueOneSetting.setHighContrast(R.layout.activity_league_one_outer);
+      /*  SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
+        ThemeSetting leagueOneSetting = new ThemeSetting(pref1,  (AppCompatActivity) getActivity());
+        leagueOneSetting.setHighContrast(R.layout.activity_league_one_outer); */
 
         sharedPreferences = getActivity().getSharedPreferences("LeagueOnePreference", Context.MODE_PRIVATE);
+        Log.d("TESTING TAG", "IT WORKED2");
 
         ArrayAdapter<String> leagueOneAdapter;
         leagueOne = getResources().getStringArray(R.array.EFL1);
@@ -48,14 +50,20 @@ public class LeagueOneFragment extends Fragment implements AdapterView.OnItemCli
         lv = v.findViewById(R.id.leagueOneList);
         lv.setChoiceMode(ListViewCompat.CHOICE_MODE_MULTIPLE);
 
-        ListViewClass listViewClass = new ListViewClass(pref1,  getActivity());
-        listViewClass.setListView(R.id.leagueOneList, leagueOneAdapter);
+        ListViewClass.setListViewTheme(lv, sharedPreferences);
+        lv.setAdapter(leagueOneAdapter);
+
+        Log.d("TESTING TAG", "IT WORKED3");
+        //ListViewClass listViewClass = new ListViewClass(pref1,  (AppCompatActivity) getActivity());
+        // listViewClass.setListView(R.id.leagueOneList, leagueOneAdapter);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
 
         Map map = sharedPreferences.getAll();
         for (Object key : map.keySet()) {
             lv.setItemChecked(Integer.valueOf((String) key), (Boolean) map.get((String) key));
+
+            Log.d("TESTING TAG", "IT WORKED4");
         }
 
 
@@ -78,6 +86,7 @@ public class LeagueOneFragment extends Fragment implements AdapterView.OnItemCli
         intent = new Intent(getActivity().getApplicationContext(), InfoActivity.class);
         intent.putExtra("Club Name", leagueOne[position]);
         startActivity(intent);
+        Log.d("TESTING TAG", "IT WORKED5");
         return true;
     }
 }

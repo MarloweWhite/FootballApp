@@ -42,8 +42,8 @@ private Toolbar toolbar;
         View v = inflater.inflate(R.layout.fragment_info, container, false);
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        ThemeSetting infoSetting = new ThemeSetting(pref1, getActivity());
-        infoSetting.setHighContrast(R.layout.activity_info_outer);
+        /*ThemeSetting infoSetting = new ThemeSetting(pref1, (AppCompatActivity) getActivity());
+        infoSetting.setHighContrast(R.layout.activity_info_outer);*/
 
         clubInfo = v.findViewById(R.id.clubName);
         clubLocation = v.findViewById(R.id.clubLocation);

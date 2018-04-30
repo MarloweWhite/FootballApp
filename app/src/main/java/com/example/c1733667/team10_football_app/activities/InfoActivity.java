@@ -31,6 +31,7 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Scanner;
 
+import fragments.AchievementFragment;
 import fragments.HelpFragment;
 import fragments.MainFragment;
 import fragments.MapsFragment;
@@ -115,9 +116,9 @@ public class InfoActivity extends AppCompatActivity implements  NavigationView.O
                 break;
 
             case R.id.achievements:
-                //   getSupportFragmentManager().beginTransaction()
-                //         .replace(R.id.main_container, new AchievementFragment())
-                //       .commit();
+                   getSupportFragmentManager().beginTransaction()
+                         .replace(R.id.main_container, new AchievementFragment())
+                       .commit();
                 break;
 
             case R.id.settings:

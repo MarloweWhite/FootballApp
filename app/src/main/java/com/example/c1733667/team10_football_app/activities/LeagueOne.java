@@ -29,6 +29,7 @@ import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 
 import java.util.Map;
 
+import fragments.AchievementFragment;
 import fragments.HelpFragment;
 import fragments.MainFragment;
 import fragments.MapsFragment;
@@ -124,9 +125,9 @@ public class LeagueOne extends AppCompatActivity implements NavigationView.OnNav
                 break;
 
             case R.id.achievements:
-                //   getSupportFragmentManager().beginTransaction()
-                //         .replace(R.id.main_container, new AchievementFragment())
-                //       .commit();
+                   getSupportFragmentManager().beginTransaction()
+                         .replace(R.id.main_container, new AchievementFragment())
+                       .commit();
                 break;
 
             case R.id.settings:

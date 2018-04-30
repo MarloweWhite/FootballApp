@@ -33,6 +33,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
+import fragments.AchievementFragment;
 import fragments.HelpFragment;
 import fragments.MainFragment;
 import fragments.MapsFragment;
@@ -40,7 +41,7 @@ import fragments.ScoreFragment;
 import fragments.SettingFragment;
 import fragments.StadiumFragment;
 
-public class MapsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MapsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
     private GoogleMap mMap;
     private String[] championLeague;
@@ -74,6 +75,10 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_outer);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
 
         Toolbar toolbar = findViewById(R.id.my_toolbar);
@@ -133,9 +138,9 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.achievements:
-                //   getSupportFragmentManager().beginTransaction()
-                //         .replace(R.id.main_container, new AchievementFragment())
-                //       .commit();
+                   getSupportFragmentManager().beginTransaction()
+                         .replace(R.id.main_container, new AchievementFragment())
+                       .commit();
                 break;
 
             case R.id.settings:
@@ -154,5 +159,63 @@ public class MapsActivity extends AppCompatActivity implements NavigationView.On
         navDrawer.closeDrawer(GravityCompat.START);
 
         return true;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        LatLng defaultMap = new LatLng(52.644031, -2.321991);
+        Map map = pref1.getAll();
+        Map map1 = pref2.getAll();
+        Map map2 = pref3.getAll();
+        Map map3 = pref4.getAll();
+        Iterator iterator = map.keySet().iterator();
+        Iterator iterator1 = map1.keySet().iterator();
+        Iterator iterator2 = map2.keySet().iterator();
+        Iterator iterator3 = map3.keySet().iterator();
+
+        while (iterator.hasNext()) {
+            String key = (String) iterator.next();
+//            Log.d("iterator", String.valueOf(iterator.next()));
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(Integer.parseInt(key)))
+                    .visible((Boolean) map.get(key))
+                    .title(clubName.get(Integer.parseInt(key))));
+        }
+        while (iterator1.hasNext()) {
+            String key = (String) iterator1.next();
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(championLeague.length
+                            + Integer.parseInt(key)))
+                    .visible((Boolean) map1.get(key))
+                    .title(clubName.get(championLeague.length
+                            + Integer.parseInt(key))));
+        }
+        while (iterator2.hasNext()) {
+            String key = (String) iterator2.next();
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(championLeague.length
+                            + premierLeague.length
+                            + Integer.parseInt(key)))
+                    .visible((Boolean) map2.get(key))
+                    .title(clubName.get(championLeague.length
+                            + premierLeague.length
+                            + Integer.parseInt(key))));
+        }
+        while (iterator3.hasNext()) {
+            String key = (String) iterator3.next();
+            mMap.addMarker(new MarkerOptions()
+                    .position(visitedClubs.get(championLeague.length
+                            + premierLeague.length
+                            + leagueOne.length - 1
+                            + Integer.parseInt(key)))
+                    .visible((Boolean) map3.get(key))
+                    .title(clubName.get(championLeague.length
+                            + premierLeague.length
+                            + leagueOne.length - 1
+                            + Integer.parseInt(key))));
+        }
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultMap, 6));
     }
 }
