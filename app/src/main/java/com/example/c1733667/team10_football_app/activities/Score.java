@@ -2,6 +2,7 @@ package com.example.c1733667.team10_football_app.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.animation.ObjectAnimator;
 import android.support.annotation.NonNull;
@@ -23,6 +24,8 @@ import com.example.c1733667.team10_football_app.R;
 import com.example.c1733667.team10_football_app.classpack.ScoreSystem;
 import com.example.c1733667.team10_football_app.classpack.Navigation;
 import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
 
 import java.util.Map;
 
@@ -30,6 +33,7 @@ import java.util.Map;
 public class Score extends AppCompatActivity implements AdapterView.OnClickListener, NavigationView.OnNavigationItemSelectedListener{
 
     private Button btnShare;
+    //private ShareButton fbButton;
     private int totalStadiumsVisited ;
     private Intent shareIntent = new Intent(Intent.ACTION_SEND);
     ProgressBar mprogressBar;
@@ -45,10 +49,14 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
         super.onCreate(savedInstanceState);
 
         SharedPreferences setting = getSharedPreferences("High contrast", 0);
-        ThemeSetting scoreSetting = new ThemeSetting(setting,Score.this);
-        scoreSetting.setHighContrast(R.layout.activity_scoring_system_outer);
+        ThemeSetting scoreSetting = new ThemeSetting(setting,Score.this);scoreSetting.setHighContrast(R.layout.activity_scoring_system_outer);
 
-        shareButtonListener();
+//         shareButtonListener();
+//         ShareLinkContent fbContent = new ShareLinkContent.Builder()
+//                .setContentUrl(Uri.parse("https://developers.facebook.com"))
+//                .build();
+//        fbButton = (ShareButton)findViewById(R.id.fbBtn);
+//        fbButton.setShareContent(fbContent);
 
         SharedPreferences championPreference = getSharedPreferences("ChampionPreference", 0);
         SharedPreferences premierPreference = getSharedPreferences("PremierPreference", 0);
