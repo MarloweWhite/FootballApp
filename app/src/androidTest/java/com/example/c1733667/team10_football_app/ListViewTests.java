@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.example.c1733667.team10_football_app.activities.Achievement;
+import com.example.c1733667.team10_football_app.activities.AchievemntInfo;
 import com.example.c1733667.team10_football_app.activities.ChampionshipLeague;
 import com.example.c1733667.team10_football_app.activities.HelpActivity;
 import com.example.c1733667.team10_football_app.activities.InfoActivity;
@@ -38,6 +39,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.matcher.ViewMatchers.isChecked;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isNotChecked;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.CoreMatchers.any;
@@ -164,7 +166,18 @@ public class ListViewTests {
         intended(hasComponent(InfoActivity.class.getName()));
         Intents.release();
     }
-
+    @Test
+    public void AchievementListViewClickTest(){
+        Intents.init();
+        onView(withId(R.id.btnAchievement)).perform(click());
+        DataInteraction a = onData(anything())
+                .inAdapterView(withId(R.id.achievementList))
+                .atPosition(0);
+//        a.perform(click());
+        onView(withId(R.id.achievementList)).check(matches(isDisplayed()));
+        intended(hasComponent(Achievement.class.getName()));
+        Intents.release();
+    }
 //    @Test
 //    public void ClubListViewClickTest() {
 //        onView(withId(R.id.btnStadium)).perform(click());
@@ -184,4 +197,5 @@ public class ListViewTests {
 //
 //        b.check(matches(isChecked()));
 //    }
+
 }
