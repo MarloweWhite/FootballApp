@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -23,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.c1733667.team10_football_app.BuildConfig;
 import com.example.c1733667.team10_football_app.R;
@@ -65,6 +67,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Intent intent;
     private File imagePath;
     private Button share;
+    private View main;
+    private ImageView imageView;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -120,14 +124,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
 
+        main = findViewById(R.id.main);
+        imageView = (ImageView) findViewById(R.id.imageView);
         share = (Button)findViewById(R.id.share);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Bitmap bitmap = takeScreenshot();
 
-                System.out.println("############################################"+ bitmap.getHeight());
+                Bitmap bitmap = takeScreenshot();
+                imageView.setVisibility(View.VISIBLE);
+                imageView.setImageBitmap(bitmap);
+                main.setBackgroundColor(Color.parseColor("#999999"));
 
                 saveBitmap(bitmap);
                 shareIt();
@@ -139,33 +147,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             View rootView = findViewById(android.R.id.content).getRootView();
             rootView.setDrawingCacheEnabled(true);
             return rootView.getDrawingCache();
+
         }
 
         public void saveBitmap(Bitmap bitmap) {
-            imagePath = new File(Environment.getExternalStorageDirectory() + "/screenshot.png");
-
-//            imagePath = new File(getApplicationContext().getFilesDir(), "screenshot.png");
+            imagePath = new File(this.getExternalFilesDir(null) + "/screenshot.png");
             FileOutputStream fos;
 
-//            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                    == PackageManager.PERMISSION_GRANTED) {
-//                System.out.println("################################ PERMISSION IS GRANTED ");
-//            }else{
-//                System.out.println("################################ PERMISSION NOT GRANTED");
-//                ActivityCompat.requestPermissions(this,
-//                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-//                        MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-//            }
-
-
             try {
-                System.out.println("###################################"+ imagePath);
                 fos = new FileOutputStream(imagePath);
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
                 fos.flush();
                 fos.close();
-                System.out.println("###################################"+ fos.);
-
             } catch (FileNotFoundException e) {
                 Log.e("GREC", e.getMessage(), e);
             } catch (IOException e) {
@@ -176,10 +169,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         private void shareIt() {
             Uri uri = FileProvider.getUriForFile(MapsActivity.this, BuildConfig.APPLICATION_ID + ".provider",imagePath);
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             sharingIntent.setType("image/*");
-            String shareBody = "In Tweecher, My highest score with screen shot";
-            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My Tweecher score");
+            String shareBody = "Check out how many stadiums I've been too";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Try beat me :D");
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
 
