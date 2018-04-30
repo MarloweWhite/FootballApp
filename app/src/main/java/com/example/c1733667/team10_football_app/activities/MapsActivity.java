@@ -70,6 +70,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Button share;
     private View main;
     private ImageView imageView;
+    private Button close;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -147,6 +148,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         main = findViewById(R.id.main);
         imageView = (ImageView) findViewById(R.id.imageView);
         share = (Button)findViewById(R.id.share);
+        close = (Button)findViewById(R.id.close);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,6 +156,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 Bitmap bitmap = takeScreenshot();
                 imageView.setVisibility(View.VISIBLE);
+                close.setVisibility(View.VISIBLE);
                 imageView.setImageBitmap(bitmap);
                 main.setBackgroundColor(Color.parseColor("#999999"));
 
@@ -161,6 +164,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 shareIt();
             }
         });
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                imageView.setVisibility(View.GONE  );
+                close.setVisibility(View.GONE);
+            }
+        });
+
     }
 
         public Bitmap takeScreenshot() {
@@ -198,6 +211,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         }
+
+
 
 
 
