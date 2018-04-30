@@ -44,6 +44,8 @@ public class ExampleUnitTest {
 
         getInstrumentation().waitForIdleSync();
 
+
+
         View view = fragment.getView().findViewById(R.id.view_in.fragment);
 
         assertNotNull(view);
