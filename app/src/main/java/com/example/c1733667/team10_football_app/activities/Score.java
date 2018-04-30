@@ -85,18 +85,6 @@ public class Score extends AppCompatActivity implements AdapterView.OnClickListe
 
         ThemeSetting textView2Contrast = new ThemeSetting(setting,Score.this);
         textView2Contrast.setTextviewContrast(textView2);
-//
-//        ThemeSetting textView3Contrast = new ThemeSetting(setting,Score.this);
-//        textView3Contrast.setTextviewContrast(textView3);
-//
-//        ThemeSetting textView4Contrast = new ThemeSetting(setting,Score.this);
-//        textView4Contrast.setTextviewContrast(textView4);
-//
-//        ThemeSetting textView5Contrast = new ThemeSetting(setting,Score.this);
-//        textView5Contrast.setTextviewContrast(textView5);
-//
-//        ThemeSetting textView6Contrast = new ThemeSetting(setting,Score.this);
-//        textView6Contrast.setTextviewContrast(textView6);
 
         TextView premierTextView = findViewById(R.id.premiertitle);
         TextView championTextView = findViewById(R.id.championtitle);
