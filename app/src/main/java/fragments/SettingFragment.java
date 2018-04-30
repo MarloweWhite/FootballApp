@@ -34,12 +34,9 @@ public class SettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_setting, container, false);
 
+        onCheckboxClicked();
 
         SharedPreferences pref1 = getActivity().getSharedPreferences("High contrast", 0);
-        /*if (pref1 != null) {
-            ThemeSetting settingTheme = new ThemeSetting(pref1, (AppCompatActivity) getActivity());
-            settingTheme.setHighContrast(R.layout.activity_setting_outer);
-        }*/
 
 
         TextView highContrastTitle = v.findViewById(R.id.highContrastTitle);
@@ -94,11 +91,10 @@ public class SettingFragment extends Fragment {
 
         return v;
     }
-
-    public void onCheckboxClicked(View view) {
-        boolean checked = ((CheckBox) view).isChecked();
+    public void onCheckboxClicked() {
+       boolean checked = (CheckBox).isChecked();
         SharedPreferences sharedPreference = getActivity().getSharedPreferences("High contrast", Context.MODE_PRIVATE);
-        switch (view.getId()) {
+        switch (getId()) {
             case R.id.highContrast:
                 sharedPreference.edit().putBoolean(String.valueOf(R.id.highContrast), checked).commit();
                 Intent intent = new Intent(getActivity().getBaseContext(), SettingActivity.class);
@@ -129,8 +125,5 @@ public class SettingFragment extends Fragment {
                 startActivity(largeIntent);
         }
     }
-
-    
-
 
 }

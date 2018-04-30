@@ -42,9 +42,16 @@ private Intent intent;
 
 
 
-        /*FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.achievement_container, new AchievementFragment());
-        fragmentTransaction.commit();*/
+        achievements = getResources().getStringArray(R.array.achievements);
+        listView = (ListViewCompat) v.findViewById(R.id.achievementList);
+        AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(getActivity(), achievements, imageID);
+        //ListViewClass listViewClass = new ListViewClass(pref1, (AppCompatActivity) getActivity());
+        //listViewClass.setListView(R.id.achievementList,customAdapter);
+        listView.setOnItemClickListener((AdapterView.OnItemClickListener) this);
+
+        //ListViewClass.setListViewTheme(listView, );
+        listView.setAdapter(customAdapter);
+
 
 
 

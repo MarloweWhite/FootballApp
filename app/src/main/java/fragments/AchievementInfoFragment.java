@@ -83,8 +83,7 @@ public class AchievementInfoFragment extends Fragment {
         shareButtonListener();
 
         SharedPreferences pref = getActivity().getSharedPreferences("High contrast", 0);
-        /*ThemeSetting achievementInfoSetting =new ThemeSetting(pref, (AppCompatActivity) getActivity());
-        achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);*/
+
 
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);

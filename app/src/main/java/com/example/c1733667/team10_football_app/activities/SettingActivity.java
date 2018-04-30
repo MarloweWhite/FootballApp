@@ -56,6 +56,13 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
+        if (pref1 != null) {
+            ThemeSetting settingTheme = new ThemeSetting(pref1, this);
+            settingTheme.setHighContrast(R.layout.activity_setting_outer);
+        }
+
+
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);
@@ -137,8 +144,7 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
         return true;
     }
 
-    public void onCheckboxClicked(View view) {
-    }
+
 }
 
 

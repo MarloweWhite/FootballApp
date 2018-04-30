@@ -52,16 +52,6 @@ public class Achievement extends AppCompatActivity implements NavigationView.OnN
         ThemeSetting achievementSetting = new ThemeSetting(pref1, this);
         achievementSetting.setHighContrast(R.layout.activity_achievement_outer);
 
-        achievements = getResources().getStringArray(R.array.achievements);
-        listView = (ListViewCompat) findViewById(R.id.achievementList);
-        AchievementCustomAdapter customAdapter = new AchievementCustomAdapter(this, achievements, imageID);
-        //ListViewClass listViewClass = new ListViewClass(pref1, (AppCompatActivity) getActivity());
-        //listViewClass.setListView(R.id.achievementList,customAdapter);
-        listView.setOnItemClickListener((AdapterView.OnItemClickListener) this);
-
-        ListViewClass.setListViewTheme(listView, (SharedPreferences) this);
-        listView.setAdapter(customAdapter);
-
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         this.navDrawer = findViewById(R.id.drawer_layout);

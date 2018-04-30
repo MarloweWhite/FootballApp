@@ -95,6 +95,10 @@ public class AchievemntInfo extends AppCompatActivity implements NavigationView.
 
         toolbar = findViewById(R.id.my_toolbar);
 
+        SharedPreferences pref = getSharedPreferences("High contrast", 0);
+        ThemeSetting achievementInfoSetting =new ThemeSetting(pref, this);
+        achievementInfoSetting.setHighContrast(R.layout.activity_achievement_info_outer);
+
         setSupportActionBar(toolbar);
 
         this.navDrawer = findViewById(R.id.drawer_layout);
