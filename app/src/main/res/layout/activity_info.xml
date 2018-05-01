@@ -7,17 +7,30 @@
     android:orientation="vertical"
     tools:context="com.example.c1733667.team10_football_app.activities.InfoActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/infoToolbar"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimaryDark"
-        app:titleTextColor="#FFFFFF" />
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+
+    </android.support.design.widget.AppBarLayout>
+
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/clubName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:textSize="20dp"
         android:gravity="center"/>
 
@@ -25,6 +38,10 @@
         android:id="@+id/clubStadium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
         android:textSize="20dp"
         android:gravity="center"
         />
@@ -33,6 +50,10 @@
         android:id="@+id/clubLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:textSize="20dp"
         android:gravity="center"/>
 
@@ -40,6 +61,11 @@
         android:id="@+id/clubInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:paddingBottom="5dp"
         android:textSize="20dp"
         android:gravity="center"/>
 

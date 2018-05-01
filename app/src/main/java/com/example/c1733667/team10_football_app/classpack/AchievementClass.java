@@ -23,10 +23,12 @@ public class AchievementClass {
         this.targetNumber = targetNumber;
         this.actualNumber = actualNumber;
     }
-
-    private ProgressBar findViewById(int achievementProgressBar) {
-        progressBar = findViewById(R.id.achievementProgressBar);
-        return progressBar;
+    public boolean unlocked(){
+        if (targetNumber > actualNumber){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     public String getName() {

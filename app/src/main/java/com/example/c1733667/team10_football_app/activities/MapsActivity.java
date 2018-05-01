@@ -1,19 +1,35 @@
 package com.example.c1733667.team10_football_app.activities;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
+import com.example.c1733667.team10_football_app.BuildConfig;
 import com.example.c1733667.team10_football_app.R;
+import com.example.c1733667.team10_football_app.classpack.Navigation;
+import com.example.c1733667.team10_football_app.classpack.ThemeSetting;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,6 +40,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -46,6 +66,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private SharedPreferences pref3;
     private SharedPreferences pref4;
     private Intent intent;
+    private File imagePath;
+    private Button share;
+    private View main;
+    private ImageView imageView;
+    private Button close;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,10 +85,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         return super.onOptionsItemSelected(item);
     }
 
+
+    @Override
+    protected void onDestroy() {
+        System.out.println("TEST");
+
+        super.onDestroy();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps_outer);
+
+        //setTheme(R.style.HighContrastTheme);
+        //setContentView(R.layout.activity_maps_outer);
+
+//        setContentView(R.layout.activity_maps_outer);
+        SharedPreferences pref = getSharedPreferences("High contrast", 0);
+        ThemeSetting highcontrastmode = new ThemeSetting(pref,MapsActivity.this);
+        highcontrastmode.setHighContrast(R.layout.activity_maps_outer);
+
+
+
         visitedClubs = new ArrayList<>();
         clubName = new ArrayList<>();
 
@@ -85,6 +128,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
         premierLeague = getResources().getStringArray(R.array.PremierLeagueTeams);
         championLeague = getResources().getStringArray(R.array.EFLC);
         leagueOne = getResources().getStringArray(R.array.EFL1);
@@ -95,49 +139,82 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.stad:
-                        Intent intent = new Intent(MapsActivity.this, StadiumActivity.class);
-                        startActivity(intent);
-                        break;
-
-                    case R.id.scores:
-                        Intent intent1 = new Intent(MapsActivity.this, Score.class);
-                        startActivity(intent1);
-                        break;
-
-
-
-                    case R.id.maps:
-                        Intent intent2 = new Intent(MapsActivity.this, MapsActivity.class);
-                        startActivity(intent2);
-                        break;
-
-
-
-                    case R.id.exit:
-                        System.exit(0);
-
-                    case R.id.achievements:
-                        Intent intent4 = new Intent(MapsActivity.this, Achievement.class);
-                        startActivity(intent4);
-                        break;
-
-                    case R.id.home:
-                        Intent intent3 = new Intent(MapsActivity.this, MainActivity.class);
-                        startActivity(intent3);
-                        break;
-
-                    case R.id.help:
-                        Intent intent5 = new Intent(MapsActivity.this, HelpActivity.class);
-                        startActivity(intent5);
-                        break;
-                }
+                Navigation navigation = new Navigation(item, MapsActivity.this);
+                navigation.activityNavigation(getApplicationContext());
                 return false;
             }
         });
 
+        main = findViewById(R.id.main);
+        imageView = (ImageView) findViewById(R.id.imageView);
+        share = (Button)findViewById(R.id.share);
+        close = (Button)findViewById(R.id.close);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Bitmap bitmap = takeScreenshot();
+                imageView.setVisibility(View.VISIBLE);
+                close.setVisibility(View.VISIBLE);
+                imageView.setImageBitmap(bitmap);
+                main.setBackgroundColor(Color.parseColor("#999999"));
+
+                saveBitmap(bitmap);
+                shareIt();
+            }
+        });
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                imageView.setVisibility(View.GONE  );
+                close.setVisibility(View.GONE);
+            }
+        });
+
     }
+
+        public Bitmap takeScreenshot() {
+            View rootView = findViewById(android.R.id.content).getRootView();
+            rootView.setDrawingCacheEnabled(true);
+            return rootView.getDrawingCache();
+
+        }
+
+        public void saveBitmap(Bitmap bitmap) {
+            imagePath = new File(this.getExternalFilesDir(null) + "/screenshot.png");
+            FileOutputStream fos;
+
+            try {
+                fos = new FileOutputStream(imagePath);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+                fos.flush();
+                fos.close();
+            } catch (FileNotFoundException e) {
+                Log.e("GREC", e.getMessage(), e);
+            } catch (IOException e) {
+                Log.e("GREC", e.getMessage(), e);
+            }
+        }
+
+        private void shareIt() {
+            Uri uri = FileProvider.getUriForFile(MapsActivity.this, BuildConfig.APPLICATION_ID + ".provider",imagePath);
+            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+            sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            sharingIntent.setType("image/*");
+            String shareBody = "Check out how many stadiums I've been too";
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Try beat me :D");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+            sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
+
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+        }
+
+
+
+
 
     public void getClubInfo() {
         Resources res = getResources();
@@ -209,6 +286,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -275,6 +353,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultMap, 6));
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
