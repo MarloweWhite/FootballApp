@@ -55,10 +55,9 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         SharedPreferences pref1 = getSharedPreferences("High contrast", 0);
         if (pref1 != null) {
-            ThemeSetting settingTheme = new ThemeSetting(pref1, this);
+            ThemeSetting settingTheme = new ThemeSetting(pref1, SettingActivity.this);
             settingTheme.setHighContrast(R.layout.activity_setting_outer);
         }
 
@@ -72,7 +71,71 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
         this.navView = findViewById(R.id.nav_view);
         this.navView.setNavigationItemSelectedListener(this);
 
+        TextView highContrastTitle = findViewById(R.id.highContrastTitle);
+        TextView textSize = findViewById(R.id.textSizeSetting);
 
+        CheckBox HighContrastcheckBox = findViewById(R.id.highContrast);
+        HighContrastcheckBox.setChecked(getSharedPreferences("High contrast",
+                Context.MODE_PRIVATE)
+                .getBoolean(String.valueOf(R.id.highContrast),
+                        false));
+
+        CheckBox smallTextCheckBox = findViewById(R.id.smallcheckbox);
+        smallTextCheckBox.setChecked(getSharedPreferences("High contrast",
+                Context.MODE_PRIVATE)
+                .getBoolean(String.valueOf(R.id.smallcheckbox),
+                        false));
+
+        CheckBox mediumTextCheckBox =findViewById(R.id.mediumcheckbox);
+        mediumTextCheckBox.setChecked(getSharedPreferences("High contrast",
+                Context.MODE_PRIVATE)
+                .getBoolean(String.valueOf(R.id.mediumcheckbox),
+                        false));
+
+        CheckBox largeTextCheckBox = findViewById(R.id.largecheckbox);
+        largeTextCheckBox.setChecked(getSharedPreferences("High contrast",
+                Context.MODE_PRIVATE)
+                .getBoolean(String.valueOf(R.id.largecheckbox),
+                        false));
+
+//        Map map = pref1.getAll();
+//        if (map.size() > 0) {
+//            for (Object key : map.keySet()) {
+//                if (map.get(String.valueOf(R.id.highContrast)) != null
+//                        && map.get(String.valueOf(R.id.highContrast)).equals(true)) {
+//                    highContrastTitle.setBackgroundColor(Color.BLUE);
+//                    textSize.setBackgroundColor(Color.BLUE);
+//                    HighContrastcheckBox.setBackgroundColor(Color.BLUE);
+//                    smallTextCheckBox.setBackgroundColor(Color.BLUE);
+//                    mediumTextCheckBox.setBackgroundColor(Color.BLUE);
+//                    largeTextCheckBox.setBackgroundColor(Color.BLUE);
+//                } else {
+//                    highContrastTitle.setBackgroundColor(Color.WHITE);
+//                    textSize.setBackgroundColor(Color.WHITE);
+//                    HighContrastcheckBox.setBackgroundColor(Color.WHITE);
+//                    smallTextCheckBox.setBackgroundColor(Color.WHITE);
+//                    mediumTextCheckBox.setBackgroundColor(Color.WHITE);
+//                    largeTextCheckBox.setBackgroundColor(Color.WHITE);
+//                }
+//            }
+//        }
+        ThemeSetting highContrastSetting = new ThemeSetting(pref1,SettingActivity.this);
+        highContrastSetting.setTextviewContrast(highContrastTitle);
+
+        ThemeSetting textSizeSetting = new ThemeSetting(pref1,SettingActivity.this);
+        textSizeSetting.setTextviewContrast(textSize);
+
+        ThemeSetting highContrastCheckbox = new ThemeSetting(pref1, SettingActivity.this);
+        highContrastCheckbox.setCheckboxContrast(HighContrastcheckBox);
+
+        ThemeSetting smallTextCheckboxContrast = new ThemeSetting(pref1,SettingActivity.this);
+        smallTextCheckboxContrast.setCheckboxContrast(smallTextCheckBox);
+
+        ThemeSetting mediumTextCheckboxContrast = new ThemeSetting(pref1,SettingActivity.this);
+        mediumTextCheckboxContrast.setCheckboxContrast(mediumTextCheckBox);
+
+        ThemeSetting largeTextCheckboxContrast = new ThemeSetting(pref1,SettingActivity.this);
+        largeTextCheckboxContrast.setCheckboxContrast(largeTextCheckBox);
 
         NavigationView navigationView = navView;
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -85,6 +148,43 @@ public class SettingActivity extends AppCompatActivity implements NavigationView
             }
         });
     }
+
+    public void onCheckboxClicked(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        SharedPreferences sharedPreference = getSharedPreferences("High contrast", Context.MODE_PRIVATE);
+        switch (view.getId()) {
+            case R.id.highContrast:
+                sharedPreference.edit().putBoolean(String.valueOf(R.id.highContrast), checked).commit();
+                Intent intent = new Intent(getBaseContext(), SettingActivity.class);
+                intent.putExtra("CHECK_BOX", checked);
+                Log.d("CheckBox", String.valueOf(checked));
+                finish();
+                startActivity(intent);
+                break;
+            case R.id.smallcheckbox:
+                sharedPreference.edit().putBoolean(String.valueOf(R.id.smallcheckbox), checked).commit();
+                Intent smallIntent = new Intent(getBaseContext(), SettingActivity.class);
+                smallIntent.putExtra("SMALL_CHECK", checked);
+                finish();
+                startActivity(smallIntent);
+                break;
+            case R.id.mediumcheckbox:
+                sharedPreference.edit().putBoolean(String.valueOf(R.id.mediumcheckbox), checked).commit();
+                Intent mediumIntent = new Intent(getBaseContext(), SettingActivity.class);
+                mediumIntent.putExtra("MEDIUM_CHECK", checked);
+                finish();
+                startActivity(mediumIntent);
+                break;
+            case R.id.largecheckbox:
+                sharedPreference.edit().putBoolean(String.valueOf(R.id.largecheckbox), checked).commit();
+                Intent largeIntent = new Intent(getBaseContext(), SettingActivity.class);
+                largeIntent.putExtra("LARGE_CHECK", checked);
+                finish();
+                startActivity(largeIntent);
+        }
+    }
+
+
 
 
     @Override
